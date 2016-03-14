@@ -4,3 +4,6 @@ from django.shortcuts import render
 
 def homepage(request):
     return render(request, 'TestLab/index.html', {})
+
+def embedPRVW(request):
+    return render(request, 'TestLab/embed.html', {})
