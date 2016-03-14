@@ -121,8 +121,8 @@
                     vtkWeb.connect(connection,
                     function(conn) {
                         pv.connection = conn;
-                        pv.viewport.setActiveRenderer('webgl');
                         pv.viewport = vtkWeb.createViewport({session:conn.session});
+                        pv.viewport.setActiveRenderer('webgl');
                         pv.viewport.bind("#viewport");
 
                         var filePath= getParameter("data");
