@@ -83,7 +83,7 @@
                         //var serviceURL = location.protocol + "//" + location.hostname +
                         //    ":" + location.port + "/paraview";
                         var serviceURL = "http:" + "//" + "104.196.120.212" +
-                        	":" + "8080" + "/parview";
+                        	":" + "9005" + "/paraview";
                         var config = {
                             sessionManagerURL: serviceURL,
                             name: "Live Articles",
@@ -101,7 +101,7 @@
 
                             var conn = {
                                 //sessionURL: "ws://" + location.hostname + ":" + location.port + "/ws"
-                                sessionURL: "ws://" + "104.196.120.212" + ":" + "8080" + "/ws"
+                                sessionURL: "ws://" + "104.196.120.212" + ":" + "9005" + "/ws"
                             };
                             setupConnection(conn);
                         }
