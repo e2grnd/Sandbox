@@ -19,7 +19,6 @@
           
                 $(window).resize(function() {
                     if (pv.viewport) {
-                    	pv.viewport.setActiveRenderer('webgl');
                         pv.viewport.render();
                     }
                 }).trigger('resize');
@@ -124,6 +123,7 @@
                         pv.connection = conn;
                         pv.viewport = vtkWeb.createViewport({session:conn.session});
                         pv.viewport.bind("#viewport");
+                        pv.viewport.setActiveRenderer("webgl");
 
                         var filePath= getParameter("data");
                         if (filePath !== "") {
