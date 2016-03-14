@@ -17,7 +17,7 @@ function loadFile(url){if(_endWith(url,".js")){loadJavaScript(url);}else if(_end
 try{modules=script.getAttribute("load").split(",");for(var j in modules){modules[j]=modules[j].replace(/^\s+|\s+$/g,'');}}catch(e){}
 try{extraScripts=script.getAttribute("extra").split(",");for(var j in extraScripts){extraScripts[j]=extraScripts[j].replace(/^\s+|\s+$/g,'');}}catch(e){}
 if(modules.length==0){modules=["core-min"];}
-var lastSlashIndex=script.getAttribute("src").lastIndexOf('lib/core/vtkweb-loader');if(lastSlashIndex!=-1){basePath=script.getAttribute("src").substr(0,lastSlashIndex);}
+var lastSlashIndex=script.getAttribute("src").lastIndexOf('/static/js/vtkweb-loader');if(lastSlashIndex!=-1){basePath=script.getAttribute("src").substr(0,lastSlashIndex);}
 for(var i in modules){for(var j in vtkWebLibs[modules[i]]){var path=basePath+vtkWebLibs[modules[i]][j];loadFile(path);}}
 for(var i in extraScripts){loadFile(extraScripts[i]);}
 script.parentNode.removeChild(script);}(window));
