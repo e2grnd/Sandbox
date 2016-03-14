@@ -15,13 +15,15 @@
 
                 //-----------------------------------------------------------------------------
                 // 'global' variables.
-                var pv = {};
-
+                var pv = {};             
+          
                 $(window).resize(function() {
                     if (pv.viewport) {
                         pv.viewport.render();
                     }
                 }).trigger('resize');
+                
+                pv.viewport.setActiveRenderer("webgl");
 
                 // Setup UI
                 $("#menu").hide();
