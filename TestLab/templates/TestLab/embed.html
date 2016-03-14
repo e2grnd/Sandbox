@@ -19,12 +19,11 @@
           
                 $(window).resize(function() {
                     if (pv.viewport) {
+                    	pv.viewport.setActiveRenderer('webgl');
                         pv.viewport.render();
                     }
                 }).trigger('resize');
                 
-                pv.viewport.setActiveRenderer('webgl');
-
                 // Setup UI
                 $("#menu").hide();
                 $("#options").hide();
