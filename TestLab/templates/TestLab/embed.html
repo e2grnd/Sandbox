@@ -80,10 +80,10 @@
                         $(this).addClass("session_started");
                         $(".clicktostart").html("Loading ...");
 
-                        var serviceURL = location.protocol + "//" + location.hostname +
-                            ":" + location.port + "/paraview";
-                        //var serviceURL = "http:" + "//" + "104.196.120.212" +
-                        //	":" + "8080" + "/paraview";
+                        //var serviceURL = location.protocol + "//" + location.hostname +
+                        //    ":" + location.port + "/paraview";
+                        var serviceURL = location.protocol + "//" + "104.196.120.212" +
+                        	":" + location.port + "/paraview";
                         var config = {
                             sessionManagerURL: serviceURL,
                             name: "Live Articles",
@@ -100,8 +100,8 @@
                             //console.log("Connection failed.");
 
                             var conn = {
-                                sessionURL: "ws://" + location.hostname + ":" + location.port + "/ws"
-                                //sessionURL: "ws://" + "104.196.120.212" + ":" + "8080" + "/ws"
+                                //sessionURL: "ws://" + location.hostname + ":" + location.port + "/ws"
+                                sessionURL: "ws://" + "104.196.120.212" + ":" + location.port + "/ws"
                             };
                             setupConnection(conn);
                         }
