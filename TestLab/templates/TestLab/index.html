@@ -20,12 +20,12 @@ Released   : 20111010
         <script src="/static/js/vtkweb-loader-min.js" load="core-min, jquery-ui"></script>
         
         <script type="text/javascript">
-            $(':submit').click(function(){
+            $("form").submit(function(){
 	        	var fileToUpload = document.getElementByID('file-select').files[0]
 	            var fd = new FormData();
 	        	fd.append('files[]',fileToUpload)
                 var xhr = new XMLHttpRequest();
-                xhr.open("POST", 'http://104.196.25.100:8080/data/uploadFile.php', true);
+                xhr.open('POST', 'http://104.196.25.100:8080/data/uploadFile.php', true);
                 xhr.send(fd);
 	        });
         </script>
