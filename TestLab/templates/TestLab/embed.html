@@ -84,8 +84,11 @@
                         //    ":" + location.port + "/paraview";
                         var serviceURL = location.protocol + "//" + "104.196.120.212" +
                         	":" + location.port + "/paraview";
+                        var dataURL = location.protocol + "//" + "104.196.120.212" +
+                    	    ":" + location.port + "/data/pvw/data";
                         var config = {
                             sessionManagerURL: serviceURL,
+                            sessionDataURL: dataURL,
                             name: "Live Articles",
                             description: "3D visualization with ParaView/Web",
                             application: "loader"
