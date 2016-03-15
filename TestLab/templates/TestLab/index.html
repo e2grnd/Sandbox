@@ -18,22 +18,32 @@ Released   : 20111010
         <title>ParaViewWeb - Live Articles</title>
         <link href="/static/css/style.css" rel="stylesheet" type="text/css" media="screen" />
         <script src="/static/js/vtkweb-loader-min.js" load="core-min, jquery-ui"></script>
+        
         <script type="text/javascript">
-            $(':button').click(function(){
+            $(':submit').click(function(){
 	        	var fileToUpload = document.getElementByID('file-select').files[0]
 	            var fd = new FormData();
 	        	fd.append('files[]',fileToUpload)
-
-	        	$.ajax({
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", 'http://104.196.25.100:8080/data/uploadFile.php', true);
+                xhr.send(fd);
+                <!--$.ajax({
 			       url: 'http://104.196.25.100:8080/data/uploadFile.php',
 			       type: 'POST',
+			       xhr: function() {  // Custom XMLHttpRequest
+			            var myXhr = $.ajaxSettings.xhr();
+			            if(myXhr.upload){ // Check if upload property exists
+			                myXhr.upload.addEventListener('progress',progressHandlingFunction, false); // For handling the progress of the upload
+			            }
+			            return myXhr;
+			       },
 			       beforeSend: beforeSendHandler,
 			       success: completeHandler,
 			       error: errorHandler,
 			       data: fd,
 			       cache: false,
 			       processData: false,
-			       contentType: false,
+			       contentType: false,-->
 			    });
 	        });
         </script>
@@ -66,9 +76,9 @@ Released   : 20111010
                                 embedding videos from <a href="https:/www.youtube.com">YouTube</a> or
                                 <a href="https://vimeo.com">Vimeo</a>.
                             </p>
-                            <form id="file-form" method="post"> <!--action="handler.php"--> 
+                            <form id="file-form" method="post" enctype="multipart/form-data"> <!--action="handler.php"--> 
 					            <input type="file" id="file-select" name="files[]"/>
-					            <input type="button" id="upload-button" value="Upload"/>
+					            <input type="submit" id="submit-button" value="Submit"/>
 					        </form>
                             <p>
                                 <iframe id="iframe1" class="paraviewweb-player" type="text/html"
