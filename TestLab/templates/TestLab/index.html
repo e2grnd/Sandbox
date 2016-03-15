@@ -46,10 +46,7 @@ Released   : 20111010
     </head>
     
     <body>
-        <form id="file-form" method="post"> <!--action="handler.php"--> 
-            <input type="file" id="file-select" name="files[]"/>
-            <button type="submit" id="upload-button">Upload</button>
-        </form>
+        
         <div id="wrapper">
             <div id="header-wrapper">
                 <div id="header">
@@ -74,6 +71,10 @@ Released   : 20111010
                                 embedding videos from <a href="https:/www.youtube.com">YouTube</a> or
                                 <a href="https://vimeo.com">Vimeo</a>.
                             </p>
+                            <form id="file-form" method="post"> <!--action="handler.php"--> 
+					            <input type="file" id="file-select" name="files[]"/>
+					            <button type="submit" id="upload-button">Upload</button>
+					        </form>
                             <p>
                                 <iframe class="paraviewweb-player" type="text/html"
                                         width="540px" height="400px" frameborder="0"
