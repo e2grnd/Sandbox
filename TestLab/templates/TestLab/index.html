@@ -17,8 +17,39 @@ Released   : 20111010
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
         <title>ParaViewWeb - Live Articles</title>
         <link href="/static/css/style.css" rel="stylesheet" type="text/css" media="screen" />
+        <!--
+        <script type="text/javascript">
+	        function uploadFile() {
+	        	var fileToUpload = document.getElementByID('file-select').files[0]
+	            var fd = new FormData();
+	        	fd.append('files[]',fileToUpload)
+
+	        	$.ajax({
+			       url: "upload.php",
+			       type: "POST",
+			       data: fd,
+			       processData: false,
+			       contentType: false,
+			       success: function(response) {
+			           // .. do something
+			       },
+			       error: function(jqXHR, textStatus, errorMessage) {
+			           console.log(errorMessage); // Optional
+			       }
+			    });
+	        	var xhr = new XMLHttpRequest();
+	            xhr.open("POST", "upload.php", true);
+	            xhr.send(fd);
+	        }
+        </script>
+        -->
     </head>
+    
     <body>
+        <form id="file-form" method="post"> <!--action="handler.php"--> 
+            <input type="file" id="file-select" name="files[]"/>
+            <button type="submit" id="upload-button">Upload</button>
+        </form>
         <div id="wrapper">
             <div id="header-wrapper">
                 <div id="header">
