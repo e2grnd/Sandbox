@@ -81,8 +81,6 @@
                         $(this).addClass("session_started");
                         $(".clicktostart").html("Loading ...");
 
-                        //var serviceURL = location.protocol + "//" + location.hostname +
-                        //    ":" + location.port + "/paraview";
                         var serviceURL = location.protocol + "//" + hostIP +
                         	":" + location.port + "/paraview";
                         var dataURL = location.protocol + "//" + hostIP +
@@ -104,7 +102,6 @@
                             //console.log("Connection failed.");
 
                             var conn = {
-                                //sessionURL: "ws://" + location.hostname + ":" + location.port + "/ws"
                                 sessionURL: "ws://" + hostIP + ":" + location.port + "/ws"
                             };
                             setupConnection(conn);
