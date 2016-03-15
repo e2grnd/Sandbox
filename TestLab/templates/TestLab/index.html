@@ -17,32 +17,30 @@ Released   : 20111010
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
         <title>ParaViewWeb - Live Articles</title>
         <link href="/static/css/style.css" rel="stylesheet" type="text/css" media="screen" />
-        <!--
+
         <script type="text/javascript">
-	        function uploadFile() {
+            $(':button').click(function(){
 	        	var fileToUpload = document.getElementByID('file-select').files[0]
 	            var fd = new FormData();
 	        	fd.append('files[]',fileToUpload)
 
 	        	$.ajax({
-			       url: "upload.php",
-			       type: "POST",
+			       url: 'http://104.196.25.100:8080/data/uploadFile.php',
+			       type: 'POST',
+			       beforeSend: beforeSendHandler,
+			       success: completeHandler,
+			       error: errorHandler,
 			       data: fd,
+			       cache: false,
 			       processData: false,
 			       contentType: false,
-			       success: function(response) {
-			           // .. do something
-			       },
-			       error: function(jqXHR, textStatus, errorMessage) {
-			           console.log(errorMessage); // Optional
-			       }
 			    });
-	        	var xhr = new XMLHttpRequest();
+	        	<!--var xhr = new XMLHttpRequest();
 	            xhr.open("POST", "upload.php", true);
-	            xhr.send(fd);
+	            xhr.send(fd);-->
 	        }
         </script>
-        -->
+
     </head>
     
     <body onload=document.getElementById('iframe1').src="embed?data=can.ex2">
@@ -73,14 +71,13 @@ Released   : 20111010
                             </p>
                             <form id="file-form" method="post"> <!--action="handler.php"--> 
 					            <input type="file" id="file-select" name="files[]"/>
-					            <button type="submit" id="upload-button">Upload</button>
+					            <input type="button" id="upload-button" value="Upload"/>
 					        </form>
                             <p>
                                 <iframe id="iframe1" class="paraviewweb-player" type="text/html"
                                         width="540px" height="400px" frameborder="0"
                                         style="border: 1px solid;">
                                 </iframe>
-                                var 
                                 <h3>Figure 1: ParaView Visualization. Click to interact!</h3>
                             </p>
                             <p>
