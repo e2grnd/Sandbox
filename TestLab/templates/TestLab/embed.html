@@ -128,6 +128,7 @@
                         pv.viewport.bind("#viewport");
 
                         var filePath= getParameter("data");
+                        document.write(filePath)
                         if (filePath !== "") {
                             pv.connection.session.call("pv.file.loader.open.file", [filePath]).then(
                             function(reply){pv.viewport.render();});
