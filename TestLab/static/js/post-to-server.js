@@ -48,8 +48,7 @@
 		  
 	    var formData = new FormData();
 	    
-	    
-	    var destinationURI = "http://104.196.120.212/root/uploadFile.php";
+	    var destinationURI = "http://104.196.120.212:8080/";
 	    
 	    // FAppend the file to FormData - dummy change
 	    var fileInput = document.getElementById('file-id');
