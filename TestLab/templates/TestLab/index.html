@@ -18,18 +18,7 @@ Released   : 20111010
         <title>ParaViewWeb - Live Articles</title>
         <link href="/static/css/style.css" rel="stylesheet" type="text/css" media="screen" />
         <script src="/static/js/vtkweb-loader-min.js" load="core-min, jquery-ui"></script>
-        
-        <script type="text/javascript">
-            $("form").submit(function(){
-	        	var fileToUpload = document.getElementByID('file-select').files[0]
-	            var fd = new FormData();
-	        	fd.append('files[]',fileToUpload)
-                var xhr = new XMLHttpRequest();
-                xhr.open('POST', 'http://104.196.25.100:8080/data/uploadFile.php', true);
-                xhr.send(fd);
-	        });
-        </script>
-
+        <script src="/static/js/post-to-server.js"></script>
     </head>
     
     <body onload=document.getElementById('iframe1').src="embed?data=can.ex2">
@@ -58,11 +47,29 @@ Released   : 20111010
                                 embedding videos from <a href="https:/www.youtube.com">YouTube</a> or
                                 <a href="https://vimeo.com">Vimeo</a>.
                             </p>
-                            <form id="file-form" method="post" enctype="multipart/form-data"> <!--action="handler.php"--> 
-					            {% csrf_token %}
-					            <input type="file" id="file-select" name="files[]"/>
-					            <input type="submit" id="submit-button" value="Submit"/>
-					        </form>
+                            <p id="support-notice">This browser does not support Ajax uploads, you may not upload a file</p>
+                            <form action="/" method="post" enctype="multipart/form-data" id="form-id">
+                            {% csrf_token %}
+
+							<!-- The file to upload -->
+							<p><input id="file-id" type="file" name="my-file" />
+							
+							<!--
+							  By default, the upload button is disabled.
+							  However, if Ajax uploads are supported it is enabled.
+							-->
+							<input type="button" value="Upload" id="upload-button-id" disabled="disabled" /></p>
+												
+							<!-- Submit button -->
+							<p><input type="submit" value="Submit" /></p>
+							
+							<!-- Niceties: Messages set by event handlers -->
+							<p id="upload-status"></p>
+							<p id="progress"></p>
+							<pre id="result"></pre>
+							
+							</form>
+
                             <p>
                                 <iframe id="iframe1" class="paraviewweb-player" type="text/html"
                                         width="540px" height="400px" frameborder="0"
