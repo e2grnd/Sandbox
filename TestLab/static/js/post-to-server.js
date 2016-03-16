@@ -55,6 +55,8 @@
 	    var file = fileInput.files[0];
 	    formData.append("my-file", file);
 	    document.write(formData)
+	    var dum1 = formData.get("my-file")
+	    document.write(dum1)
 	     
 	    
 	    $.ajax({
