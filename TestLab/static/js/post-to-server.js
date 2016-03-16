@@ -53,7 +53,7 @@
 	    // FAppend the file to FormData - dummy change
 	    var fileInput = document.getElementById('file-id');
 	    var file = fileInput.files[0];
-	    formData.append('my-file', file);
+	    formData.append("my-file", file);
 	     
 	    
 	    $.ajax({
