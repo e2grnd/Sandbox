@@ -59,9 +59,8 @@
 	        url: destinationURI,
 	        type: "POST",
 	        data: formData,
-	        cache: false,
-	        processData: false,
-	        contentType: false,
+	        contentType:"application/json; charset=utf-8",
+	        dataType:"json",
 	        success: function(response) {
 	            alert("success");
 	        },
