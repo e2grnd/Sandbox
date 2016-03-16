@@ -48,7 +48,7 @@
 		  
 	    var formData = new FormData();
 	    
-	    var destinationURI = "http://104.196.120.212/images/";
+	    var destinationURI = "http://104.196.120.212/images/paraview";
 	    
 	    // FAppend the file to FormData - dummy change
 	    var fileInput = document.getElementById('file-id');
