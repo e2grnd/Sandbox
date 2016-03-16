@@ -63,7 +63,7 @@
 	        data: formData,
 	        crossDomain : true,
 	        cache: false,
-	        processData: true,
+	        processData: false,
 	        contentType: false,
 	        success: function(response) {
 	            alert("success");
