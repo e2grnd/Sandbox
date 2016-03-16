@@ -48,7 +48,7 @@
 		  
 	    var formData = new FormData();
 	    
-	    var destinationURI = 'http://104.196.120.212:8080/data/uploadFile.php';
+	    var destinationURI = 'http://104.196.120.212:8144/data/uploadFile.php';
 	    
 	    // FAppend the file to FormData
 	    var fileInput = document.getElementById('file-id');
@@ -59,8 +59,9 @@
 	        url: destinationURI,
 	        type: "POST",
 	        data: formData,
-	        contentType:"application/json; charset=utf-8",
-	        dataType:"json",
+	        cache: false,
+	        processData: false,
+	        contentType: false,
 	        success: function(response) {
 	            alert("success");
 	        },
