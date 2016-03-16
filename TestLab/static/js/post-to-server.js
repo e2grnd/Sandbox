@@ -32,7 +32,7 @@
 		
 	  // Ajax uploads are supported
 	  // Change the support message and enable the upload button
-	  var notice = document.getElementById('support-notice');
+	  var notice = document.getElementById("support-notice");
 	  var uploadBtn = document.getElementById('upload-button-id');
 	  
 	  notice.innerHTML = "Upload File to Server";
