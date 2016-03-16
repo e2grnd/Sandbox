@@ -21,7 +21,7 @@ Released   : 20111010
         <script src="/static/js/post-to-server.js"></script>
     </head>
     
-    <body onload=document.getElementById('iframe1').src="embed?data=can.ex2">
+    <body onload="checkForAjaxSupport()">
         
         <div id="wrapper">
             <div id="header-wrapper">
@@ -73,7 +73,8 @@ Released   : 20111010
                             <p>
                                 <iframe id="iframe1" class="paraviewweb-player" type="text/html"
                                         width="540px" height="400px" frameborder="0"
-                                        style="border: 1px solid;">
+                                        style="border: 1px solid;"
+                                        src="embed?data=can.ex2">
                                 </iframe>
                                 <h3>Figure 1: ParaView Visualization. Click to interact!</h3>
                             </p>
