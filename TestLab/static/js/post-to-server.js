@@ -49,8 +49,7 @@
 	    var formData = new FormData();
 	    
 	    
-	    var destinationURI = location.protocol + "//" + "104.196.120.212" + 
-	               ":" + location.port + "/data";
+	    var destinationURI = location.protocol + "//" + "104.196.120.212" + "/data";
 	    
 	    // FAppend the file to FormData - dummy change
 	    var fileInput = document.getElementById('file-id');
