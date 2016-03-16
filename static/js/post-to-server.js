@@ -2,9 +2,9 @@
 
 	function checkForAjaxSupport() {
 		
-	  document.write(supportFileAPI())
-	  document.write(supportUploadProgress())
-	  document.write(supportFormData())
+	  document.write('supportFileAPI()')
+	  document.write('supportUploadProgress()')
+	  document.write('supportFormData()')
 	  return supportFileAPI() && supportUploadProgress() && supportFormData();
 	  
 	  // Check if the file is API supported
