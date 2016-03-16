@@ -10,7 +10,7 @@
 	    var fileCheck = document.createElement('INPUT');
 	    fileCheck.type = 'file';
 	    document.write('here1');
-	    return 'files' in fi;
+	    return 'files' in fileCheck;
 	  };
 	  
 	  // Check if progress events are supported
