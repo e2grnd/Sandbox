@@ -62,9 +62,9 @@
 	        cache: false,
 	        processData: false,
 	        contentType: false,
-	        success: function(response) {
-	            alert("success");
-	        },
+	        success: function(php_script_response){
+                alert(php_script_response); // display response from the PHP script, if any
+            }
 	        error: function(response) {
 	        	alert("failed");
 	        }
