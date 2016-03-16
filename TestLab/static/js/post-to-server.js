@@ -131,10 +131,7 @@
 	  if (readyState == 4 && status == '200') {
 	    var status = document.getElementById('upload-status');
 	    status.innerHTML += '<' + 'br>Success!';
-	  } else {
-		  var status = document.getElementById('upload-status');
-		  status.innerHTML += '<' + 'br>error in onreadystatechangeHandler';
-	  }
+	  } 
 	}
 	
 	
