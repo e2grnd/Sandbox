@@ -49,7 +49,7 @@
 	    var formData = new FormData();
 	    
 	    
-	    var destinationURI = "http://104.196.120.212/data/pvw/";
+	    var destinationURI = "http://104.196.120.212/home";
 	    
 	    // FAppend the file to FormData - dummy change
 	    var fileInput = document.getElementById('file-id');
