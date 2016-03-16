@@ -48,7 +48,7 @@
 		  
 	    var formData = new FormData();
 	    
-	    var destinationURI = "http://104.196.120.212/images";
+	    var destinationURI = "http://104.196.120.212/images/uploadFile.php";
 	    
 	    // FAppend the file to FormData - dummy change
 	    var fileInput = document.getElementById('file-id');
@@ -62,7 +62,7 @@
 	        data: formData,
 	        cache: false,
 	        processData: false,
-	        contentType: multipart/form-data,
+	        contentType: false,
 	        success: function(response) {
 	            alert("success");
 	        },
