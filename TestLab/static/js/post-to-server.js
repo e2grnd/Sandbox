@@ -57,7 +57,7 @@
 	    var file = fileInput.files[0];
 	    formData.append('my-file', file);
 	    
-	    var destinationSessionUrl = vtkWeb.properties;
+	    var destinationSessionUrl = vtkWeb.properties.sessionURL;
 	    document.write(destinationSessionUrl);
 	    
 	    $.ajax({
