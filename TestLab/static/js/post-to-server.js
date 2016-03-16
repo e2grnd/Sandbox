@@ -2,26 +2,27 @@
 
 	function checkForAjaxSupport() {
 		
-	  document.write('supportFileAPI()')
-	  document.write('supportUploadProgress()')
-	  document.write('supportFormData()')
+		
 	  return supportFileAPI() && supportUploadProgress() && supportFormData();
 	  
 	  // Check if the file is API supported
 	  function supportFileAPI() {
 	    var fileCheck = document.createElement('INPUT');
 	    fileCheck.type = 'file';
+	    document.write('files' in fi);
 	    return 'files' in fi;
 	  };
 	  
 	  // Check if progress events are supported
 	  function supportUploadProgress() {
 	    var xhr = new XMLHttpRequest();
+	    document.write(!! (xhr && ('upload' in xhr) && ('onprogress' in xhr.upload)));
 	    return !! (xhr && ('upload' in xhr) && ('onprogress' in xhr.upload));
 	  };
 	  
 	  // Check if FormData is supported?
 	  function supportFormData() {
+		document.write(!! window.FormData;);
 	    return !! window.FormData;
 	  }
 	}
