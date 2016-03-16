@@ -60,8 +60,8 @@
 	    $.ajax({
 	        url: destinationURI,
 	        type: "POST",
+	        timeout: 60
 	        data: formData,
-	        //crossDomain : true,
 	        cache: false,
 	        processData: false,
 	        contentType: false,
