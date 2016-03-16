@@ -19,7 +19,7 @@ function checkForAjaxSupport() {
   function supportFormData() {
     return !! window.FormData;
   }
-}
+}window.onload = checkForAjaxSupport;
 
 // Confirm Ajax support
 if (checkForAjaxSupport()) {
