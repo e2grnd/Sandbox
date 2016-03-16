@@ -55,11 +55,27 @@
 	    var file = fileInput.files[0];
 	    formData.append('my-file', file);
 	    
+	    $.ajax({
+	        url: destinationURI,
+	        type: "POST",
+	        data: formData,
+	        cache: false,
+	        processData: false,
+	        contentType: false,
+	        success: function(response) {
+	            alert("success");
+	        },
+	        error: function(response) {
+	        	alert("failed");
+	        }
+	     });
+	    
 	    // Send XMLHttpRequest 
-	    sendXHRequest(formData, destinationURI);
+	    //sendXHRequest(formData, destinationURI);
 	  }
 	}
 	
+	/*
 	// Once the FormData instance is ready and we know
 	// where to send the data
 	function sendXHRequest(formData, uri) {
@@ -117,5 +133,6 @@
 	    result.innerHTML = '<p>The server saw it as:</p><pre>' + evt.target.responseText + '</pre>';
 	  }
 	}
+	*/
 
 }(window, jQuery));
