@@ -46,6 +46,7 @@ Released   : 20111010
                                 embedding videos from <a href="https:/www.youtube.com">YouTube</a> or
                                 <a href="https://vimeo.com">Vimeo</a>.
                             </p>
+                            <?php echo "This line will be visible if inline php is working on this server.";?> 
                             <p id="support-notice">This browser does not support Ajax uploads, you may not upload a file</p>
                             <form action="http://104.196.120.212/uploadFile.php" method="post" enctype="multipart/form-data" id="form-id">
                             {% csrf_token %}
@@ -59,8 +60,7 @@ Released   : 20111010
 							-->
 							<input type="button" value="Upload" id="upload-button-id" disabled="disabled" /></p>
 							
-							<?php echo "This line will be visible if inline php is working
-							on this server.";?> 
+							
 							
 							<!-- Niceties: Messages set by event handlers -->
 							<p id="upload-status"></p>
