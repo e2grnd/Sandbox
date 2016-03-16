@@ -61,8 +61,9 @@
 	        url: destinationURI,
 	        type: "POST",
 	        data: formData,
+	        crossDomain : true,
 	        cache: false,
-	        processData: false,
+	        processData: true,
 	        contentType: false,
 	        success: function(response) {
 	            alert("success");
