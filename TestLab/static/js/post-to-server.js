@@ -49,7 +49,7 @@
 	    var formData = new FormData();
 	    
 	    
-	    var destinationURI = location.protocol + "//" + hostIP + 
+	    var destinationURI = location.protocol + "//" + "104.196.120.212" + 
 	               ":" + location.port + "/data/uploadFile.php";
 	    
 	    // FAppend the file to FormData
