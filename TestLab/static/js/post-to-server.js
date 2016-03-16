@@ -52,8 +52,8 @@
 	    
 	    // FAppend the file to FormData - dummy change
 	    var fileInput = document.getElementById('file-id');
-	    var file = fileInput.files[0];
-	    formData.append("my-file", file);   
+	    var file_data = fileInput.files[0];
+	    formData.append('file', file_data);   
 	    
 	    $.ajax({
 	        url: destinationURI,
