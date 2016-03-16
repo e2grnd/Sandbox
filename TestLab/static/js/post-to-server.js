@@ -134,6 +134,7 @@
 	    var result = document.getElementById('result');
 	    result.innerHTML = '<p>The server saw it as:</p><pre>' + evt.target.responseText + '</pre>';
 	  } else {
+		  var status = document.getElementById('upload-status');
 		  status.innerHTML += '<' + 'br>error in onreadystatechangeHandler';
 	  }
 	}
