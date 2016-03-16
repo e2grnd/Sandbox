@@ -48,13 +48,14 @@
 		  
 	    var formData = new FormData();
 	    
-	    var destinationURI = "http://104.196.120.212/uploadFile.php";
+	    var destinationURI = "http://104.196.120.212/images";
 	    
 	    // FAppend the file to FormData - dummy change
 	    var fileInput = document.getElementById('file-id');
 	    var file = fileInput.files[0];
 	    formData.append('my-file', file);
-	        
+	     
+	    /*
 	    $.ajax({
 	        url: destinationURI,
 	        type: "POST",
@@ -69,13 +70,14 @@
 	        	alert("failed");
 	        }
 	     });
+	     */
 	    
 	    // Send XMLHttpRequest 
-	    //sendXHRequest(formData, destinationURI);
+	    sendXHRequest(formData, destinationURI);
 	  }
 	}
 	
-	/*
+	
 	// Once the FormData instance is ready and we know
 	// where to send the data
 	function sendXHRequest(formData, uri) {
@@ -133,6 +135,6 @@
 	    result.innerHTML = '<p>The server saw it as:</p><pre>' + evt.target.responseText + '</pre>';
 	  }
 	}
-	*/
+	
 
 }(window, jQuery));
