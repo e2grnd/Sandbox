@@ -128,12 +128,9 @@
 	  catch(e) {
 	    return;
 	  }
-	  document.write(evt.target.responseText);
-	  if (readyState == 4 && status == '200' && evt.target.responseText) {
+	  if (readyState == 4 && status == '200') {
 	    var status = document.getElementById('upload-status');
 	    status.innerHTML += '<' + 'br>Success!';
-	    var result = document.getElementById('result');
-	    result.innerHTML = '<p>The server saw it as:</p><pre>' + evt.target.responseText + '</pre>';
 	  } else {
 		  var status = document.getElementById('upload-status');
 		  status.innerHTML += '<' + 'br>error in onreadystatechangeHandler';
