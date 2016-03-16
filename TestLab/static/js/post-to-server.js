@@ -50,16 +50,13 @@
 	    
 	    
 	    var destinationURI = location.protocol + "//" + "104.196.120.212" + 
-	               ":" + location.port + "/data/uploadFile.php";
+	               ":" + location.port + "/data";
 	    
 	    // FAppend the file to FormData - dummy change
 	    var fileInput = document.getElementById('file-id');
 	    var file = fileInput.files[0];
 	    formData.append('my-file', file);
-	    
-	    var destinationSessionUrl = vtkWeb.properties.sessionURL;
-	    document.write(destinationSessionUrl);
-	    
+	        
 	    $.ajax({
 	        url: destinationURI,
 	        type: "POST",
