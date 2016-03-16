@@ -9,20 +9,20 @@
 	  function supportFileAPI() {
 	    var fileCheck = document.createElement('INPUT');
 	    fileCheck.type = 'file';
-	    document.write('files' in fi);
+	    document.write('here1');
 	    return 'files' in fi;
 	  };
 	  
 	  // Check if progress events are supported
 	  function supportUploadProgress() {
 	    var xhr = new XMLHttpRequest();
-	    document.write(!! (xhr && ('upload' in xhr) && ('onprogress' in xhr.upload)));
+	    document.write('here2');
 	    return !! (xhr && ('upload' in xhr) && ('onprogress' in xhr.upload));
 	  };
 	  
 	  // Check if FormData is supported?
 	  function supportFormData() {
-		document.write(!! window.FormData;);
+		document.write('here3');
 	    return !! window.FormData;
 	  }
 	}
