@@ -62,7 +62,7 @@
 	        type: "POST",
 	        data: formData,
 	        cache: false,
-	        processData: true,
+	        processData: false,
 	        contentType: false,
 	        success: function(response) {
 	            alert("success");
