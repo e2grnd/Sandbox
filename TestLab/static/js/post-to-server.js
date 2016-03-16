@@ -61,7 +61,7 @@
 	        url: destinationURI,
 	        type: "POST",
 	        data: formData,
-	        crossDomain : true,
+	        //crossDomain : true,
 	        cache: false,
 	        processData: false,
 	        contentType: false,
