@@ -128,7 +128,7 @@
 	  catch(e) {
 	    return;
 	  }
-	  document.write(readyState);
+	  document.write(status);
 	  if (readyState == 4 && status == '200' && evt.target.responseText) {
 	    var status = document.getElementById('upload-status');
 	    status.innerHTML += '<' + 'br>Success!';
