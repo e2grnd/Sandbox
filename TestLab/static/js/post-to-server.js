@@ -9,20 +9,17 @@
 	  function supportFileAPI() {
 	    var fileCheck = document.createElement('INPUT');
 	    fileCheck.type = 'file';
-	    document.write('here1');
 	    return 'files' in fileCheck;
 	  };
 	  
 	  // Check if progress events are supported
 	  function supportUploadProgress() {
 	    var xhr = new XMLHttpRequest();
-	    document.write('here2');
 	    return !! (xhr && ('upload' in xhr) && ('onprogress' in xhr.upload));
 	  };
 	  
 	  // Check if FormData is supported?
 	  function supportFormData() {
-		document.write('here3');
 	    return !! window.FormData;
 	  }
 	}
@@ -51,7 +48,7 @@
 		  
 	    var formData = new FormData();
 	    
-	    var destinationURI = 'http://104.196.120.212:8080/data/pvw/data/';
+	    var destinationURI = 'http://104.196.120.212:8080/data/uploadFile.php';
 	    
 	    // FAppend the file to FormData
 	    var fileInput = document.getElementById('file-id');
