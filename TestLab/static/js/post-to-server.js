@@ -102,13 +102,13 @@
 	// Handle the start of the transmission
 	function onloadstartHandler(evt) {
 	  var div = document.getElementById('upload-status');
-	  div.innerHTML = 'Upload started.';
+	  div.innerHTML = 'Upload started...';
 	}
 	
 	// Handle the end of the transmission
 	function onloadHandler(evt) {
 	  var div = document.getElementById('upload-status');
-	  div.innerHTML += '<' + 'br>File uploaded. Waiting for response.';
+	  div.innerHTML += '<' + 'br>File uploaded...';
 	}
 	
 	// Handle the progress
@@ -131,7 +131,7 @@
 	    return;
 	  }
 	  if (readyState == 4 && status == '200') {
-	    var status = document.getElementById('upload-status');
+	    var status = document.getElementById('result');
 	    status.innerHTML += '<' + 'br>Success!';
 	  } 
 	}
