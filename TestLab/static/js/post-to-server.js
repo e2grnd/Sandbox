@@ -91,10 +91,10 @@
 	  var xhr = new XMLHttpRequest();
 	  
 	  // Set up events
-	  xhr.upload.addEventListener('loadstart', onloadstartHandler, false);
+	  //xhr.upload.addEventListener('loadstart', onloadstartHandler, false);
 	  xhr.upload.addEventListener('progress', onprogressHandler, false);
-	  xhr.upload.addEventListener('load', onloadHandler, false);
-	  xhr.addEventListener('readystatechange', onreadystatechangeHandler, false);
+	  //xhr.upload.addEventListener('load', onloadHandler, false);
+	  //xhr.addEventListener('readystatechange', onreadystatechangeHandler, false);
 	  
 	  // Set up request
 	  xhr.open('POST', uri, true);
