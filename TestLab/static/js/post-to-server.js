@@ -147,6 +147,7 @@
 	  } 
 	}
 	
+	//dummy text
 	function getFileName() {
 				  
 	    var fullPath = document.getElementById('file-id').value;
