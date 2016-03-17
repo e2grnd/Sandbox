@@ -32,7 +32,7 @@
 	  var notice = document.getElementById("support-notice");
 	  var uploadBtn = document.getElementById('upload-button-id');
 	  
-	  notice.innerHTML = "Upload File to Server";
+	  notice.innerHTML = "Upload VTK File to Server";
 	  uploadBtn.removeAttribute('disabled');
 	  
 	  // Initialize the file upload
