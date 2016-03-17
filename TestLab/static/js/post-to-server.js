@@ -76,10 +76,10 @@
 	     
 	    
 	     
-	    
+	    getFileName();
 	    // Send XMLHttpRequest 
 	    sendXHRequest(formData, destinationURI);
-	    getFileName();
+	    
 	  }
 	}
 	
