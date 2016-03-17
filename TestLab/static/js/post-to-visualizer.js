@@ -14,7 +14,9 @@
 				if (filename.indexOf('\\') === 0 || filename.indexOf('/') === 0) {
 					filename = filename.substring(1);
 				}
-				alert(filename);
+
+				var status = document.getElementById('result');
+			    status.innerHTML = filename;
 			}
 	    
 	  }
