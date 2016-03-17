@@ -55,9 +55,9 @@
 	    var file_data = fileInput.files[0];
 	    formData.append('file', file_data);   
 	    
-	     //Could also use ajax directly, by both uncommenting this ajax
-	     //code and commenting out the below sendXHRequest(...)
-	     
+	    //Could also use ajax directly, by both uncommenting this ajax
+	    //code and commenting out the below sendXHRequest(...)
+	    /* 
 	    $.ajax({
 	        url: destinationURI,
 	        type: "POST",
@@ -72,12 +72,13 @@
 	        	alert("failed");
 	        }
 	     });
+	     */
 	     
 	    
 	     
 	    
 	    // Send XMLHttpRequest 
-	    //sendXHRequest(formData, destinationURI);
+	    sendXHRequest(formData, destinationURI);
 	  }
 	}
 	
