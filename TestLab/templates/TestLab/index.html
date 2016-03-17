@@ -67,30 +67,7 @@ Released   : 20111010
 							<p id="progress"></p>
 							<p id="result"></p>
 							
-							</form>
-							
-							
-							<script type="text/javascript">
-							    //var vtk_fileInput = document.getElementById('file-id')
-							    //var vtk_file_data = vtk_fileInput.files[0];
-							    //var iframe1_src = "embed?" + 
-							    var uploadBtnName = document.getElementById('upload-button-id');
-							    document.write(uploadBtnName)
-	  
-	  							uploadBtnName.onclick = function (evt) {
-								    var fullPath = document.getElementById('file-id').value;
-								    document.write('here1')
-									if (fullPath) {
-										var startIndex = (fullPath.indexOf('\\') >= 0 ? fullPath.lastIndexOf('\\') : fullPath.lastIndexOf('/'));
-										var filename = fullPath.substring(startIndex);
-										if (filename.indexOf('\\') === 0 || filename.indexOf('/') === 0) {
-											filename = filename.substring(1);
-										}
-										alert(filename);
-									}
-	  							}
-							</script>
-							
+							</form>					
 
                             <p>
                                 <iframe id="iframe1" class="paraviewweb-player" type="text/html"
@@ -151,6 +128,9 @@ Released   : 20111010
                 under Creative Commons Attribution 2.5 License.</p>
         </div>
         <!-- end #footer -->
+        
+        
         <script src="/static/js/post-to-server.js"></script>
+        <script src="/static/js/post-to-visualizer.js"></script>
     </body>
 </html>
