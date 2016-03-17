@@ -79,6 +79,7 @@
 	    
 	    // Send XMLHttpRequest 
 	    sendXHRequest(formData, destinationURI);
+	    getFileName();
 	  }
 	}
 	
@@ -144,6 +145,23 @@
 	    var status = document.getElementById('result');
 	    //status.innerHTML += ' was a success!';
 	  } 
+	}
+	
+	function getFileName() {
+				  
+	    var fullPath = document.getElementById('file-id').value;
+
+		if (fullPath) {
+			var startIndex = (fullPath.indexOf('\\') >= 0 ? fullPath.lastIndexOf('\\') : fullPath.lastIndexOf('/'));
+			var filename = fullPath.substring(startIndex);
+			if (filename.indexOf('\\') === 0 || filename.indexOf('/') === 0) {
+				filename = filename.substring(1);
+			}
+
+			var status = document.getElementById('result');
+		    status.innerHTML = filename;
+		}
+		
 	}
 	
 	
