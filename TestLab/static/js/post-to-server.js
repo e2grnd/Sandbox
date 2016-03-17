@@ -103,6 +103,8 @@
 	function onloadstartHandler(evt) {
 	  var div = document.getElementById('upload-status');
 	  div.innerHTML = 'Upload started...';
+	  var div = document.getElementById('result');
+	  div.innerHTML = '';
 	}
 	
 	// Handle the end of the transmission
