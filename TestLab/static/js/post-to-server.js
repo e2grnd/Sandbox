@@ -46,17 +46,6 @@
 	  
 	  uploadBtn.onclick = function (evt) {
 		  
-	    var fullPath = document.getElementById('file-id').value;
-	    document.write(fullPath)
-		if (fullPath) {
-			var startIndex = (fullPath.indexOf('\\') >= 0 ? fullPath.lastIndexOf('\\') : fullPath.lastIndexOf('/'));
-			var filename = fullPath.substring(startIndex);
-			if (filename.indexOf('\\') === 0 || filename.indexOf('/') === 0) {
-				filename = filename.substring(1);
-			}
-			alert(filename);
-		}
-		  
 	    var formData = new FormData();
 	    
 	    var destinationURI = "http://104.196.120.212/uploadFile.php";
