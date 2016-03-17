@@ -158,6 +158,7 @@
 			if (filename.indexOf('\\') === 0 || filename.indexOf('/') === 0) {
 				filename = filename.substring(1);
 			}
+			filename = filename.substring(0,filename.lastIndexOf('.'));
 			var status = document.getElementById('result');
 		    status.innerHTML = filename;			
 		}
