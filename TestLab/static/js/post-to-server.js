@@ -160,7 +160,7 @@
 			}
 
 			var status = document.getElementById('result');
-		    status.innerHTML = filename;
+		    status.innerHTML = fullpath;
 		}
 		
 	}
