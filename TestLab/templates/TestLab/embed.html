@@ -149,7 +149,7 @@
                     }
                     if (pv.connection) {
                         pv.connection.session.call('application.exit');
-                        pv.connection.session.close();
+                        pv.connection.session.stop();
                     }
                     $("#options").hide();
                     pv = {};
