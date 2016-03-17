@@ -116,7 +116,7 @@
 	  var div = document.getElementById('progress');
 	  var percent = evt.loaded/evt.total*100;
 	  percent = percent.toFixed(2)
-	  div.innerHTML = 'Progress: ' + percent + '%';
+	  div.innerHTML = 'Upload Progress: ' + percent + '%';
 	}
 	
 	// Handle the response from the server
