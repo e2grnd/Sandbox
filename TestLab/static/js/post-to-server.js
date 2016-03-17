@@ -103,6 +103,7 @@
 	  xhr.send(formData);
 	}
 	
+	/*
 	// Handle the start of the transmission
 	function onloadstartHandler(evt) {
 	  var div = document.getElementById('upload-status');
@@ -110,12 +111,15 @@
 	  var div = document.getElementById('result');
 	  div.innerHTML = '';
 	}
+	*/
 	
+	/*
 	// Handle the end of the transmission
 	function onloadHandler(evt) {
 	  var div = document.getElementById('result');
 	  div.innerHTML = 'File uploaded';
 	}
+	*/
 	
 	// Handle the progress
 	function onprogressHandler(evt) {
