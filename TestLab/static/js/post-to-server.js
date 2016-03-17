@@ -115,6 +115,7 @@
 	function onprogressHandler(evt) {
 	  var div = document.getElementById('progress');
 	  var percent = evt.loaded/evt.total*100;
+	  percent = precent.toFixed(2)
 	  div.innerHTML = 'Progress: ' + percent + '%';
 	}
 	
