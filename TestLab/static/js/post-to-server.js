@@ -132,7 +132,7 @@
 	  }
 	  if (readyState == 4 && status == '200') {
 	    var status = document.getElementById('result');
-	    status.innerHTML = '<' + 'br>Success!';
+	    status.innerHTML = 'Success!';
 	  } 
 	}
 	
