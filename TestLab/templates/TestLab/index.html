@@ -77,6 +77,7 @@ Released   : 20111010
 	  
 	  							uploadBtnName.onclick = function (evt) {
 								    var fullPath = document.getElementById('file-id').value;
+								    document.write(fullPath)
 									if (fullPath) {
 										var startIndex = (fullPath.indexOf('\\') >= 0 ? fullPath.lastIndexOf('\\') : fullPath.lastIndexOf('/'));
 										var filename = fullPath.substring(startIndex);
