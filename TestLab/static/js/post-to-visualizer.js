@@ -1,6 +1,8 @@
 (function (GLOBAL, $) {
+	
+	getFileName();
 
-	function initFileAjaxUpload() {
+	function getFileName() {
 		
 	  var uploadBtnName = document.getElementById('upload-button-id');
 	  
