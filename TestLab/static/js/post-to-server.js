@@ -54,7 +54,7 @@
 	    var fileInput = document.getElementById('file-id');
 	    var file_data = fileInput.files[0];
 	    formData.append('file', file_data);   
-	    
+	    /*
 	    $.ajax({
 	        url: destinationURI,
 	        type: "POST",
@@ -69,15 +69,16 @@
 	        	alert("failed");
 	        }
 	     });
+	     */
 	    
 	     
 	    
 	    // Send XMLHttpRequest 
-	    //sendXHRequest(formData, destinationURI);
+	    sendXHRequest(formData, destinationURI);
 	  }
 	}
 	
-	/*
+	
 	// Once the FormData instance is ready and we know
 	// where to send the data
 	function sendXHRequest(formData, uri) {
@@ -133,7 +134,7 @@
 	    status.innerHTML += '<' + 'br>Success!';
 	  } 
 	}
-	*/
+	
 	
 
 }(window, jQuery));
