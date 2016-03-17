@@ -107,7 +107,7 @@
 	
 	// Handle the end of the transmission
 	function onloadHandler(evt) {
-	  var div = document.getElementById('result-status');
+	  var div = document.getElementById('result');
 	  div.innerHTML = '<' + 'br>File uploaded';
 	}
 	
