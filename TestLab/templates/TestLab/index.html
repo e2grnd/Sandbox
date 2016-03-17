@@ -47,11 +47,11 @@ Released   : 20111010
                                 <a href="https://vimeo.com">Vimeo</a>.
                             </p>
                             <br />
-                            <?php echo "This line will be visible if inline php is working on this server.";?> 
-                            <!-- action="http://104.196.120.212/uploadFile.php" -->
+                                                        
                             <p id="support-notice">This browser does not support Ajax uploads, you may not upload a file</p>
+                            
                             <form method="post" enctype="multipart/form-data" id="form-id">
-                            {% csrf_token %}
+                            <!-- {% csrf_token %} -->
 
 							<!-- The file to upload -->
 							<p><input id="file-id" type="file" name="file" />
