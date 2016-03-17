@@ -108,7 +108,7 @@
 	// Handle the end of the transmission
 	function onloadHandler(evt) {
 	  var div = document.getElementById('result');
-	  div.innerHTML = 'File upload';
+	  div.innerHTML = 'File uploaded';
 	}
 	
 	// Handle the progress
@@ -132,7 +132,7 @@
 	  }
 	  if (readyState == 4 && status == '200') {
 	    var status = document.getElementById('result');
-	    status.innerHTML += ' was a success!';
+	    //status.innerHTML += ' was a success!';
 	  } 
 	}
 	
