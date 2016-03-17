@@ -159,8 +159,9 @@
 				filename = filename.substring(1);
 			}
 			filename = filename.substring(0,filename.lastIndexOf('.'));
-			var status = document.getElementById('result');
-		    status.innerHTML = filename;			
+		    var sourceName = "embed?data=" + filename
+		    var frameChanges = document.getElementById('iframe1');
+		    frameChanges.src = sourceName;	
 		}
 		
 	}
