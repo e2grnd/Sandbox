@@ -138,6 +138,11 @@
                 '.pv-filter-list', '.pv-data-info', '.pv-global-settings-editor', '.pv-savedata-options');
 
             $('[data-toggle="tooltip"]').tooltip({container: 'body'});
+            
+            // Add resize listener
+            $(window).resize(function() {
+                viewport.render();
+            }).trigger('resize');
 
             // Update stop method to use the connection
             stop = function() {
