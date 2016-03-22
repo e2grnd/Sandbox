@@ -386,10 +386,13 @@
     // ========================================================================
 
     function createViewportView(viewportSelector) {
+    	var fileToLoad = "disk_out_ref.ex2";
         $(viewportSelector).empty()
                            .bind('captured-screenshot-ready', onScreenshotCaptured);
         viewport = vtkWeb.createViewport({session: session});
         viewport.bind(viewportSelector);
+        session.call('pv.file.loader.open.file', [fileToLoad]).then(
+                function(reply){viewport.render();});
     }
 
     // ------------------------------------------------------------------------
