@@ -120,11 +120,9 @@
         
         var config = {
             sessionManagerURL: serviceURL,
-            application: "visualizer"
-            
+            application: "visualizer",
+            fileToLoad: "disk_out_ref.ex2"
         },
-        
-        var fileToLoad = "disk_out_ref.ex2";
         
         reallyStop = true,
         
@@ -147,9 +145,9 @@
             //}).trigger('resize');
             
             // Auto load file if any available
-            if(fileToLoad !== "") {
-                connection.session.call('pv.file.loader.open.file', [fileToLoad]).then(function(reply){
-                	viewport.render();
+            if(connection.hasOwnProperty('fileToLoad')) {
+                connection.session.call('pv.file.loader.open.file', [connection['fileToLoad']]).then(function(){
+                    viewport.invalidateScene();
                 });
             }
 
