@@ -23,54 +23,7 @@
                         pv.viewport.render();
                     }
                 }).trigger('resize');
-                
-                /*
-                // Setup UI
-                $("#menu").hide();
-                $("#options").hide();
-
-                // handlers for selecting of options in the menu.
-                $("#menu").menu({
-                    select : function (event, ui) {
-                        event.preventDefault();
-                        $(this).hide();
-                        var selectedItem = ui.item;
-                        if (selectedItem.hasClass("resetview") === true) {
-                            if (pv.viewport) {pv.viewport.resetCamera();}
-                        } else if (selectedItem.hasClass("stats") === true) {
-                            var anchor = selectedItem.find("a");
-                            if (selectedItem.hasClass("show") === true) {
-                                anchor.text("Hide Statistics");
-                                if (pv.viewport) {
-                                    pv.viewport.showStatistics(true);
-                                }
-
-                            } else {
-                                anchor.text("Show Statistics");
-                                if (pv.viewport) {
-                                    pv.viewport.showStatistics(false);
-                                }
-                            }
-                            selectedItem.toggleClass("show");
-                        } else if (selectedItem.hasClass("disconnect") === true) {
-                            cleanup();
-                        }
-                    }
-                });
-
-                // show the menu when the mouse enter the "options" button.
-                $("#options").click(function(event) {
-                    $("#menu").show("fade").focus();
-                }
-            );
-
-                // hide the menu if the user moves out from the menu.
-                $("#menu").mouseleave(function(event) {
-                    $("#menu").hide("fade");
-                }
-            );
-                */
-
+           
                 // if the user clicks on the empty viewport, we start a new session
                 // if one hasn't already been started.
                 $("#viewport").click(function() {
@@ -85,12 +38,9 @@
 
                         var serviceURL = location.protocol + "//" + hostIP +
                         	":" + location.port + "/paraview";
-                        var dataURL = location.protocol + "//" + hostIP +
-                    	    ":" + location.port + "/data";
                         var config = {
                             sessionManagerURL: serviceURL,
-                            sessionDataURL: dataURL,
-                            name: "Live Articles",
+                            name: "Test Visualizer",
                             description: "3D visualization with ParaView/Web",
                             application: "loader"
                         };
