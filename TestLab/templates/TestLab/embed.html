@@ -38,11 +38,12 @@
 
                         var serviceURL = location.protocol + "//" + hostIP +
                         	":" + location.port + "/paraview";
+                        
                         var config = {
                             sessionManagerURL: serviceURL,
                             name: "Test Visualizer",
                             description: "3D visualization with ParaView/Web",
-                            application: "loader"
+                            application: "visualizer"
                         };
 
                         // Start a new ParaView/Web instance.
