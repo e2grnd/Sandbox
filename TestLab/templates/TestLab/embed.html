@@ -7,6 +7,7 @@
 
         <!-- dependency -->
         <script src="/static/js/vtkweb-loader-min.js" load="core-min, jquery-ui"></script>
+        <script src="/static/js/mainPV.js"></script>
         <script type="text/javascript">
             $(function() {
                 // Center the clicktostart element.
@@ -79,6 +80,10 @@
                         pv.viewport.setActiveRenderer('webgl');
                         pv.viewport.resetCamera();
                         pv.viewport.bind("#viewport");
+                        pv.initializeVisualizer(
+                                connection.session,
+                                '.pv-viewport', '.pv-pipeline', '.pv-proxy-editor', '.pv-files', '.pv-source-list',
+                                '.pv-filter-list', '.pv-data-info', '.pv-global-settings-editor', '.pv-savedata-options');
 
                         var filePath= getParameter("data");
 
