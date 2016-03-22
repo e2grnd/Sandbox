@@ -121,7 +121,8 @@
         
         var config = {
             sessionManagerURL: serviceURL,
-            application: "visualizer"
+            application: "visualizer",
+            file: "disk_out_ref.ex2"
         },
         
         reallyStop = true,
@@ -141,9 +142,9 @@
             
             // Auto load file if any available
             //if(connection.hasOwnProperty('fileToLoad')) {
-                connection.session.call('pv.file.loader.open.file', [fileToLoad]).then(function(reply){
-                	pv.viewport.render();
-                });
+            //    connection.session.call('pv.file.loader.open.file', [connection['fileToLoad']]).then(function(){
+            //        viewport.invalidateScene();
+            //    });
             //}
 
             // Update stop method to use the connection
