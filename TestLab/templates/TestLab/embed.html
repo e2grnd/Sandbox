@@ -16,12 +16,12 @@
 
                 //-----------------------------------------------------------------------------
                 // 'global' variables.
-                var pv = {};   
+                var pview = {};   
                 var hostIP = "104.196.120.212";
           
                 $(window).resize(function() {
-                    if (pv.viewport) {
-                        pv.viewport.render();
+                    if (pview.viewport) {
+                        pview.viewport.render();
                     }
                 }).trigger('resize');
            
@@ -33,7 +33,7 @@
                     }
                     // We start a new ParaView session everytime the user clicks on
                     // the the page.
-                    if (!pv.connection) {
+                    if (!pview.connection) {
                         $(this).addClass("session_started");
                         $(".clicktostart").html("Loading ...");
 
@@ -75,11 +75,11 @@
                     // visualizing.
                     vtkWeb.connect(connection,
                     function(conn) {
-                        pv.connection = conn;
-                        pv.viewport = vtkWeb.createViewport({session:conn.session});
-                        pv.viewport.setActiveRenderer('webgl');
-                        pv.viewport.resetCamera();
-                        pv.viewport.bind("#viewport");
+                        pview.connection = conn;
+                        pview.viewport = vtkWeb.createViewport({session:conn.session});
+                        pview.viewport.setActiveRenderer('webgl');
+                        pview.viewport.resetCamera();
+                        pview.viewport.bind("#viewport");
                         pv.initializeVisualizer(
                                 connection.session,
                                 '.pv-viewport', '.pv-pipeline', '.pv-proxy-editor', '.pv-files', '.pv-source-list',
@@ -88,13 +88,13 @@
                         var filePath= getParameter("data");
 
                         if (filePath !== "") {
-                            pv.connection.session.call("pv.file.loader.open.file", [filePath]).then(
-                            function(reply){pv.viewport.render();});
+                            pview.connection.session.call("pview.file.loader.open.file", [filePath]).then(
+                            function(reply){pview.viewport.render();});
                         }
                         //$("#options").show();
                     },
                     function(code,reason){
-                        pv.connection = null;
+                        pview.connection = null;
                         console.log(reason);
                         cleanup();
                     }
@@ -102,15 +102,15 @@
                 }
 
                 function cleanup() {
-                    if (pv.viewport) {
-                        pv.viewport.unbind();
+                    if (pview.viewport) {
+                        pview.viewport.unbind();
                     }
-                    if (pv.connection) {
-                        pv.connection.session.call('application.exit');
-                        pv.connection.session.close;
+                    if (pview.connection) {
+                        pview.connection.session.call('application.exit');
+                        pview.connection.session.close;
                     }
                     $("#options").hide();
-                    pv = {};
+                    pview = {};
                     $("#viewport").removeClass("session_started");
                     $(".clicktostart").html("Click to Start");
                 }
