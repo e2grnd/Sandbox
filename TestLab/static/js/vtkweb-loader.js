@@ -65,8 +65,8 @@
         "/static/js/paraview.ui.toolbar.connect.js"
         ],
         "jquery-ui": [
-        "ext/jquery-ui/jquery-ui-1.10.0.css",
-        "ext/jquery-ui/jquery-ui-1.10.0.min.js"
+        "/static/css/jquery-ui-1.10.0.css",
+        "/static/js/jquery-ui-1.10.0.min.js"
         ],
         "d3":[
         "ext/d3/d3.v2.js"
