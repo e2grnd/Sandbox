@@ -24,6 +24,7 @@
                     }
                 }).trigger('resize');
                 
+                /*
                 // Setup UI
                 $("#menu").hide();
                 $("#options").hide();
@@ -68,6 +69,7 @@
                     $("#menu").hide("fade");
                 }
             );
+                */
 
                 // if the user clicks on the empty viewport, we start a new session
                 // if one hasn't already been started.
@@ -90,7 +92,7 @@
                             sessionDataURL: dataURL,
                             name: "Live Articles",
                             description: "3D visualization with ParaView/Web",
-                            application: "visualizer"
+                            application: "loader"
                         };
 
                         // Start a new ParaView/Web instance.
