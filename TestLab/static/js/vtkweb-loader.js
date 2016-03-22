@@ -92,21 +92,21 @@
         "lib/widgets/vtkweb-widgets-min.js"
         ],
         "pv-visualizer": [
-        "ext/fontello/css/animation.css",
-        "ext/fontello/css/fontello.css",
-        "ext/bootstrap3/css/bootstrap-theme.min.css",
-        "ext/bootstrap3/css/bootstrap.min.css",
-        "ext/bootstrap3/js/bootstrap.min.js",
-        "lib/js/paraview.ui.action.list.js",
-        "lib/js/paraview.ui.files.js",
-        "lib/js/paraview.ui.data.js",
-        "lib/js/paraview.ui.proxy.editor.js",
-        "lib/css/paraview.ui.proxy.editor.css",
-        "lib/js/paraview.ui.svg.pipeline.js",
-        "lib/js/paraview.ui.opacity.editor.js",
-        "lib/css/paraview.ui.opacity.editor.css",
-        "lib/js/paraview.ui.color.editor.js",
-        "lib/css/paraview.ui.color.editor.css"
+        "/static/css/animation.css",
+        "/static/css/fontello.css",
+        "/static/css/bootstrap-theme.min.css",
+        "/static/css/bootstrap.min.css",
+        "/static/js/bootstrap.min.js",
+        "/static/js/paraview.ui.action.list.js",
+        "/static/js/paraview.ui.files.js",
+        "/static/js/paraview.ui.data.js",
+        "/static/js/paraview.ui.proxy.editor.js",
+        "/static/css/paraview.ui.proxy.editor.css",
+        "/static/js/paraview.ui.svg.pipeline.js",
+        "/static/js/paraview.ui.opacity.editor.js",
+        "/static/css/paraview.ui.opacity.editor.css",
+        "/static/js/paraview.ui.color.editor.js",
+        "/static/css/paraview.ui.color.editor.css"
         ]
 
     },
