@@ -55,14 +55,14 @@
         "lib/js/paraview.ui.pipeline.js",
         ],
         "pv-toolbar": [
-        "lib/css/paraview.ui.toolbar.css",
-        "lib/css/paraview.ui.toolbar.vcr.css",
-        "lib/css/paraview.ui.toolbar.viewport.css",
-        "lib/css/paraview.ui.toolbar.connect.css",
-        "lib/js/paraview.ui.toolbar.js",
-        "lib/js/paraview.ui.toolbar.vcr.js",
-        "lib/js/paraview.ui.toolbar.viewport.js",
-        "lib/js/paraview.ui.toolbar.connect.js"
+        "/static/css/paraview.ui.toolbar.css",
+        "/static/css/paraview.ui.toolbar.vcr.css",
+        "/static/css/paraview.ui.toolbar.viewport.css",
+        "/static/css/paraview.ui.toolbar.connect.css",
+        "/static/js/paraview.ui.toolbar.js",
+        "/static/js/paraview.ui.toolbar.vcr.js",
+        "/static/js/paraview.ui.toolbar.viewport.js",
+        "/static/js/paraview.ui.toolbar.connect.js"
         ],
         "jquery-ui": [
         "ext/jquery-ui/jquery-ui-1.10.0.css",
