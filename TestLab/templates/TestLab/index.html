@@ -23,7 +23,16 @@
                  data-placement='bottom'
                  title='Toggle Inspector Panel'/>
             <span
+                class='vtk-icon-flow-cascade clickable padding inspector-selector' data-type='pipeline' data-toggle='tooltip' data-placement='bottom' title='Show Pipeline'>
+            </span>
+            <span
                 class='vtk-icon-doc-text clickable padding inspector-selector' data-type='files' data-toggle='tooltip' data-placement='bottom' title='Show File List'>
+            </span>
+            <span
+                class='vtk-icon-plus clickable padding inspector-selector' data-type='sources' data-toggle='tooltip' data-placement='bottom' title='Show Sources/Filters'>
+            </span>
+            <span
+                class='vtk-icon-info-1 clickable padding inspector-selector need-input-source' data-type='info' data-toggle='tooltip' data-placement='bottom' title='Show Data Info'>
             </span>
             <span
                 class='vtk-icon-resize-full-alt-1 reset-camera clickable' data-toggle='tooltip' data-placement='bottom' title='Reset Camera'>
@@ -34,11 +43,9 @@
             <span
                 class='vtk-icon-clock-1 toggle-time-toolbar clickable' data-toggle='tooltip' data-placement='bottom' title='Toggle VCR Controls'>
             </span>
-            <!--  
             <span
                 class='vtk-icon-cog-alt clickable padding inspector-selector float-right not-busy' data-type='preferences' style="margin: 2px 0" data-toggle='tooltip' data-placement='bottom' title='Show Preferences'>
             </span>
-            -->
             <span class='vtk-icon-spin4 busy animate-spin clickable float-right'>
             </span>
         </div>
@@ -50,29 +57,78 @@
             <span class='vtk-icon-fast-fw vcr-action clickable' data-action='next' data-toggle='tooltip' data-placement='bottom' title='To Next'></span>
             <span class='vtk-icon-to-end vcr-action clickable' data-action='last' data-toggle='tooltip' data-placement='bottom' title='To Last'></span>
             <input type='text' class='pv-time-input time-value pv-gray-darker' value='0.0'/>
-            <!--  
             <span class='vtk-icon-download vcr-fetch-times clickable local-only' data-action='allsteps' data-toggle='tooltip' data-placement='bottom' title='Fetch All Timesteps'></span>
             <span class='vtk-icon-trash vcr-clear-cache clickable local-only' data-action='clearcache' data-toggle='tooltip' data-placement='bottom' title='Clear Cache'></span>
-            -->
         </div>
     </div>
 
     <div class="row hide-on-start">
         <div class='col-xs-12 col-sm-5 col-md-4 col-lg-3 scroll-overflow fix-height pv-gray-lighter-transparent lower-right-round-corner inspector-container' style='z-index: 1000; overflow-y: auto; overflow-x: hidden;'>
+            <div class="row inspector" data-type="pipeline">
+                <div class='clickable col-xS-12 col-sm-12 col-md-12 col-lg-12 nopadding pv-pipeline'>
+                </div>
+                <div class='col-xs-12 col-sm-12 col-md-12 col-lg-12 pv-proxy-editor'>
+                </div>
+            </div>
             <div class="row inspector" data-type="files">
                 <div class='col-xs-12 col-sm-12 col-md-12 col-lg-12 pv-files'>
                 </div>
             </div>
-            
+            <div class="row inspector" data-type="sources">
+                <div class='col-xs-12 col-sm-12 col-md-12 col-lg-12 pv-source-list nopadding'>
+                </div>
+                <div class='col-xs-12 col-sm-12 col-md-12 col-lg-12 pv-filter-list nopadding need-input-source'>
+                </div>
+            </div>
+            <div class="row inspector" data-type="info">
+                <div class='col-xs-12 col-sm-12 col-md-12 col-lg-12 pv-data-info'>
+                </div>
+            </div>
+            <div class="row inspector" data-type="preferences">
+                <div class='col-xs-12 col-sm-12 col-md-12 col-lg-12 pv-preferences'>
+                    <div class="row" style='margin-top: 15px;'>
+                        <label class='col-sm-5 control-label'
+                               data-toggle='tooltip'
+                               data-placement='right'
+                               title='Select rendering mode'>Rendering</label>
+                        <div class='col-sm-5'>
+                            <select class='pv-update-viewport' data-property-name='ActiveRendererType'>
+                                <option value='image'>Remote</option>
+                                <option value='vgl'>Local (VGL)</option>
+                                <option value='webgl'>Local (deprecated)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class='col-sm-5 control-label'
+                               data-toggle='tooltip'
+                               data-placement='right'
+                               title='Toggle local rendering statistics'>Statistics</label>
+                        <div class='col-sm-5'>
+                            <input type='checkbox' class='pv-update-viewport checkbox' data-property-name='Stats'/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class='col-sm-5 control-label'
+                               data-toggle='tooltip'
+                               data-placement='right'
+                               title='Shutdown server process when leaving page'>Auto&nbsp;shutdown</label>
+                        <div class='col-sm-5'>
+                            <input type='checkbox' class='pv-update-viewport checkbox' data-property-name='CloseBehavior' checked/>
+                        </div>
+                    </div>
+                    <div class="row" style="height: 15px;"><br/></div>
+                </div>
+                <div class='col-xs-12 col-sm-12 col-md-12 col-lg-12 pv-global-settings-editor'>
+                </div>
+            </div>
             <div class="row inspector" data-type="saveopts" style="display: none;">
                 <div class='col-xs-12 col-sm-12 col-md-12 col-lg-12 pv-savedata-options'>
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 btn-group btn-group-sm" role="group" aria-label="Save Types" style="margin-top: 15px;">
-                            <button type="button" data-action="screen" class="btn btn-default active-panel-btn col-xs-12 col-sm-12 col-md-12 col-lg-12">Screenshot</button>
-                            <!--  
+                            <button type="button" data-action="screen" class="btn btn-default active-panel-btn col-xs-4 col-sm-4 col-md-4 col-lg-4">Screenshot</button>
                             <button type="button" data-action="data" class="btn btn-default active-panel-btn col-xs-4 col-sm-4 col-md-4 col-lg-4">Data</button>
                             <button type="button" data-action="state" class="btn btn-default active-panel-btn col-xs-4 col-sm-4 col-md-4 col-lg-4">State</button>
-                            -->
                         </div>
                     </div>
                     <div class="row screenshot-save-only label-spacing">
