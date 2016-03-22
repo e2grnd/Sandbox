@@ -121,10 +121,13 @@
         var config = {
             sessionManagerURL: serviceURL,
             application: "visualizer"
+            fileToLoad: "disk_out_ref.ex2"
         },
         
         reallyStop = true,
+        
         stop = vtkWeb.NoOp,
+        
         start = function(connection) {
             $('.app-wait-start-page').remove();
             $('.hide-on-start').removeClass('hide-on-start');
