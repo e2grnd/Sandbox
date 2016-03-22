@@ -114,14 +114,14 @@
     <script type="text/javascript">
     
         var hostIP = "104.196.120.212";
+        var fileToLoad = "disk_out_ref.ex2";
         
         var serviceURL = location.protocol + "//" + hostIP +
     	":" + location.port + "/paraview";
         
         var config = {
             sessionManagerURL: serviceURL,
-            application: "visualizer",
-            fileToLoad: "disk_out_ref.ex2"
+            application: "visualizer"
         },
         
         reallyStop = true,
@@ -145,11 +145,11 @@
             //}).trigger('resize');
             
             // Auto load file if any available
-            if(connection.hasOwnProperty('fileToLoad')) {
-                connection.session.call("connection.session.pv-viewport.file.loader.open.file", [connection['fileToLoad']]).then(function(reply){
+            //if(connection.hasOwnProperty('fileToLoad')) {
+                connection.session.call("connection.session.pv-viewport.file.loader.open.file", fileToLoad]).then(function(reply){
                 	connection.session.pv-viewport.render();
                 });
-            }
+            //}
 
             // Update stop method to use the connection
             stop = function() {
