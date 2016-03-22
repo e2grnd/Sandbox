@@ -189,8 +189,14 @@
     <script src="/static/js/vtkweb-loader.js" load="core, pv-visualizer"></script>
     <script src="/static/js/main.js"></script>
     <script type="text/javascript">
+    
+        var hostIP = "104.196.120.212";
+        
+        var serviceURL = location.protocol + "//" + hostIP +
+    	":" + location.port + "/paraview";
+        
         var config = {
-            sessionManagerURL: vtkWeb.properties.sessionManagerURL,
+            sessionManagerURL: serviceURL,
             application: "visualizer"
         },
         reallyStop = true,
