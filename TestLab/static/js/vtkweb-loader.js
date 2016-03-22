@@ -23,12 +23,12 @@
         "/static/js/vtkweb-all.js"
         ],
         "core-min": [
-        "ext/core/jquery-1.8.3.min.js",
-        "ext/core/autobahn.min.js",
-        "ext/core/gl-matrix-min.js",
-        "ext/core/jquery.hammer.min.js",
-        "ext/core/vgl.min.js",
-        "lib/core/vtkweb-all.min.js"
+        "/static/js/jquery-1.8.3.min.js",
+        "/static/js/autobahn.min.js",
+        "/static/js/gl-matrix-min.js",
+        "/static/js/jquery.hammer.min.js",
+        "/static/js/vgl.min.js",
+        "/static/js/vtkweb-all.min.js"
         ],
         "bootstrap": [
         "ext/bootstrap/js/bootstrap.min.js",
