@@ -135,7 +135,7 @@
                             pv.connection.session.call("pv.file.loader.open.file", [filePath]).then(
                             function(reply){pv.viewport.render();});
                         }
-                        $("#options").show();
+                        //$("#options").show();
                     },
                     function(code,reason){
                         pv.connection = null;
@@ -179,13 +179,12 @@
             <p class="clicktostart">Click to Start</p>
         </div>
         <button id="options" class="anchor-bottom-right transparent">Options</button>
+        <!-- 
         <ul id="menu" style="list-style-type:none">
             <li class="stats show"><a>Show Statistics</a></li>
-            <!-- 
             <li class="resetview"><a>Reset View</a></li>
-            
             <li class="disconnect"><a>Disconnect</a></li>
-            -->
         </ul>
+        -->
     </body>
 </html>
