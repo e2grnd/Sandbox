@@ -158,7 +158,7 @@
 			if (filename.indexOf('\\') === 0 || filename.indexOf('/') === 0) {
 				filename = filename.substring(1);
 			}
-		    var sourceName = "embed?data=" + filename
+		    var sourceName = "indexViz?file=" + filename
 		    var frameChanges = document.getElementById('iframe1');
 		    frameChanges.src = sourceName;	
 		}
