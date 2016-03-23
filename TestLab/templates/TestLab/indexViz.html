@@ -122,7 +122,7 @@
         var config = {
             sessionManagerURL: serviceURL,
             application: "visualizer",
-            file: "disk_out_ref.ex2"
+            //file: "disk_out_ref.ex2"
         },
         
         reallyStop = true,
@@ -140,9 +140,15 @@
 
             $('[data-toggle="tooltip"]').tooltip({container: 'body'});
             
+            var filePath= getParameter("file");
+            
             // Auto load file if any available
+            if (filePath !== "") {
+                            connection.session.call('pv.file.visualizer.open.file', [filePath]).then(
+                            function(reply){connection.session.pv-viewport.viewport.render();});
+            }
             //if(connection.hasOwnProperty('fileToLoad')) {
-            //    connection.session.call('pv.file.loader.open.file', [connection['fileToLoad']]).then(function(){
+            //    connection.session.call('pv.file.visualizer.open.file', [connection['fileToLoad']]).then(function(){
             //        viewport.invalidateScene();
             //    });
             //}
