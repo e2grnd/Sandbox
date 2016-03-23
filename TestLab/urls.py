@@ -4,5 +4,5 @@ from . import views
 urlpatterns = [
     url(r'^$', views.homepage, name='homepage'),
     url(r'^embed$', views.embedPRVW, name='embedPRVW'),
-    url(r'^indexViz', views.testembedViz, name='testembedViz'),
+    url(r'^embedViz', views.testembedViz, name='testembedViz'),
 ]
