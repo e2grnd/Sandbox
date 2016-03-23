@@ -724,7 +724,7 @@
                 console.log(err);
             }
             // Update information section
-            updateDataInformationPanel(pipelineDataModel.source.data);
+            //updateDataInformationPanel(pipelineDataModel.source.data);
 
             // Handle callback if any
             if(pipelineLoadedCallBack) {
