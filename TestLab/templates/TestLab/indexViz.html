@@ -144,11 +144,16 @@
             
             var filePath= getParameter("file");
             
-            // Auto load file if any available
             if (filePath !== "") {
-                            connection.session.call('pv.file.visualizer.open.file', [filePath]).then(
-                            function(reply){viewport.render();});
+            	connection.session.call("pv.proxy.manager.create.reader", [filePath]).then(invalidatePipeline, invalidatePipeline);
+            	activePipelineInspector();
             }
+            
+            // Auto load file if any available
+            //if (filePath !== "") {
+            //                connection.session.call('pv.file.visualizer.open.file', [filePath]).then(
+            //                function(reply){viewport.render();});
+            //}
             //if(connection.hasOwnProperty('fileToLoad')) {
             //    connection.session.call('pv.file.visualizer.open.file', [connection['fileToLoad']]).then(function(){
             //        viewport.invalidateScene();

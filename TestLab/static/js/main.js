@@ -1001,13 +1001,13 @@
 
         // Create panels
         createFileManagerView(fileSelector);
-        createCreationView(sourceSelector, 'sources');
-        createCreationView(filterSelector, 'filters');
+        //createCreationView(sourceSelector, 'sources');
+        //createCreationView(filterSelector, 'filters');
         createViewportView(viewportSelector);
         createPipelineManagerView(pipelineSelector);
         createProxyEditorView(proxyEditorSelector);
-        createDataInformationPanel(dataInfoSelector);
-        createGlobalSettingsPanel(settingsSelector);
+        //createDataInformationPanel(dataInfoSelector);
+        //createGlobalSettingsPanel(settingsSelector);
         createSaveOptionsPanel(saveOptsSelector);
 
         // Set initial state
