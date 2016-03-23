@@ -163,7 +163,5 @@
 		}
 		
 	}
-	
-	
 
 }(window, jQuery));
