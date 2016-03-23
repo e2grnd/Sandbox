@@ -73,22 +73,22 @@
                         </div>
                     </div>
                     <div class="row screenshot-save-only label-spacing">
-                        <div class="col-xs-12">
+                        <div class="col-xs-8">
                             Desired Resolution
                             <span class="vtk-icon-arrows-cw screenshot-reset-size-btn clickable float-right" data-toggle='tooltip' data-placement='bottom' title='Current Screen Size'></span>
                         </div>
                     </div>
                     <div class="row screenshot-save-only">
-                        <div class="col-xs-12 text-center">
+                        <div class="col-xs-8 text-center">
                             <input type="text" style="width: 45%" class="screenshot-pixel-width light-form-control input-sm float-left">
                             x
                             <input type="text" style="width: 45%" class="screenshot-pixel-height light-form-control input-sm float-right">
                         </div>
                     </div>
                     <div class="row label-spacing">
-                    	<div class="col-xs-6">
+                    	<div class="col-xs-8">
                         </div>
-                        <div class="col-xs-6">
+                        <div class="col-xs-8">
                             <button type="button"
                                     class="screenshot-save-only screenshot-grab-image-btn btn btn-default btn-sm"
                                     data-toggle="tooltip"
@@ -113,7 +113,6 @@
     <script type="text/javascript">
     
         var hostIP = "104.196.120.212";
-        var fileToLoad = "disk_out_ref.ex2";
         
         var serviceURL = location.protocol + "//" + hostIP +
     	":" + location.port + "/paraview";
@@ -121,7 +120,6 @@
         var config = {
             sessionManagerURL: serviceURL,
             application: "visualizer",
-            //file: "disk_out_ref.ex2"
         },
         
         reallyStop = true,
@@ -146,17 +144,6 @@
             	connection.session.call('pv.proxy.manager.create.reader', [filePath]).then(pv.invalidatePipeline, pv.invalidatePipeline);
             	pv.activePipelineInspector;
             }
-            
-            // Auto load file if any available
-            //if (filePath !== "") {
-            //                connection.session.call('pv.file.visualizer.open.file', [filePath]).then(
-            //                function(reply){viewport.render();});
-            //}
-            //if(connection.hasOwnProperty('fileToLoad')) {
-            //    connection.session.call('pv.file.visualizer.open.file', [connection['fileToLoad']]).then(function(){
-            //        viewport.invalidateScene();
-            //    });
-            //}
 
             // Update stop method to use the connection
             stop = function() {
