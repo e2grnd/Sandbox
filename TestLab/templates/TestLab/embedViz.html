@@ -147,17 +147,6 @@
             	pv.activePipelineInspector;
             }
             
-            // Auto load file if any available
-            //if (filePath !== "") {
-            //                connection.session.call('pv.file.visualizer.open.file', [filePath]).then(
-            //                function(reply){viewport.render();});
-            //}
-            //if(connection.hasOwnProperty('fileToLoad')) {
-            //    connection.session.call('pv.file.visualizer.open.file', [connection['fileToLoad']]).then(function(){
-            //        viewport.invalidateScene();
-            //    });
-            //}
-
             // Update stop method to use the connection
             stop = function() {
                 if (reallyStop === true) {
