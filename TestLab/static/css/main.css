@@ -26,9 +26,9 @@
 .pv-h4-font { font-size: 16px }
 
 .cn {
-  display: table-cell;
-  vertical-align: middle;
-  align: center;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
 }
 
 .pv-gray-darker  { background: #222; color: #eee; }
