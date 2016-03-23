@@ -113,13 +113,15 @@
     <script type="text/javascript">
     
         var hostIP = "104.196.120.212";
-     
+        var fileToLoad = "disk_out_ref.ex2";
+        
         var serviceURL = location.protocol + "//" + hostIP +
     	":" + location.port + "/paraview";
         
         var config = {
             sessionManagerURL: serviceURL,
             application: "visualizer",
+            //file: "disk_out_ref.ex2"
         },
         
         reallyStop = true,
@@ -145,6 +147,17 @@
             	pv.activePipelineInspector;
             }
             
+            // Auto load file if any available
+            //if (filePath !== "") {
+            //                connection.session.call('pv.file.visualizer.open.file', [filePath]).then(
+            //                function(reply){viewport.render();});
+            //}
+            //if(connection.hasOwnProperty('fileToLoad')) {
+            //    connection.session.call('pv.file.visualizer.open.file', [connection['fileToLoad']]).then(function(){
+            //        viewport.invalidateScene();
+            //    });
+            //}
+
             // Update stop method to use the connection
             stop = function() {
                 if (reallyStop === true) {
