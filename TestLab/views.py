@@ -9,4 +9,4 @@ def embedPRVW(request):
     return render(request, 'TestLab/embed.html', {})
 
 def testembedViz(request):
-    return render(request, 'TestLab/indexViz.html', {})
+    return render(request, 'TestLab/index_VTK.html', {})
