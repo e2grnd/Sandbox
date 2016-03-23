@@ -143,7 +143,7 @@
             // Auto load file if any available
             if(connection.hasOwnProperty('file')) {
                 connection.session.call('pv.file.visualizer.open.file', [connection['file']]).then(function(){
-                    pv-viewport.invalidateScene();
+                	connection.session.pv-viewport.invalidateScene();
                 });
             }
 
