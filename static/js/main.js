@@ -390,7 +390,6 @@
                            .bind('captured-screenshot-ready', onScreenshotCaptured);
         viewport = vtkWeb.createViewport({session: session});
         viewport.setActiveRenderer('webgl');
-        viewport.resetCamera();
         viewport.bind(viewportSelector);
     }
 
@@ -398,7 +397,7 @@
 
     function updateView() {
         if(viewport) {
-            viewport.invalidateScene();
+            viewport.invalidateScene();cd M
         }
     }
 
