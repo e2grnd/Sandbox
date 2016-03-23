@@ -375,7 +375,7 @@
                     swatchesWidth = imgLoadEvt.target.width;
                     swatchesHeight = imgLoadEvt.target.height;
                 });
-                swatchImage.attr('src', '../../lib/img/defaultSwatches.png');
+                swatchImage.attr('src', '/static/defaultSwatches.png');
 
                 // Generate the html containing the edit controls for the rgb points
                 html = html.replace(/RGBVALUES/, inflateRgbEditList(rgbInfo, editMode));
