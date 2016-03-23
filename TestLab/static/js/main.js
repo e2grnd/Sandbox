@@ -1032,5 +1032,7 @@
     module.initializeVisualizer = initializeVisualizer;
     
     module.invalidatePipeline = invalidatePipeline;
+    
+    module.activePipelineInspector = activePipelineInspector;
 
 }(window, jQuery));
