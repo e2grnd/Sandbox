@@ -1034,5 +1034,7 @@
     module.invalidatePipeline = invalidatePipeline;
     
     module.activePipelineInspector = activePipelineInspector;
+    
+    module.startWorking = startWorking;
 
 }(window, jQuery));
