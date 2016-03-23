@@ -145,7 +145,7 @@
             // Auto load file if any available
             if (filePath !== "") {
                             connection.session.call('pv.file.visualizer.open.file', [filePath]).then(
-                            function(reply){connection.session.pv-viewport.viewport.render();});
+                            function(reply){connection.session.pv-viewport.render();});
             }
             //if(connection.hasOwnProperty('fileToLoad')) {
             //    connection.session.call('pv.file.visualizer.open.file', [connection['fileToLoad']]).then(function(){
