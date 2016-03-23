@@ -1037,5 +1037,7 @@
     module.activePipelineInspector = activePipelineInspector;
     
     module.startWorking = startWorking;
+    
+    module.addFixHeightBehavior = addFixHeightBehavior;
 
 }(window, jQuery));
