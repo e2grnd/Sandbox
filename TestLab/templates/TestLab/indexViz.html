@@ -29,12 +29,6 @@
                 class='vtk-icon-doc-text clickable padding inspector-selector' data-type='files' data-toggle='tooltip' data-placement='bottom' title='Show File List'>
             </span>
             <span
-                class='vtk-icon-plus clickable padding inspector-selector' data-type='sources' data-toggle='tooltip' data-placement='bottom' title='Show Sources/Filters'>
-            </span>
-            <span
-                class='vtk-icon-info-1 clickable padding inspector-selector need-input-source' data-type='info' data-toggle='tooltip' data-placement='bottom' title='Show Data Info'>
-            </span>
-            <span
                 class='vtk-icon-resize-full-alt-1 reset-camera clickable' data-toggle='tooltip' data-placement='bottom' title='Reset Camera'>
             </span>
             <span
@@ -42,9 +36,6 @@
             </span>
             <span
                 class='vtk-icon-clock-1 toggle-time-toolbar clickable' data-toggle='tooltip' data-placement='bottom' title='Toggle VCR Controls'>
-            </span>
-            <span
-                class='vtk-icon-cog-alt clickable padding inspector-selector float-right not-busy' data-type='preferences' style="margin: 2px 0" data-toggle='tooltip' data-placement='bottom' title='Show Preferences'>
             </span>
             <span class='vtk-icon-spin4 busy animate-spin clickable float-right'>
             </span>
@@ -74,61 +65,11 @@
                 <div class='col-xs-12 col-sm-12 col-md-12 col-lg-12 pv-files'>
                 </div>
             </div>
-            <div class="row inspector" data-type="sources">
-                <div class='col-xs-12 col-sm-12 col-md-12 col-lg-12 pv-source-list nopadding'>
-                </div>
-                <div class='col-xs-12 col-sm-12 col-md-12 col-lg-12 pv-filter-list nopadding need-input-source'>
-                </div>
-            </div>
-            <div class="row inspector" data-type="info">
-                <div class='col-xs-12 col-sm-12 col-md-12 col-lg-12 pv-data-info'>
-                </div>
-            </div>
-            <div class="row inspector" data-type="preferences">
-                <div class='col-xs-12 col-sm-12 col-md-12 col-lg-12 pv-preferences'>
-                    <div class="row" style='margin-top: 15px;'>
-                        <label class='col-sm-5 control-label'
-                               data-toggle='tooltip'
-                               data-placement='right'
-                               title='Select rendering mode'>Rendering</label>
-                        <div class='col-sm-5'>
-                            <select class='pv-update-viewport' data-property-name='ActiveRendererType'>
-                                <option value='image'>Remote</option>
-                                <option value='vgl'>Local (VGL)</option>
-                                <option value='webgl'>Local (deprecated)</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <label class='col-sm-5 control-label'
-                               data-toggle='tooltip'
-                               data-placement='right'
-                               title='Toggle local rendering statistics'>Statistics</label>
-                        <div class='col-sm-5'>
-                            <input type='checkbox' class='pv-update-viewport checkbox' data-property-name='Stats'/>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <label class='col-sm-5 control-label'
-                               data-toggle='tooltip'
-                               data-placement='right'
-                               title='Shutdown server process when leaving page'>Auto&nbsp;shutdown</label>
-                        <div class='col-sm-5'>
-                            <input type='checkbox' class='pv-update-viewport checkbox' data-property-name='CloseBehavior' checked/>
-                        </div>
-                    </div>
-                    <div class="row" style="height: 15px;"><br/></div>
-                </div>
-                <div class='col-xs-12 col-sm-12 col-md-12 col-lg-12 pv-global-settings-editor'>
-                </div>
-            </div>
             <div class="row inspector" data-type="saveopts" style="display: none;">
                 <div class='col-xs-12 col-sm-12 col-md-12 col-lg-12 pv-savedata-options'>
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 btn-group btn-group-sm" role="group" aria-label="Save Types" style="margin-top: 15px;">
-                            <button type="button" data-action="screen" class="btn btn-default active-panel-btn col-xs-4 col-sm-4 col-md-4 col-lg-4">Screenshot</button>
-                            <button type="button" data-action="data" class="btn btn-default active-panel-btn col-xs-4 col-sm-4 col-md-4 col-lg-4">Data</button>
-                            <button type="button" data-action="state" class="btn btn-default active-panel-btn col-xs-4 col-sm-4 col-md-4 col-lg-4">State</button>
+                            <button type="button" data-action="screen" class="btn btn-default active-panel-btn col-xs-12 col-sm-12 col-md-12 col-lg-12">Screenshot</button>
                         </div>
                     </div>
                     <div class="row screenshot-save-only label-spacing">
@@ -145,32 +86,14 @@
                         </div>
                     </div>
                     <div class="row label-spacing">
-                        <div class="col-xs-4">
-                            Filename
+                    	<div class="col-xs-6">
                         </div>
-                        <div class="col-xs-8 text-right">
-                            <span class="data-save-only active-data-type-label"></span>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <input type="text" class="save-data-filename form-control input-sm" data-toggle='tooltip' data-placement='bottom' title='Enter relative path and filename to server location where file should be written'/>
-                        </div>
-                    </div>
-                    <div class="row label-spacing">
                         <div class="col-xs-6">
                             <button type="button"
                                     class="screenshot-save-only screenshot-grab-image-btn btn btn-default btn-sm"
                                     data-toggle="tooltip"
                                     data-placement="bottom"
-                                    title="Capture contents of render window">Capture</button>
-                        </div>
-                        <div class="col-xs-6 text-right">
-                            <button type="button"
-                                    class="save-data-button btn btn-default btn-sm"
-                                    data-toggle="tooltip"
-                                    data-placement="bottom"
-                                    title="Save file to server">Save</button>
+                                    title="Capture contents of render window">Capture Screenshot</button>
                         </div>
                     </div>
                     <div class="row label-spacing captured-screenshot-container screenshot-save-only">
@@ -185,9 +108,6 @@
         </div>
     </div>
 
-    <script type="text/javascript">
-       var viewport = {};
-    </script>
     <script src="/static/js/vtkweb-loader.js" load="core, jquery-ui, pv-visualizer"></script>
     <script src="/static/js/main.js"></script>
     <script type="text/javascript">
