@@ -7,3 +7,6 @@ def homepage(request):
 
 def embedPRVW(request):
     return render(request, 'TestLab/embed.html', {})
+
+def testembedViz(request):
+    return render(request, 'TestLab/indexViz.html', {})
