@@ -145,7 +145,7 @@
             var filePath= getParameter("file");
             
             if (filePath !== "") {
-            	connection.session.call("pv.proxy.manager.create.reader", [filePath]).then(invalidatePipeline, invalidatePipeline);
+            	connection.session.call('pv.proxy.manager.create.reader', [filePath]).then(pv.invalidatePipeline, pv.invalidatePipeline);
             	activePipelineInspector();
             }
             

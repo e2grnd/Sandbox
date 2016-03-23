@@ -1030,5 +1030,7 @@
 
     // Expose some methods to pv namespace
     module.initializeVisualizer = initializeVisualizer;
+    
+    module.invalidatePipeline = invalidatePipeline;
 
 }(window, jQuery));
