@@ -1,6 +1,6 @@
 (function (GLOBAL, $) {
     var session,
-        viewport,
+        //viewport,
         pipeline,
         proxyEditor,
         settingsEditor,
