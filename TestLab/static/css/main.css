@@ -25,6 +25,12 @@
 
 .pv-h4-font { font-size: 16px }
 
+.cn {
+  display: table-cell;
+  vertical-align: middle;
+  align: center;
+}
+
 .pv-gray-darker  { background: #222; color: #eee; }
 .pv-gray-dark    { background: #333; color: #eee; }
 .pv-gray         { background: #555; color: #eee; }
