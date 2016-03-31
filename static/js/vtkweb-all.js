@@ -1740,7 +1740,7 @@
             if (!force_event && action_pending) {
                 return true;
             }
-            button_state.left   = event.buttonMiddle; //CHANGED BY DAN
+            button_state.left   = event.buttonLeft;
             button_state.right  = event.buttonRight;
             button_state.middle = event.buttonMiddle;
             return false;
@@ -4094,10 +4094,14 @@
                     mouseHandling.lastY = newMouseY;
 
                     if (mouseHandling.button === 1) {
-                        cameraLayerZero.rotate(mouseDX, mouseDY);
-                        for(var i in otherCamera) {
-                            otherCamera[i].rotate(mouseDX, mouseDY);
-                        }
+                    	panD = cameraLayerZero.calculatePanDeltas(
+                            width, height, newMouseX, newMouseY,
+                            lastMouseX, lastMouseY);
+                        cameraLayerZero.pan(-panD[0], -panD[1], -panD[2] );
+                        //cameraLayerZero.rotate(mouseDX, mouseDY);
+                        //for(var i in otherCamera) {
+                        //    otherCamera[i].rotate(mouseDX, mouseDY);
+                        //}
                     } else if (mouseHandling.button === 2) {
                         panD = cameraLayerZero.calculatePanDeltas(
                             width, height, newMouseX, newMouseY,
