@@ -733,7 +733,7 @@
                 pipelineLoadedCallBack = null;
             }
 
-            // Handle automatic reset camera
+            // Handle automatic reset camera.
             if(pipelineDataModel.sources.length === 1) {
                 //resetCamera();
             } else {
