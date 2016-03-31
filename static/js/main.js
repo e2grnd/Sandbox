@@ -685,16 +685,16 @@
                 repVal = widgetSettings['Representation'] || "-Representation",
                 viewVal = widgetSettings['View'] || "-View",
                 colMgmtVal = widgetSettings['Color Management'] || "+Color Management",
-                //props = [].concat(
-                //    srcVal, pipelineDataModel.source.properties, '_Source',
-                //    repVal, pipelineDataModel.representation.properties, '_Representation',
-                //    viewVal, pipelineDataModel.view.properties, "_View"
-                //    ),
-                //ui = [].concat(
-                //    srcVal, pipelineDataModel.source.ui, '_Source',
-                //    repVal, pipelineDataModel.representation.ui, '_Representation',
-                //    viewVal, pipelineDataModel.view.ui, "_View"
-                //    );
+                props = [].concat(
+                    srcVal, pipelineDataModel.source.properties, '_Source',
+                    repVal, pipelineDataModel.representation.properties, '_Representation',
+                    viewVal, pipelineDataModel.view.properties, "_View"
+                    ),
+                ui = [].concat(
+                    srcVal, pipelineDataModel.source.ui, '_Source',
+                    repVal, pipelineDataModel.representation.ui, '_Representation',
+                    viewVal, pipelineDataModel.view.ui, "_View"
+                    );
 
             if (!$.isEmptyObject(colorBy) && colorBy.hasOwnProperty('array')) {
                 props = [].concat(colMgmtVal,
@@ -713,8 +713,8 @@
                 proxyEditor.proxyEditor(pipelineDataModel.metadata.name,
                                         pipelineDataModel.metadata.leaf,
                                         pipelineDataModel.metadata.id,
-                                        props,
-                                        ui,
+                                        [],
+                                        [],
                                         pipelineDataModel.source.data.arrays,
                                         paletteNameList,
                                         colorBy,
