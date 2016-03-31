@@ -735,7 +735,7 @@
 
             // Handle automatic reset camera
             if(pipelineDataModel.sources.length === 1) {
-                resetCamera();
+                //resetCamera();
             } else {
                 updateView();
             }
