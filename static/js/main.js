@@ -695,18 +695,20 @@
                     repVal, pipelineDataModel.representation.ui, '_Representation',
                     viewVal, pipelineDataModel.view.ui, "_View"
                     );
+                colorBy.scalarBar = 1
 
             if (!$.isEmptyObject(colorBy) && colorBy.hasOwnProperty('array')) {
                 props = [].concat(colMgmtVal,
                                   extractRepresentation(pipelineDataModel.representation.properties),
                                   "ColorByPanel",
                                   "_Color Management",
-                                  []);
+                                  []);//CHANGED TO [] FROM props BY DAN
                 ui = [].concat(colMgmtVal,
                                extractRepresentation(pipelineDataModel.representation.ui),
                                "ColorByPanel",
                                "_Color Management",
-                               []);
+                               []);//CHANGED TO [] FROM ui BY DAN
+                colorBy.scalarBar = 1
             }
 
             try {
