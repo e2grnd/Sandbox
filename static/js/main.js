@@ -701,12 +701,12 @@
                                   extractRepresentation(pipelineDataModel.representation.properties),
                                   "ColorByPanel",
                                   "_Color Management",
-                                  props);
+                                  []);
                 ui = [].concat(colMgmtVal,
                                extractRepresentation(pipelineDataModel.representation.ui),
                                "ColorByPanel",
                                "_Color Management",
-                               ui);
+                               []);
             }
 
             try {
