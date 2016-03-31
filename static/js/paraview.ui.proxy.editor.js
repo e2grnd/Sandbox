@@ -370,6 +370,11 @@
                     widgetKey: widgetKey,
                     widgetData: widgetData
                 });
+                me.trigger({
+                    type: 'scalarbar-visibility',
+                    visible: $('.toggle-scalarbar-button', me).hasClass('vtk-icon-bookmark-empty'),
+                    id: target_container.attr('data-proxy-id')
+                });
             }
 
             function persistToggleState() {
