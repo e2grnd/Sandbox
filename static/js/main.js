@@ -443,10 +443,12 @@
             proxyEditor.empty();
             updateView();
         } else {
-            $('.need-input-source').show();
-            pipelineDataModel.metadata = getProxyMetaData(event.active);
-            pipelineDataModel.source = null;
-            pipelineDataModel.representation = null;
+            $('.need-input-source').hide();
+            proxyEditor.empty();
+            updateView();
+            //pipelineDataModel.metadata = getProxyMetaData(event.active);
+            //pipelineDataModel.source = null;
+            //pipelineDataModel.representation = null;
             //if(pipelineDataModel.metadata) {
             //    loadProxy(pipelineDataModel.metadata.id, 'source');
             //    loadProxy(pipelineDataModel.metadata.rep, 'representation');
