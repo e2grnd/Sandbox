@@ -355,6 +355,12 @@
                 colorEditorInitialized = false,
                 widgetKey = opts.widgetKey,
                 widgetData = $.extend(true, {}, opts.widgetData);
+                
+                me.trigger({
+                    type: 'scalarbar-visibility',
+                    visible: $('.toggle-scalarbar-button', me).hasClass('vtk-icon-bookmark-empty'),
+                    id: target_container.attr('data-proxy-id')
+                });
 
             /*
              * Update the application data object and store it
@@ -369,11 +375,6 @@
                     type: 'store-widget-settings',
                     widgetKey: widgetKey,
                     widgetData: widgetData
-                });
-                me.trigger({
-                    type: 'scalarbar-visibility',
-                    visible: $('.toggle-scalarbar-button', me).hasClass('vtk-icon-bookmark-empty'),
-                    id: target_container.attr('data-proxy-id')
                 });
             }
 
