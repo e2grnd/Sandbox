@@ -447,13 +447,13 @@
             pipelineDataModel.metadata = getProxyMetaData(event.active);
             pipelineDataModel.source = null;
             pipelineDataModel.representation = null;
-            //if(pipelineDataModel.metadata) {
-            //    loadProxy(pipelineDataModel.metadata.id, 'source');
-            //    loadProxy(pipelineDataModel.metadata.rep, 'representation');
-            //    if(pipelineDataModel.view === null) {
-            //        loadProxy(event.view, 'view');
-            //    }
-            //}
+            if(pipelineDataModel.metadata) {
+                loadProxy(pipelineDataModel.metadata.id, 'source');
+                loadProxy(pipelineDataModel.metadata.rep, 'representation');
+                if(pipelineDataModel.view === null) {
+                    loadProxy(event.view, 'view');
+                }
+            }
         }
     }
 
@@ -733,7 +733,7 @@
                 pipelineLoadedCallBack = null;
             }
 
-            // Handle automatic reset camera.
+            // Handle automatic reset camera
             if(pipelineDataModel.sources.length === 1) {
                 resetCamera();
             } else {
