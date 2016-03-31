@@ -1740,7 +1740,7 @@
             if (!force_event && action_pending) {
                 return true;
             }
-            button_state.left   = event.buttonLeft;
+            button_state.left   = event.buttonMiddle; //CHANGED BY DAN
             button_state.right  = event.buttonRight;
             button_state.middle = event.buttonMiddle;
             return false;
