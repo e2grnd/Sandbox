@@ -713,7 +713,7 @@
                 proxyEditor.proxyEditor(pipelineDataModel.metadata.name,
                                         pipelineDataModel.metadata.leaf,
                                         pipelineDataModel.metadata.id,
-                                        [],
+                                        props,
                                         ui,
                                         pipelineDataModel.source.data.arrays,
                                         paletteNameList,
