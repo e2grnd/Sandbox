@@ -1,5 +1,7 @@
 (function (GLOBAL, $) {
 
+	var status
+	
 	function checkForAjaxSupport() {
 		
 		
@@ -101,6 +103,7 @@
 	  
 	  // Send Request
 	  xhr.send(formData);
+
 	}
 	
 	
@@ -125,7 +128,7 @@
 	
 	// Handle the response from the server
 	function onreadystatechangeHandler(evt) {
-	  var status, text, readyState;
+	  var text, readyState;
 	  try {
 	    readyState = evt.target.readyState;
 	    text = evt.target.responseText;
@@ -140,7 +143,11 @@
 	}
 	
 	function getFileName() {
-				  
+				 
+		while (status != '200'){
+			
+		}
+		
 	    var fullPath = document.getElementById('file-id').value;
 
 		if (fullPath) {
