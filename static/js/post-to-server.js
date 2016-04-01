@@ -147,13 +147,6 @@
 	}
 	
 	function getFileName() {
-				
-		
-		while (float(percent) <= 99.9999){
-			document.write(float(percent))
-		}
-		
-		document.write('done looping')
 		
 	    var fullPath = document.getElementById('file-id').value;
 
