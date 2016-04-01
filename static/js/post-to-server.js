@@ -81,6 +81,8 @@
 	    // Send XMLHttpRequest 
 	    sendXHRequest(formData, destinationURI);
 	    
+	    var myVar = setInterval(printStatus,2000);
+	    
 	    getFileName();
 	  }
 	}
@@ -165,6 +167,10 @@
 		    frameChanges.src = sourceName;	
 		}
 		
+	}
+	
+	function printStatus() {
+			document.write(status)
 	}
 
 }(window, jQuery));
