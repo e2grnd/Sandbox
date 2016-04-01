@@ -145,7 +145,7 @@
 	
 	function getFileName() {
 				 
-		while (percent <= 99.9999){
+		while (float(percent) <= 99.9999){
 			document.write('looping')
 		}
 		
