@@ -440,12 +440,12 @@
 
                         // => Palette
                         internalCount = paletteList.length;
-                        var internalMap = [0,3,11,15,187,188]
+                        var internalMap = [0,1,2,3,11,15,187,188]
                         paletteOptions.push(TEMPLATE_OPTION
                                 .replace(/SELECTED/g, 'SELECTED')
                                 .replace(/VALUE/g, '')
                                 .replace(/LABEL/g, 'Choose palette'));
-                        for(var i = 0; i < 6; ++i) {
+                        for(var i = 0; i < 8; ++i) {
                         	var ii = internalMap[i]
                             paletteOptions.push(TEMPLATE_OPTION
                                 .replace(/SELECTED/g, (paletteList[ii] ===  activePalette ) ? 'SELECTED' : '')
