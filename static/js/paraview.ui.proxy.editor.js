@@ -415,7 +415,7 @@
                             .replace(/SELECTED/g, '')
                             .replace(/VALUE/g, 'SOLID')
                             .replace(/LABEL/g, 'Solid color'));
-                        for(var i = 0; i < 1; ++i) {
+                        for(var i = 1; i < 2; ++i) {
                             var arrayId = arrayList[i].location + ':' + arrayList[i].name;
                             if(arrayList[i].location !== 'FIELDS') {
                                 arrayOptions.push(TEMPLATE_OPTION
