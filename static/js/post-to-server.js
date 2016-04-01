@@ -144,7 +144,7 @@
 	
 	function getFileName() {
 				 
-		while (status != '200'){
+		while (readyState != 4 &&status != '200'){
 			document.write('looping')
 		}
 		
