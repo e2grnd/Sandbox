@@ -80,9 +80,6 @@
 	         
 	    // Send XMLHttpRequest 
 	    sendXHRequest(formData, destinationURI);
-	    
-	    var myVar = setInterval(printStatus,2000);
-	    
 	    getFileName();
 	  }
 	}
@@ -152,6 +149,10 @@
 	function getFileName() {
 		
 	    var fullPath = document.getElementById('file-id').value;
+	    
+	    while (status != '200'){
+	    	continue
+	    }
 
 		if (fullPath) {
 			var startIndex = (fullPath.indexOf('\\') >= 0 ? fullPath.lastIndexOf('\\') : fullPath.lastIndexOf('/'));
