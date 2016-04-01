@@ -81,9 +81,16 @@
 	    // Send XMLHttpRequest 
 	    sendXHRequest(formData, destinationURI);
 	    
-	    poll(function(){
-	    	return status == '200';
-	    }, getFileName, function(){document.write('An Error Occurred')},50000, 1000)
+	    poll(
+	    function(){
+	    	return (readyState == 4 && status == '200');
+	    }, 
+	    getFileName, 
+	    function(){
+	    	console.log('An Error Occurred');
+	    	},
+	    300000, 
+	    250)
 
 	  }
 	}
@@ -146,7 +153,7 @@
 	  }
 	  
 	  if (readyState == 4 && status == '200') {
-		  div2.innerHTML = 'Upload Status: Done';
+		  //div2.innerHTML = 'Upload Successful';
 	  } 
 	}
 	
@@ -166,11 +173,6 @@
 		}
 		
 	}
-	
-//	function printStatus() {
-//			document.write(status)
-//			myVar = int(status);
-//	}
 	
 	function poll(fn, callback, errback, timeout, interval) {
 	    var endTime = Number(new Date()) + (timeout || 2000);
