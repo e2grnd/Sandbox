@@ -151,9 +151,6 @@
 	
 	function getFileName() {
 		
-		while (status != '200'){
-			document.write(status)
-		}
 	    var fullPath = document.getElementById('file-id').value;
 
 		if (fullPath) {
