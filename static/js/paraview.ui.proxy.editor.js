@@ -427,7 +427,7 @@
                                 }
                             }
                         }
-                        document.write(arrayOptions)
+                        document.write(arrayOptions[0])
 
                         // => Components
                         var internalCount = range.length;
