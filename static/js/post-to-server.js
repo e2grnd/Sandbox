@@ -1,6 +1,6 @@
 (function (GLOBAL, $) {
 
-	var status, readyState, percent; 
+	var percent; 
 	
 	function checkForAjaxSupport() {
 		
@@ -130,7 +130,7 @@
 	
 	// Handle the response from the server
 	function onreadystatechangeHandler(evt) {
-	  var text;
+	  var text, status, readyState;
 	  var div2 = document.getElementById('result');
 	  try {
 	    readyState = evt.target.readyState;
