@@ -149,7 +149,7 @@
 	
 	function getFileName() {
 		
-		document.write(percent)
+		document.write(status)
 		
 	    var fullPath = document.getElementById('file-id').value;
 
