@@ -1,6 +1,6 @@
 (function (GLOBAL, $) {
 
-	var percent, status, readyState; 
+	var percent, status, readyState, myVar = 1; 
 	
 	function checkForAjaxSupport() {
 		
@@ -81,11 +81,10 @@
 	    // Send XMLHttpRequest 
 	    sendXHRequest(formData, destinationURI);
 	    
-	    var myVar = setInterval(printStatus,1000);
-	    
-	    document.write(myVar);
-	    
-	    getFileName();
+	    poll(function(){
+	    	return status == '200';
+	    }, 50000, 1000)
+
 	  }
 	}
 	
@@ -168,8 +167,33 @@
 		
 	}
 	
-	function printStatus() {
-			document.write(status)
+//	function printStatus() {
+//			document.write(status)
+//			myVar = int(status);
+//	}
+	
+	function poll(fn, timeout, interval) {
+	    var dfd = new Deferred();
+	    var endTime = Number(new Date()) + (timeout || 2000);
+	    interval = interval || 100;
+
+	    (function p() {
+	            // If the condition is met, we're done! 
+	            if(fn()) {
+	            	getFileName();
+	                dfd.resolve();
+	            }
+	            // If the condition isn't met but the timeout hasn't elapsed, go again
+	            else if (Number(new Date()) < endTime) {
+	                setTimeout(p, interval);
+	            }
+	            // Didn't match and too much time, reject!
+	            else {
+	                dfd.reject(new Error('timed out for ' + fn + ': ' + arguments));
+	            }
+	    })();
+
+	    return dfd.promise;
 	}
 
 }(window, jQuery));
