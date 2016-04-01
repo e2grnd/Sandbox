@@ -115,6 +115,8 @@
 	
 	// Handle the end of the transmission
 	function onloadHandler(evt) {
+		var div = document.getElementById('upload-status');
+		div.innerHTML += '<' + 'br>File uploaded. Waiting for response.';
 	}
 	
 	
