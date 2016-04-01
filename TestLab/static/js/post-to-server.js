@@ -1,5 +1,7 @@
 (function (GLOBAL, $) {
 
+	var status, readyState, percent; 
+	
 	function checkForAjaxSupport() {
 		
 		
@@ -48,7 +50,9 @@
 		  
 	    var formData = new FormData();
 	    
-	    var destinationURI = "http://104.196.120.212/uploadFile.php";
+	    var hostIP = "104.196.120.212";
+	    
+	    var destinationURI = "http://" + hostIP + "/uploadFile.php";
 	    
 	    // FAppend the file to FormData - dummy change
 	    var fileInput = document.getElementById('file-id');
@@ -73,10 +77,7 @@
 	        }
 	     });
 	     */
-	     
-	    
-	     
-	    
+	         
 	    // Send XMLHttpRequest 
 	    sendXHRequest(formData, destinationURI);
 	    getFileName();
@@ -92,47 +93,43 @@
 	  var xhr = new XMLHttpRequest();
 	  
 	  // Set up events
-	  //xhr.upload.addEventListener('loadstart', onloadstartHandler, false);
+	  xhr.upload.addEventListener('loadstart', onloadstartHandler, false);
 	  xhr.upload.addEventListener('progress', onprogressHandler, false);
-	  //xhr.upload.addEventListener('load', onloadHandler, false);
-	  //xhr.addEventListener('readystatechange', onreadystatechangeHandler, false);
+	  xhr.upload.addEventListener('load', onloadHandler, false);
+	  xhr.addEventListener('readystatechange', onreadystatechangeHandler, false);
 	  
 	  // Set up request
 	  xhr.open('POST', uri, true);
 	  
 	  // Send Request
 	  xhr.send(formData);
+
 	}
 	
-	/*
+	
 	// Handle the start of the transmission
 	function onloadstartHandler(evt) {
-	  var div = document.getElementById('upload-status');
-	  div.innerHTML = 'Upload started...';
-	  var div = document.getElementById('result');
-	  div.innerHTML = '';
 	}
-	*/
 	
-	/*
+	
+	
 	// Handle the end of the transmission
 	function onloadHandler(evt) {
-	  var div = document.getElementById('result');
-	  div.innerHTML = 'File uploaded';
 	}
-	*/
+	
 	
 	// Handle the progress
 	function onprogressHandler(evt) {
 	  var div = document.getElementById('progress');
-	  var percent = evt.loaded/evt.total*100;
+	  percent = evt.loaded/evt.total*100;
 	  percent = percent.toFixed(2)
 	  div.innerHTML = 'Upload Progress: ' + percent + '%';
 	}
 	
 	// Handle the response from the server
 	function onreadystatechangeHandler(evt) {
-	  var status, text, readyState;
+	  var text;
+	  var div2 = document.getElementById('result');
 	  try {
 	    readyState = evt.target.readyState;
 	    text = evt.target.responseText;
@@ -142,13 +139,18 @@
 	    return;
 	  }
 	  if (readyState == 4 && status == '200') {
-	    var status = document.getElementById('result');
-	    //status.innerHTML += ' was a success!';
+		  div2.innerHTML = 'Upload Status: Done';
 	  } 
 	}
 	
 	function getFileName() {
-				  
+				 
+		while (float(percent) <= 99.9999){
+			document.write('looping')
+		}
+		
+		document.write('done looping')
+		
 	    var fullPath = document.getElementById('file-id').value;
 
 		if (fullPath) {
