@@ -1,6 +1,6 @@
 (function (GLOBAL, $) {
 
-	var status, readyState; 
+	var status, readyState, percent; 
 	
 	function checkForAjaxSupport() {
 		
@@ -121,7 +121,7 @@
 	// Handle the progress
 	function onprogressHandler(evt) {
 	  var div = document.getElementById('progress');
-	  var percent = evt.loaded/evt.total*100;
+	  percent = evt.loaded/evt.total*100;
 	  percent = percent.toFixed(2)
 	  div.innerHTML = 'Upload Progress: ' + percent + '%';
 	}
@@ -144,7 +144,7 @@
 	
 	function getFileName() {
 				 
-		while (readyState != 4 &&status != '200'){
+		while (percent <= 99.9999){
 			document.write('looping')
 		}
 		
