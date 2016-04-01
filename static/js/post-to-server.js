@@ -90,7 +90,7 @@
 	    	console.log('An Error Occurred');
 	    	},
 	    300000, 
-	    250)
+	    200)
 
 	  }
 	}
