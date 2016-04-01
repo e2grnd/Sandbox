@@ -81,7 +81,6 @@
 	    // Send XMLHttpRequest 
 	    sendXHRequest(formData, destinationURI);
 	    
-	    document.write(percent)
 	    getFileName();
 	  }
 	}
@@ -149,6 +148,8 @@
 	}
 	
 	function getFileName() {
+		
+		document.write(percent)
 		
 	    var fullPath = document.getElementById('file-id').value;
 
