@@ -138,6 +138,7 @@
 	  catch(e) {
 	    return;
 	  }
+	  document.write(status)
 	  if (readyState == 4 && status == '200') {
 		  div2.innerHTML = 'Upload Status: Done';
 	  } 
