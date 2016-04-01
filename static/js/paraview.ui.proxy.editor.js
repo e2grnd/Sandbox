@@ -440,20 +440,22 @@
 
                         // => Palette
                         internalCount = paletteList.length;
+                        var internalMap = [0,3,11,15,49,187,188,190]
                         paletteOptions.push(TEMPLATE_OPTION
                                 .replace(/SELECTED/g, 'SELECTED')
                                 .replace(/VALUE/g, '')
                                 .replace(/LABEL/g, 'Choose palette'));
-                        for(var i = 0; i < internalCount; ++i) {
+                        for(var i = 0; i < 6; ++i) {
+                        	var ii = internalMap[i]
                             paletteOptions.push(TEMPLATE_OPTION
-                                .replace(/SELECTED/g, (paletteList[i] ===  activePalette ) ? 'SELECTED' : '')
-                                .replace(/VALUE/g, paletteList[i])
-                                .replace(/LABEL/g, paletteList[i]));
+                                .replace(/SELECTED/g, (paletteList[ii] ===  activePalette ) ? 'SELECTED' : '')
+                                .replace(/VALUE/g, paletteList[ii])
+                                .replace(/LABEL/g, paletteList[ii]));
                         }
-                        document.write(paletteList)
-                        document.write(paletteList[30])
-                        document.write(paletteList[80])
-                        document.write(paletteList[185])
+                        //document.write(paletteList)
+                        //document.write(paletteList[30])
+                        //document.write(paletteList[80])
+                        //document.write(paletteList[185])
 
                         // ID, ARRAY_OPTIONS, COMPONENT_OPTIONS, PALETTE_OPTIONS
                         bufferProperties.push(TEMPLATE_COLOR_BY_PANEL
