@@ -310,7 +310,7 @@
             session.call('pv.vcr.action', ['next']).then(function(timeValue){
                 $('.time-value').val(timeValue);
                 updateView();
-                setTimeout(runTimeAnimationLoop, 10);
+                setTimeout(runTimeAnimationLoop, 50);
             });
         }
     }
@@ -397,7 +397,8 @@
 
     function updateView() {
         if(viewport) {
-            viewport.invalidateScene();
+            //viewport.invalidateScene();
+            viewport.render();
         }
     }
 
