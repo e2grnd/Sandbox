@@ -427,6 +427,7 @@
                                 }
                             }
                         }
+                        document.write(arrayOptions)
 
                         // => Components
                         var internalCount = range.length;
