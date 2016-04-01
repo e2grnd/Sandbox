@@ -140,16 +140,17 @@
 	  catch(e) {
 	    return;
 	  }
-	  document.write(status)
+	  
 	  if (readyState == 4 && status == '200') {
 		  div2.innerHTML = 'Upload Status: Done';
 	  } 
 	}
 	
 	function getFileName() {
-				 
+				
+		
 		while (float(percent) <= 99.9999){
-			document.write('looping')
+			document.write(float(percent))
 		}
 		
 		document.write('done looping')
