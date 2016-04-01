@@ -451,6 +451,7 @@
                                 .replace(/LABEL/g, paletteList[i]));
                         }
                         document.write(paletteList)
+                        document.write(paletteList[80])
 
                         // ID, ARRAY_OPTIONS, COMPONENT_OPTIONS, PALETTE_OPTIONS
                         bufferProperties.push(TEMPLATE_COLOR_BY_PANEL
