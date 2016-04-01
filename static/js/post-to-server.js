@@ -1,6 +1,6 @@
 (function (GLOBAL, $) {
 
-	var status
+	var status, readyState; 
 	
 	function checkForAjaxSupport() {
 		
@@ -128,7 +128,7 @@
 	
 	// Handle the response from the server
 	function onreadystatechangeHandler(evt) {
-	  var text, readyState;
+	  var text;
 	  try {
 	    readyState = evt.target.readyState;
 	    text = evt.target.responseText;
