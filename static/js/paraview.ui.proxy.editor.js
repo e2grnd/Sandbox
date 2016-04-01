@@ -427,7 +427,7 @@
                                 }
                             }
                         }
-                        document.write(arrayOptions[0])
+                        document.write(arrayOptions)
 
                         // => Components
                         var internalCount = range.length;
@@ -450,6 +450,7 @@
                                 .replace(/VALUE/g, paletteList[i])
                                 .replace(/LABEL/g, paletteList[i]));
                         }
+                        document.write(paletteOptions)
 
                         // ID, ARRAY_OPTIONS, COMPONENT_OPTIONS, PALETTE_OPTIONS
                         bufferProperties.push(TEMPLATE_COLOR_BY_PANEL
