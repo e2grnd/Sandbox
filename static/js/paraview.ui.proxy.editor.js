@@ -426,8 +426,10 @@
                                     range = arrayList[i].range;
                                 }
                             }
+                            document.write(arrayList[i].name)
+                            document.write(arrayList[i].location)
                         }
-                        document.write(arrayList[0].name)
+                        
 
                         // => Components
                         var internalCount = range.length;
