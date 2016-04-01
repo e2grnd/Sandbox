@@ -452,7 +452,7 @@
                                 .replace(/VALUE/g, paletteList[ii])
                                 .replace(/LABEL/g, paletteList[ii]));
                         }
-                        //document.write(paletteList)
+                        ///document.write(paletteList)
                         //document.write(paletteList[30])
                         //document.write(paletteList[80])
                         //document.write(paletteList[185])
