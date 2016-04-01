@@ -83,7 +83,7 @@
 	    
 	    poll(function(){
 	    	return status == '200';
-	    }, 50000, 1000)
+	    }, getFileName, function(){document.write('An Error Occurred')},50000, 1000)
 
 	  }
 	}
@@ -172,16 +172,14 @@
 //			myVar = int(status);
 //	}
 	
-	function poll(fn, timeout, interval) {
-	    var dfd = new Deferred();
+	function poll(fn, callback, errback, timeout, interval) {
 	    var endTime = Number(new Date()) + (timeout || 2000);
 	    interval = interval || 100;
 
 	    (function p() {
 	            // If the condition is met, we're done! 
 	            if(fn()) {
-	            	getFileName();
-	                dfd.resolve();
+	                callback();
 	            }
 	            // If the condition isn't met but the timeout hasn't elapsed, go again
 	            else if (Number(new Date()) < endTime) {
@@ -189,11 +187,9 @@
 	            }
 	            // Didn't match and too much time, reject!
 	            else {
-	                dfd.reject(new Error('timed out for ' + fn + ': ' + arguments));
+	                errback(new Error('timed out for ' + fn + ': ' + arguments));
 	            }
 	    })();
-
-	    return dfd.promise;
 	}
 
 }(window, jQuery));
