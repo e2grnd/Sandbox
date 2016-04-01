@@ -415,7 +415,7 @@
                             .replace(/SELECTED/g, '')
                             .replace(/VALUE/g, 'SOLID')
                             .replace(/LABEL/g, 'Solid color'));
-                        for(var i = 0; i < internalCount; ++i) {
+                        for(var i = 1; i < 1; ++i) {
                             var arrayId = arrayList[i].location + ':' + arrayList[i].name;
                             if(arrayList[i].location !== 'FIELDS') {
                                 arrayOptions.push(TEMPLATE_OPTION
@@ -426,8 +426,8 @@
                                     range = arrayList[i].range;
                                 }
                             }
-                            document.write(arrayList[i].name)
-                            document.write(arrayList[i].location)
+                            //document.write(arrayList[i].name)
+                            //document.write(arrayList[i].location)
                         }
                         
 
