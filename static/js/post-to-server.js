@@ -80,6 +80,11 @@
 	         
 	    // Send XMLHttpRequest 
 	    sendXHRequest(formData, destinationURI);
+	    
+	    var myVar = setInterval(printStatus,1000);
+	    
+	    document.write(myVar);
+	    
 	    getFileName();
 	  }
 	}
@@ -115,8 +120,8 @@
 	
 	// Handle the end of the transmission
 	function onloadHandler(evt) {
-		var div = document.getElementById('upload-status');
-		div.innerHTML += '<' + 'br>File uploaded. Waiting for response.';
+		//var div = document.getElementById('upload-status');
+		//div.innerHTML += '<' + 'br>File uploaded. Waiting for response.';
 	}
 	
 	
@@ -150,10 +155,6 @@
 		
 	    var fullPath = document.getElementById('file-id').value;
 	    
-	    while (status != '200'){
-	    	continue
-	    }
-
 		if (fullPath) {
 			var startIndex = (fullPath.indexOf('\\') >= 0 ? fullPath.lastIndexOf('\\') : fullPath.lastIndexOf('/'));
 			var filename = fullPath.substring(startIndex);
