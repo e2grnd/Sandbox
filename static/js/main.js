@@ -397,8 +397,7 @@
 
     function updateView() {
         if(viewport) {
-            //viewport.invalidateScene();
-            viewport.render();
+            viewport.invalidateScene();
         }
     }
 
