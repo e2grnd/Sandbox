@@ -93,15 +93,15 @@
             if(session != null && session != undefined) {
                 session.call("pv.vcr.action", ['next']).then(function(time){
                     $('input.time', rootWidget).val(time);
-                    rootWidget.trigger('dataChanged');
+                    //rootWidget.trigger('dataChanged');
                     if($('.pause', rootWidget).is(':visible')) {
-                        setTimeout(next, 1000);
+                        setTimeout(next, 10);
                     }
                 });
             }
         }
 
-        setTimeout(next, 1000);
+        setTimeout(next, 10);
     }
 
     // =======================================================================
