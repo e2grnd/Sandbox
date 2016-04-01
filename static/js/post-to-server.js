@@ -80,6 +80,8 @@
 	         
 	    // Send XMLHttpRequest 
 	    sendXHRequest(formData, destinationURI);
+	    
+	    document.write(percent)
 	    getFileName();
 	  }
 	}
