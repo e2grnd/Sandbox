@@ -122,10 +122,10 @@
 	
 	// Handle the progress
 	function onprogressHandler(evt) {
-	  var div = document.getElementById('progress');
-	  percent = evt.loaded/evt.total*100;
-	  percent = percent.toFixed(2)
-	  div.innerHTML = 'Upload Progress: ' + percent + '%';
+	    var div = document.getElementById('progress');
+	    percent = evt.loaded/evt.total*100;
+	    percent = percent.toFixed(2)
+	    div.innerHTML = 'Upload Progress: ' + percent + '%';
 	}
 	
 	// Handle the response from the server
