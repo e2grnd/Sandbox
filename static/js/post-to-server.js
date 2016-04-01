@@ -129,6 +129,7 @@
 	// Handle the response from the server
 	function onreadystatechangeHandler(evt) {
 	  var text;
+	  var div2 = document.getElementById('result');
 	  try {
 	    readyState = evt.target.readyState;
 	    text = evt.target.responseText;
@@ -138,7 +139,7 @@
 	    return;
 	  }
 	  if (readyState == 4 && status == '200') {
-	    //status
+		  div2.innerHTML = 'Upload Status: Done';
 	  } 
 	}
 	
