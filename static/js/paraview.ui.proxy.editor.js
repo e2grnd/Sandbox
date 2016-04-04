@@ -16,7 +16,7 @@
         TEMPLATE_END_GROUP = "</div>",
         TEMPLATE_COLOR_BY_PANEL = "<div class='row pv-color-panel' data-proxy-id='REP_ID'><div class='col-sm-4'><div class='row'>" +
         "<label class='clickable color-by-label col-sm-12 col-xs-6 control-label top-property' data-proxy-id='_ID_' data-action='toggle-scalarbar' data-toggle='tooltip' data-placement='bottom' title='Toggle Color Legend'>" +
-        "Color<span class='toggle-scalarbar-button clickable vtk-icon-bookmarkEMPTY' data-proxy-id='_ID_' data-action='toggle-scalarbar'></span>" +
+        "Color<span class='toggle-scalarbar-button clickable vtk-icon-bookmarkEMPTY' data-proxy-id='_ID_' data-action='toggle-scalarbar' id='initScalar'></span>" +
         "</label>" +
         "<span class='hidden-xs pv-form-height col-sm-12 color-by-column-empty-row top-property'></span>" +
         "<div class='pv-form-height col-sm-12 col-xs-6 color-options-button-panel top-property'>" +
@@ -603,6 +603,8 @@
                     console.err(ex);
                 }
             }
+            
+            document.getElementById('initScalar').click()
                        
             // Attach listener
             if(!me.hasClass('has-listener')) {
@@ -622,11 +624,7 @@
                              
                 me.on('click', function(event){
                     var target_container = $(event.target),
-                        action = target_container.attr('data-action');
-                    
-                    document.write(event.target)
-
-                    
+                        action = target_container.attr('data-action');                  
                     
                     if(action === undefined) {
                         return;
