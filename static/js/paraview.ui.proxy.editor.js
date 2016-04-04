@@ -766,7 +766,6 @@
             
             if (InitialApplyContour){
             	apply(me, wantColorManagement);  
-            	eventFire(document.getElementById('initScalar'), 'click');
             	InitialApplyContour = 0;
             }
             if (InitialApplyLegend){
@@ -781,6 +780,7 @@
                         rgbpoints: event.rgbpoints
                     });
                 });
+            	eventFire(document.getElementById('initScalar'), 'click');
             	//eventFire(document.getElementById('customLeg'), 'click');  
             	//var el = document.getElementById('customLeg');
             	//el.click();
