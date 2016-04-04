@@ -779,7 +779,8 @@
                     });
                 });
             	//eventFire(document.getElementById('customLegendScale'), 'click');
-            	$('#customLegendScale').trigger('click');
+            	var elLegend = document.getElementById('customLegendScale');
+            	elLegend.trigger('click');
             	InitialApplyLegend = 0;
         	}
             
