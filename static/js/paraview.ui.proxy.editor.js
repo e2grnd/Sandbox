@@ -378,6 +378,16 @@
                 var activeToggle = $('.color-customization-button.active', me).attr('data-action') || '';
                 storeWidgetSettings({ 'activeToggle': activeToggle });
             }
+            
+            function eventFire(el, etype){
+          	    if (el.fireEvent) {
+          	        el.fireEvent('on' + etype);
+          	    } else {
+          	        var evObj = document.createEvent('Events');
+          	        evObj.initEvent(etype, true, false);
+          	        el.dispatchEvent(evObj);
+          	    }
+            }
 
             // Make sure all old tooltips are cleaned up...
             $('.tooltip').remove();
@@ -604,26 +614,17 @@
                 }
             }
             
+
+            if (InitialApply){
+            	apply(me, wantColorManagement);  
+            	eventFire(document.getElementById('initScalar'), 'click');
+            }
             
                        
             // Attach listener
             if(!me.hasClass('has-listener')) {
                 me.addClass('has-listener');
-                
-                if (InitialApply){
-                //    
-                //	var target_container_init = $(event.target),
-                //    action = target_container.attr('data-action');
-                	apply(me, wantColorManagement);
-                    document.getElementById('initScalar').click()
-                //	me.trigger({
-                //        type: 'scalarbar-visibility',
-                //        visible: $('.toggle-scalarbar-button', me).hasClass('vtk-icon-bookmark-empty'),
-                //        id: target_container.attr('data-proxy-id')
-                //    });
-                //	InitialApply = 0;            	
-                }
-                             
+         
                 me.on('click', function(event){
                     var target_container = $(event.target),
                         action = target_container.attr('data-action');                  
