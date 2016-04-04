@@ -777,7 +777,11 @@
                         rgbpoints: event.rgbpoints
                     });
                 });
-            	//eventFire(document.getElementById('customLegendScale'), 'click');
+            	var el = document.getElementById('customLegendScale');
+            	var etype = 'click'
+            	var evObj = document.createEvent('Events');
+      	        evObj.initEvent(etype, true, false);
+      	        el.dispatchEvent(evObj);
             	InitialApplyLegend = 0;
         	}
             
