@@ -44,7 +44,7 @@
         "<input type='text' class='bottom-property top-property scalar-range-max form-control pv-form-height value' data-toggle='tooltip' data-placement='bottom' title='Maximum Scalar Color'>" +
         "</div></div></div>",
         TEMPLATE_DELETE = "<span class='button-padding-right button-padding-left-small vtk-icon-trash clickable' data-action='delete-proxy' data-proxy-id='_ID_' data-toggle='tooltip' data-placement='bottom' title='Delete Pipeline Component'></span>",
-        TEMPLATE_EDITOR = "<div class='pv-editor-bar text-center pv-gray-dark row' style='padding-bottom: 5px;'>" +
+        TEMPLATE_EDITOR = "<div class='pv-editor-bar text-center pv-gray-dark row' style='padding-bottom: 1px;'>" +
         //"<span class='float-left button-padding-right vtk-icon-tools clickable' data-action='toggle-advance-properties' data-toggle='tooltip' data-placement='bottom' title='Toggle Advanced Properties'></span>" +
         //"<span class='button-padding-left button-padding-right-small clickable' data-action='reset-property-values' data-toggle='tooltip' data-placement='bottom' title='Reset Properties'>TITLE</span>" +
         //"CAN_DELETE" +
