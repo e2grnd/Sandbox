@@ -779,14 +779,6 @@
                     });
                 });
             	//eventFire(document.getElementById('customLegendScale'), 'click');
-            	me.trigger({
-                    type: 'rescale-transfer-function',
-                    mode: 'custom',
-                    min: $('.scalar-range-min', me).val(),
-                    max: $('.scalar-range-max', me).val(),
-                    id: proxyID,
-                    colorBy: extractColorBy()
-                });
             	InitialApplyLegend = 0;
         	}
             
