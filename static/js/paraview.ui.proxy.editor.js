@@ -428,9 +428,7 @@
                                 .replace(/SELECTED/g, '')
                                 .replace(/VALUE/g, 'SOLID')
                                 .replace(/LABEL/g, 'Solid color'));
-                        
-                        $("#ClickToApply").trigger("click")
-                        
+                                               
 
                         // => Components
                         var internalCount = range.length;
@@ -606,6 +604,8 @@
                 }
             }
 
+            apply(me, wantColorManagement);
+            
             // Attach listener
             if(!me.hasClass('has-listener')) {
                 me.addClass('has-listener');
