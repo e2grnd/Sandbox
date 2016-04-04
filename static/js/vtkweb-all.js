@@ -2167,7 +2167,7 @@
       }
 
       if (status === 'create') {
-        var initialMessage = "Downloading metadata for all timesteps",
+        var initialMessage = "Downloading metadata for animation",
             html = PROGRESS_BAR_TEMPLATE.replace(/MESSAGE/, initialMessage),
             progressElt = $(html);
         m_container.append(progressElt);
