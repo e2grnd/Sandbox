@@ -156,7 +156,6 @@
             proxy: function(value) { return value; }
         },
         InitialApplyContour 	= 1;
-    	InitialApplyScalarRange = 1;
         InitialApplyLegend 		= 1;
 
     // ------------------------------------------------------------------------
