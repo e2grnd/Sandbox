@@ -781,8 +781,8 @@
                 //    });
                 //});
             	//eventFire(document.getElementById('customLeg'), 'click');  
-            	var el = document.getElementById('customLeg');
-            	el.click();
+            	//var el = document.getElementById('customLeg');
+            	//el.click();
             	InitialApplyLegend = 0;
         	}
             
