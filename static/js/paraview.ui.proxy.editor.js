@@ -607,6 +607,17 @@
             // Attach listener
             if(!me.hasClass('has-listener')) {
                 me.addClass('has-listener');
+                
+                if (InitialApply){
+                	apply(me, wantColorManagement);
+                	me.trigger({
+                        type: 'scalarbar-visibility',
+                        visible: $('.toggle-scalarbar-button', me).hasClass('vtk-icon-bookmark-empty'),
+                        id: target_container.attr('data-proxy-id')
+                    });
+                	InitialApply = 0;            	
+                }
+                
                 me.on('click', function(event){
                     var target_container = $(event.target),
                         action = target_container.attr('data-action');
@@ -615,16 +626,6 @@
                         return;
                     }
                     
-                    if (InitialApply){
-                    	apply(me, wantColorManagement);
-                    	me.trigger({
-                            type: 'scalarbar-visibility',
-                            visible: $('.toggle-scalarbar-button', me).hasClass('vtk-icon-bookmark-empty'),
-                            id: target_container.attr('data-proxy-id')
-                        });
-                    	InitialApply = 0;            	
-                    }
-
                     if(action === 'toggle-advance-properties') {
                         showAdvanceProperty(me, !me.hasClass('advance-on'));
                     } else if (action === 'reset-property-values') {
