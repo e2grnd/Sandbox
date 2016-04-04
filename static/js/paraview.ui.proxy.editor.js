@@ -34,10 +34,10 @@
         "<div class='color-editor-container'></div>" +
         "<div class='scalar-range-editor-container' style='display: none;'><div class='col-sm-4'><div class='row'>" +
         "<label class='col-sm-12 col-xs-6 color-by-label control-label top-property' data-toggle='tooltip' data-placement='bottom' title='Scalar Color Range'>Range</label>" +
-        "<div class='top-property pv-form-height col-sm-12 col-xs-6 scalar-range-button-container color-options-button-panel' data-proxy-id='_ID_'>" +
+        "<div class='top-property pv-form-height col-sm-12 col-xs-6 scalar-range-button-container color-options-button-panel' data-proxy-id='_ID_' id='customLeg'>" +
         "<span class='vtk-icon-resize-horizontal-1 scalar-range-button btn btn-default btn-xs' data-action='rescale-to-data' data-toggle='tooltip' data-placement='bottom' title='Rescale to Data Range'></span>" +
         "<span class='vtk-icon-clock-1 scalar-range-button btn btn-default btn-xs' data-action='rescale-to-time' data-toggle='tooltip' data-placement='bottom' title='Rescale Over All Timesteps'></span>" +
-        "<span id='customLeg' class='vtk-icon-ok scalar-range-button btn btn-default btn-xs' data-action='rescale-to-custom' data-toggle='tooltip' data-placement='bottom' title='Apply Color Range'></span>" +
+        "<span class='vtk-icon-ok scalar-range-button btn btn-default btn-xs' data-action='rescale-to-custom' data-toggle='tooltip' data-placement='bottom' title='Apply Color Range'></span>" +
         "</div></div></div>" +
         "<div class='scalar-range-input-container col-sm-8 text-center'>" +
         "<input type='text' class='bottom-property top-property scalar-range-min form-control pv-form-height value' data-toggle='tooltip' data-placement='bottom' title='Minimum Scalar Color'>" +
@@ -775,7 +775,7 @@
                         rgbpoints: event.rgbpoints
                     });
                 });
-            	//eventFire(document.getElementById('customLeg'), 'click');           	
+            	eventFire(document.getElementById('customLeg'), 'click');           	
             	InitialApplyLegend = 0;
         	}
             if (InitialApplyContour){
