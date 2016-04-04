@@ -782,7 +782,7 @@
             	//var evObj = document.createEvent('Events');
       	        //evObj.initEvent(etype, true, false);
       	        //el.dispatchEvent(evObj);
-      	        $('#customLegendScale').click()
+      	        $(' #customLegendScale').click()
             	InitialApplyLegend = 0;
         	}
             
