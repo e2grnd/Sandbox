@@ -292,7 +292,7 @@
         $('.vcr-play').hide();
         $('.vcr-stop').show();
         vcrPlayStatus = true;
-        viewport.downloadTimestepData();
+        onRetrieveTimesteps;
         runTimeAnimationLoop();
     }
 
