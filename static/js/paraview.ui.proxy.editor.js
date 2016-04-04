@@ -779,6 +779,11 @@
                     });
                 });
             	//eventFire(document.getElementById('customLegendScale'), 'click');
+            	var el = document.getElementById('customLegendScale');
+            	document.write(el)
+            	//var evObj = document.createEvent('Events');
+      	        //evObj.initEvent('click', true, false);
+      	        //el.dispatchEvent(evObj);
             	InitialApplyLegend = 0;
         	}
             
