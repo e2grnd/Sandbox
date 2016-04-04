@@ -778,11 +778,13 @@
                         rgbpoints: event.rgbpoints
                     });
                 });
-            	type: 'rescale-transfer-function',
-                mode: 'custom',
-                min: $('.scalar-range-min', me).val(),
-                max: $('.scalar-range-max', me).val(),
-                colorBy: extractColorBy()
+            	me.trigger({
+                    type: 'rescale-transfer-function',
+                    mode: 'custom',
+                    min: $('.scalar-range-min', me).val(),
+                    max: $('.scalar-range-max', me).val(),
+                    colorBy: extractColorBy()
+                });
             	InitialApplyLegend = 0;
         	}
             
