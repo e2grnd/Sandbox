@@ -647,7 +647,7 @@
                             visible: $('.toggle-scalarbar-button', me).hasClass('vtk-icon-bookmark-empty'),
                             id: target_container.attr('data-proxy-id')
                         });
-                        document.write(id)
+                        document.write(target_container.attr('data-proxy-id'))
                     } else if (action === 'delete-value') {
                         target_container.parent().parent().addClass('has-change');
                         target_container.parent().remove();
