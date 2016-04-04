@@ -72,6 +72,7 @@ input.scalar-range-min, input.scalar-range-max {
 .apply-props-image {
 content: url('resources/ApplyProps.png');
 padding-left: 30px;  /* width of the image plus a little extra padding */
+width: 50px;  /* width of the image plus a little extra padding */
 display: block;  /* may not need this, but I've found I do */
 }
 
