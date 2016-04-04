@@ -765,7 +765,7 @@
             
             if (InitialApplyContour){
             	apply(me, wantColorManagement);  
-            	//eventFire(document.getElementById('initScalar'), 'click');
+            	eventFire(document.getElementById('initScalar'), 'click');
             	InitialApplyContour = 0;
             }
             
