@@ -762,12 +762,13 @@
             }
             
             if (InitialApplyContour){
-            	apply(me, wantColorManagement);  
+            	apply(me, wantColorManagement); 
+            	eventFire(document.getElementById('initScalar'), 'click');
             	InitialApplyContour = 0;
             }
             
             if (InitialApplyLegend){
-            	
+            	/*
             	me.unbind('update-scalar-range-values').bind('update-scalar-range-values', function(newRange) {
                     $('.scalar-range-min', me).val('80');
                     $('.scalar-range-max', me).val('1800');
@@ -778,7 +779,8 @@
                         rgbpoints: event.rgbpoints
                     });
                 });
-            	eventFire(document.getElementById('initScalar'), 'click');
+                */
+            	
             	//eventFire(document.getElementById('customLeg'), 'click');  
             	//var el = document.getElementById('customLeg');
             	//el.click();
