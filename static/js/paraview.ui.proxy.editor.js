@@ -751,8 +751,8 @@
             	apply(me, wantColorManagement);  
             	eventFire(document.getElementById('initScalar'), 'click');
             	me.unbind('update-scalar-range-values').bind('update-scalar-range-values', function(newRange) {
-                    $('.scalar-range-min', me).val(80);
-                    $('.scalar-range-max', me).val(1800);
+                    $('.scalar-range-min', me).val('80');
+                    $('.scalar-range-max', me).val('1800');
                 });
 
                 me.unbind('notify-new-rgb-points-received').bind('notify-new-rgb-points-received', function(event) {
