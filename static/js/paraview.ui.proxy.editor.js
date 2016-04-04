@@ -737,11 +737,6 @@
             
             if (InitialApply){
             	apply(me, wantColorManagement);
-            	me.trigger({
-                    type: 'scalarbar-visibility',
-                    visible: $('.toggle-scalarbar-button', me).hasClass('vtk-icon-bookmark-empty'),
-                    id: target_container.attr('data-proxy-id')
-                });
             	InitialApply = 0;            	
             }
 
