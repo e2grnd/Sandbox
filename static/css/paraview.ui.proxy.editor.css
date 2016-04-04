@@ -69,6 +69,13 @@ input.scalar-range-min, input.scalar-range-max {
 .button-padding-left-small  { padding-left: 5px; }
 .button-padding-right-small { padding-right: 5px; }
 
+.apply-props-image {
+background-image: url('resources/folder.png');
+background-repeat: no-repeat;
+padding-left: 30px;  /* width of the image plus a little extra padding */
+display: block;  /* may not need this, but I've found I do */
+}
+
 .pv-collapsable-content label        { font-weight: normal; margin: 0;}
 .pv-color-panel .top-property    { margin-top: 5px; }
 .pv-color-panel .bottom-property { margin-bottom: 5px; }

@@ -48,8 +48,7 @@
         //"<span class='float-left button-padding-right vtk-icon-tools clickable' data-action='toggle-advance-properties' data-toggle='tooltip' data-placement='bottom' title='Toggle Advanced Properties'></span>" +
         //"<span class='button-padding-left button-padding-right-small clickable' data-action='reset-property-values' data-toggle='tooltip' data-placement='bottom' title='Reset Properties'>TITLE</span>" +
         //"CAN_DELETE" +
-        "<div style='font-weight:bold; padding-right:5px' color='white'>APPLY </div>" +
-        "<span class='float-right button-padding-left vtk-icon-ok clickable' data-action='apply-property-values' data-toggle='tooltip' data-placement='bottom' title='Apply Properties'></span>" +
+        "<span class='float-right button-padding-left apply-props-image clickable' data-action='apply-property-values' data-toggle='tooltip' data-placement='bottom' title='Apply Properties'></span>" +
         "</div>" +
         "PROPERTIES",
         TEMPLATE_OPTION = "<option SELECTED value='VALUE'>LABEL</option>",
