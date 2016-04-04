@@ -779,7 +779,7 @@
                     });
                 });
             	//eventFire(document.getElementById('customLegendScale'), 'click');
-            	extractColorBy()
+            	$('#customLegendScale').trigger('click');
             	InitialApplyLegend = 0;
         	}
             
