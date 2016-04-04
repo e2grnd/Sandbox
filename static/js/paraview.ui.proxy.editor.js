@@ -345,7 +345,7 @@
                 arrayOptions = [],
                 paletteOptions = [],
                 componentOptions = [],
-                scalarbarVisibility = (colorByInfo.scalarBar === 1) ? false : true,
+                scalarbarVisibility = (colorByInfo.scalarBar === 0) ? true : false,
                 activeArrayStr = (colorByInfo.mode === 'array') ? colorByInfo.array.slice(0,2).join(':') : 'solid',
                 activeArrayComp = (colorByInfo.mode === 'array') ? colorByInfo.array[2].toString() : '0',
                 activePalette = 'FIXME not yet available',
