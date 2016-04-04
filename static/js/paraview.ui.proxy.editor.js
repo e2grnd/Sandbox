@@ -769,7 +769,7 @@
             }
             
             if (InitialApplyLegend){
-            	
+            	/*
             	me.unbind('update-scalar-range-values').bind('update-scalar-range-values', function(newRange) {
                     $('.scalar-range-min', me).val('80');
                     $('.scalar-range-max', me).val('1800');
@@ -780,9 +780,9 @@
                         rgbpoints: event.rgbpoints
                     });
                 });
-                
+                */
             	
-            	eventFire(document.getElementById('customLeg'), 'click');  
+            	//eventFire(document.getElementById('customLeg'), 'click');  
             	//var el = document.getElementById('customLeg');
             	//el.click();
             	//$('[data-action=rescale-to-custom]').click()

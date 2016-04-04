@@ -1,4 +1,4 @@
-r"""paraviewweb_protocols is a module that contains a set of ParaViewWeb related
+"""paraviewweb_protocols is a module that contains a set of ParaViewWeb related
 protocols that can be combined together to provide a flexible way to define
 very specific web application.
 """
