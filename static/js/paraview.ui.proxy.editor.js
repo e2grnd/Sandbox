@@ -699,6 +699,7 @@
                             id: target_container.parent().attr('data-proxy-id'),
                             colorBy: extractColorBy()
                         });
+                        /*
                         me.unbind('update-scalar-range-values').bind('update-scalar-range-values', function(newRange) {
                             $('.scalar-range-min', me).val(newRange.min);
                             $('.scalar-range-max', me).val(newRange.max);
@@ -709,6 +710,7 @@
                                 rgbpoints: event.rgbpoints
                             });
                         });
+                        */
                     } else if (action === 'rescale-to-time') {
                         me.trigger({
                             type: 'rescale-transfer-function',
@@ -780,7 +782,7 @@
                 });
                 
             	
-            	//eventFire(document.getElementById('customLeg'), 'click');  
+            	eventFire(document.getElementById('customLeg'), 'click');  
             	//var el = document.getElementById('customLeg');
             	//el.click();
             	//$('[data-action=rescale-to-custom]').click()
