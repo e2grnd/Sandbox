@@ -770,8 +770,8 @@
             if (InitialApplyLegend){
             	
             	me.unbind('update-scalar-range-values').bind('update-scalar-range-values', function(newRange) {
-                    $('.scalar-range-min', me).val(80.0);
-                    $('.scalar-range-max', me).val(1800.0);
+                    $('.scalar-range-min', me).val('80.0');
+                    $('.scalar-range-max', me).val('1800.0');
                 });
             	me.unbind('notify-new-rgb-points-received').bind('notify-new-rgb-points-received', function(event) {
                     $('.color-editor-container', me).trigger({
