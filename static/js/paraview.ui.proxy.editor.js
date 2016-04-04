@@ -789,7 +789,7 @@
             	InitialApplyLegend = 0;
         	}
             
-            // - dependent property visibility
+            // - dependent property visibility 
             $('.has-dependency', me).unbind().bind('change', function() {
                 var hasDepContainer = $(this),
                     proxy_id = hasDepContainer.attr('data-proxy-id'),
