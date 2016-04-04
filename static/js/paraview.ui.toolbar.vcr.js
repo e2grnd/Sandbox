@@ -95,13 +95,13 @@
                     $('input.time', rootWidget).val(time);
                     rootWidget.trigger('dataChanged');
                     if($('.pause', rootWidget).is(':visible')) {
-                        setTimeout(next, 10);
+                        setTimeout(next, 100);
                     }
                 });
             }
         }
 
-        setTimeout(next, 10);
+        setTimeout(next, 100);
     }
 
     // =======================================================================
