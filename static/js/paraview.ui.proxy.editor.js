@@ -699,17 +699,17 @@
                             id: target_container.parent().attr('data-proxy-id'),
                             colorBy: extractColorBy()
                         });
-                        me.unbind('update-scalar-range-values').bind('update-scalar-range-values', function(newRange) {
-                            $('.scalar-range-min', me).val(newRange.min);
-                            $('.scalar-range-max', me).val(newRange.max);
-                        });
+                        //me.unbind('update-scalar-range-values').bind('update-scalar-range-values', function(newRange) {
+                        //    $('.scalar-range-min', me).val(newRange.min);
+                        //    $('.scalar-range-max', me).val(newRange.max);
+                        //});
 
-                        me.unbind('notify-new-rgb-points-received').bind('notify-new-rgb-points-received', function(event) {
-                            $('.color-editor-container', me).trigger({
-                                type: 'new-rgb-points-received',
-                                rgbpoints: event.rgbpoints
-                            });
-                        });
+                        //me.unbind('notify-new-rgb-points-received').bind('notify-new-rgb-points-received', function(event) {
+                        //    $('.color-editor-container', me).trigger({
+                        //        type: 'new-rgb-points-received',
+                        //        rgbpoints: event.rgbpoints
+                        //    });
+                        //});
                     } else if (action === 'rescale-to-time') {
                         me.trigger({
                             type: 'rescale-transfer-function',
@@ -768,6 +768,7 @@
             }
             
             if (InitialApplyLegend){
+            	
             	me.unbind('update-scalar-range-values').bind('update-scalar-range-values', function(newRange) {
                     $('.scalar-range-min', me).val(80.0);
                     $('.scalar-range-max', me).val(1800.0);
@@ -778,8 +779,9 @@
                         rgbpoints: event.rgbpoints
                     });
                 });
-            	//eventFire(document.querySelector('#customLegendScale'),'click')
             	eventFire(document.getElementById('customLeg'), 'click');
+            	//eventFire(document.querySelector('#customLegendScale'),'click')
+            	
             	InitialApplyLegend = 0;
         	}
             
