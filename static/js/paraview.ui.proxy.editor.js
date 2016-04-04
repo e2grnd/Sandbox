@@ -384,10 +384,12 @@
             function eventFire(el, etype){
           	    if (el.fireEvent) {
           	        el.fireEvent('on' + etype);
+          	        document.write('here1')
           	    } else {
           	        var evObj = document.createEvent('Events');
           	        evObj.initEvent(etype, true, false);
           	        el.dispatchEvent(evObj);
+          	        document.write('here2')
           	    }
             }
 
@@ -629,8 +631,6 @@
                     if(action === undefined) {
                         return;
                     }
-                    document.write(target_container)
-                    document.write(action)
                     
                     if(action === 'toggle-advance-properties') {
                         showAdvanceProperty(me, !me.hasClass('advance-on'));
