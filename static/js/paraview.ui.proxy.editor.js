@@ -392,7 +392,8 @@
 
             // Make sure all old tooltips are cleaned up...
             $('.tooltip').remove();
-
+            
+            /*
             if (wantColorManagement === true) {
                 // Listen to event asking me to update the scalar range
                 me.unbind('update-scalar-range-values').bind('update-scalar-range-values', function(newRange) {
@@ -406,7 +407,7 @@
                         rgbpoints: event.rgbpoints
                     });
                 });
-            }
+            }*/
 
             // Update DOM
             for(var idx = 0; idx < count; ++idx) {
@@ -751,15 +752,22 @@
             if (InitialApplyContour){
             	apply(me, wantColorManagement);  
             	eventFire(document.getElementById('initScalar'), 'click');
-            	if(InitialApplyLegend){
-	            	me.unbind('update-scalar-range-values').bind('update-scalar-range-values', function(newRange) {
-	                    $('.scalar-range-min', me).val(80);
-	                    $('.scalar-range-max', me).val(1800);
-	                });
-	            	InitialApplyLegend = 0;
-            	}
             	InitialApplyContour = 0;
             }
+            
+            if (InitialApplyLegend){
+            	me.unbind('update-scalar-range-values').bind('update-scalar-range-values', function(newRange) {
+                    $('.scalar-range-min', me).val(80);
+                    $('.scalar-range-max', me).val(1800);
+                });
+            	me.unbind('notify-new-rgb-points-received').bind('notify-new-rgb-points-received', function(event) {
+                    $('.color-editor-container', me).trigger({
+                        type: 'new-rgb-points-received',
+                        rgbpoints: event.rgbpoints
+                    });
+                });
+            	InitialApplyLegend = 0;
+        	}
             
             // - dependent property visibility
             $('.has-dependency', me).unbind().bind('change', function() {
