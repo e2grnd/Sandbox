@@ -750,14 +750,7 @@
             if (InitialApply){
             	apply(me, wantColorManagement);  
             	eventFire(document.getElementById('initScalar'), 'click');
-            	me.trigger({
-                    type: 'rescale-transfer-function',
-                    mode: 'custom',
-                    min: 80,
-                    max: 1800,
-                    //id: target_container.parent().attr('data-proxy-id'),
-                    colorBy: extractColorBy()
-                });
+            	$('.scalar-range-min', me).val() = 80,
             	InitialApply = 0;
             }
             
