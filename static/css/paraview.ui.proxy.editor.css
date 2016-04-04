@@ -70,8 +70,7 @@ input.scalar-range-min, input.scalar-range-max {
 .button-padding-right-small { padding-right: 5px; }
 
 .apply-props-image {
-background-image: url('resources/folder.png');
-background-repeat: no-repeat;
+content: url('resources/folder.png');
 padding-left: 30px;  /* width of the image plus a little extra padding */
 display: block;  /* may not need this, but I've found I do */
 }
