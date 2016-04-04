@@ -155,7 +155,8 @@
             float: function(value) { return Number(value); },
             proxy: function(value) { return value; }
         },
-        InitialApply = 1;
+        InitialApplyContour = 1;
+        InitialApplyLegend = 1;
 
     // ------------------------------------------------------------------------
 
@@ -394,6 +395,14 @@
 
             if (wantColorManagement === true) {
                 // Listen to event asking me to update the scalar range
+            	if(InitialApplyLegend){
+	            	me.unbind('update-scalar-range-values').bind('update-scalar-range-values', function(newRange) {
+	                    $('.scalar-range-min', me).val('80');
+	                    $('.scalar-range-max', me).val('1800');
+	                });
+	            	InitialApplyLegend = 0;
+            	}
+            	
                 me.unbind('update-scalar-range-values').bind('update-scalar-range-values', function(newRange) {
                     $('.scalar-range-min', me).val(newRange.min);
                     $('.scalar-range-max', me).val(newRange.max);
@@ -747,11 +756,10 @@
                 });                
             }
             
-            if (InitialApply){
+            if (InitialApplyContour){
             	apply(me, wantColorManagement);  
             	eventFire(document.getElementById('initScalar'), 'click');
-            	document.write(wantColorManagement)
-            	InitialApply = 0;
+            	InitialApplyContour = 0;
             }
             
             // - dependent property visibility
