@@ -2020,7 +2020,7 @@
     "z-index" : "0"
   },
   DEFAULT_OPTIONS = {
-    keepServerInSynch: false
+    keepServerInSynch: true
   },
   FACTORY_KEY = 'vgl',
   FACTORY = {
@@ -2645,7 +2645,7 @@
         "z-index" : "0"
     },
     DEFAULT_OPTIONS = {
-        keepServerInSynch: false
+        keepServerInSynch: true
     },
     FACTORY_KEY = 'webgl',
     FACTORY = {

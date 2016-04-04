@@ -307,7 +307,6 @@
 
     function runTimeAnimationLoop() {
         if(vcrPlayStatus) {
-        	viewport.downloadAllTimesteps()
             session.call('pv.vcr.action', ['next']).then(function(timeValue){
                 $('.time-value').val(timeValue);
                 updateView();
