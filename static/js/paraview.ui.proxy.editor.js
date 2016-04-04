@@ -403,10 +403,10 @@
 	            	InitialApplyLegend = 0;
             	}
             	
-                me.unbind('update-scalar-range-values').bind('update-scalar-range-values', function(newRange) {
-                    $('.scalar-range-min', me).val(newRange.min);
-                    $('.scalar-range-max', me).val(newRange.max);
-                });
+                //me.unbind('update-scalar-range-values').bind('update-scalar-range-values', function(newRange) {
+                //    $('.scalar-range-min', me).val(newRange.min);
+                //    $('.scalar-range-max', me).val(newRange.max);
+                //});
 
                 me.unbind('notify-new-rgb-points-received').bind('notify-new-rgb-points-received', function(event) {
                     $('.color-editor-container', me).trigger({
