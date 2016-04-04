@@ -625,9 +625,7 @@
                 me.on('click', function(event){
                     var target_container = $(event.target),
                         action = target_container.attr('data-action');  
-                    
-                    document.write(target_container)
-                    
+       
                     if(action === undefined) {
                         return;
                     }
@@ -701,6 +699,7 @@
                             id: target_container.parent().attr('data-proxy-id'),
                             colorBy: extractColorBy()
                         });
+                        document.write(target_container)
                         me.unbind('update-scalar-range-values').bind('update-scalar-range-values', function(newRange) {
                             $('.scalar-range-min', me).val(newRange.min);
                             $('.scalar-range-max', me).val(newRange.max);
