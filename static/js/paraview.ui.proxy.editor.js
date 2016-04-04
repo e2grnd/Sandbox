@@ -750,7 +750,7 @@
             if (InitialApply){
             	apply(me, wantColorManagement);  
             	eventFire(document.getElementById('initScalar'), 'click');
-            	$('.scalar-range-min', me).val(80);
+            	$('.scalar-range-min', me).val('80');
             	InitialApply = 0;
             }
             
