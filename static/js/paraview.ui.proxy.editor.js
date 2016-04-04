@@ -648,14 +648,6 @@
                             visible: $('.toggle-scalarbar-button', me).hasClass('vtk-icon-bookmark-empty'),
                             id: target_container.attr('data-proxy-id')
                         });
-                        me.trigger({
-                            type: 'rescale-transfer-function',
-                            mode: 'custom',
-                            min: $('.scalar-range-min', me).val(),
-                            max: $('.scalar-range-max', me).val(),
-                            id: target_container.attr('data-proxy-id'),
-                            colorBy: extractColorBy()
-                        });
                     } else if (action === 'delete-value') {
                         target_container.parent().parent().addClass('has-change');
                         target_container.parent().remove();
@@ -769,13 +761,11 @@
                 });                
             }
             
-            
-            
-            
             if (InitialApplyContour){
             	apply(me, wantColorManagement);  
             	InitialApplyContour = 0;
             }
+            
             if (InitialApplyLegend){
             	
             	me.unbind('update-scalar-range-values').bind('update-scalar-range-values', function(newRange) {
