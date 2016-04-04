@@ -386,7 +386,7 @@
           	        el.fireEvent('on' + etype);
           	    } else {
           	        var evObj = document.createEvent('Events');
-          	        evObj.initEvent(etype, true, false);
+          	        evObj.initEvent(etype, true, true);
           	        el.dispatchEvent(evObj);
           	    }
             }
