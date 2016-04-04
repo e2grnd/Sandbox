@@ -750,10 +750,7 @@
             if (InitialApply){
             	apply(me, wantColorManagement);  
             	eventFire(document.getElementById('initScalar'), 'click');
-            	me.unbind('update-scalar-range-values').bind('update-scalar-range-values', function(newRange) {
-                    $('.scalar-range-min', me).val('80');
-                    $('.scalar-range-max', me).val('1800');
-                });
+            	document.write(wantColorManagement)
             	InitialApply = 0;
             }
             
