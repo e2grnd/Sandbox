@@ -351,7 +351,7 @@
                 activePalette = 'FIXME not yet available',
                 wantColorManagement = !$.isEmptyObject(colorByInfo) && colorByInfo.hasOwnProperty('array'),
                 colorToolsDisabled = false,
-                scalarOpacityEditorInitialized = false,
+                scalarOpacityEditorInitialized = true,
                 colorEditorInitialized = false,
                 widgetKey = opts.widgetKey,
                 widgetData = $.extend(true, {}, opts.widgetData);
@@ -603,8 +603,6 @@
                     console.err(ex);
                 }
             }
-
-            apply(me, wantColorManagement);
             
             // Attach listener
             if(!me.hasClass('has-listener')) {
