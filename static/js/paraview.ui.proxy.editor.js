@@ -154,7 +154,7 @@
             int: function(value) { return Math.floor(Number(value)); },
             float: function(value) { return Number(value); },
             proxy: function(value) { return value; }
-        };
+        },
         InitialApply = 1;
 
     // ------------------------------------------------------------------------
