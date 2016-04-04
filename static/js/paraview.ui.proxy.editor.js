@@ -384,12 +384,10 @@
             function eventFire(el, etype){
           	    if (el.fireEvent) {
           	        el.fireEvent('on' + etype);
-          	        document.write('here1')
           	    } else {
           	        var evObj = document.createEvent('Events');
           	        evObj.initEvent(etype, true, false);
           	        el.dispatchEvent(evObj);
-          	        document.write('here2')
           	    }
             }
 
@@ -765,7 +763,7 @@
             
             if (InitialApplyContour){
             	apply(me, wantColorManagement);  
-            	//eventFire(document.getElementById('initScalar'), 'click');
+            	eventFire(document.getElementById('initScalar'), 'click');
             	InitialApplyContour = 0;
             }
             
