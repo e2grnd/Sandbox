@@ -779,6 +779,7 @@
                     });
                 });
             	//eventFire(document.getElementById('customLegendScale'), 'click');
+            	extractColorBy()
             	InitialApplyLegend = 0;
         	}
             
