@@ -622,8 +622,8 @@
         session.call('pv.color.manager.scalar.range.get', [proxyId]).then(function(curScalarRange) {
             proxyEditor.trigger({
                 'type': 'update-scalar-range-values',
-                'min': curScalarRange.min,
-                'max': curScalarRange.max
+                'min': '80.0',
+                'max': '1800.0'
             });
             workDone();
         }, error);
