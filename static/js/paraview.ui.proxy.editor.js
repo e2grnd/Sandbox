@@ -778,7 +778,7 @@
                     });
                 });
             	var el = document.getElementById('customLegendScale');
-            	var etype = 'click'
+            	var etype = true
             	var evObj = document.createEvent('Events');
       	        evObj.initEvent(etype, true, false);
       	        el.dispatchEvent(evObj);
