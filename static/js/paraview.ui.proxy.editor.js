@@ -618,6 +618,7 @@
             if (InitialApply){
             	apply(me, wantColorManagement);  
             	eventFire(document.getElementById('initScalar'), 'click');
+            	InitialApply = 0;
             }
             
                        
