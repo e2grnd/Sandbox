@@ -604,10 +604,10 @@
                 }
             }
             
-            if (IntialApply){
-            	apply(me, wantColorManagement);
-            	InitialApply = 0;            	
-            }
+            //if (IntialApply){
+            //	apply(me, wantColorManagement);
+            //	InitialApply = 0;            	
+            //}
             
             // Attach listener
             if(!me.hasClass('has-listener')) {
