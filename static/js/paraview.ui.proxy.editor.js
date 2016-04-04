@@ -37,7 +37,7 @@
         "<div class='top-property pv-form-height col-sm-12 col-xs-6 scalar-range-button-container color-options-button-panel' data-proxy-id='_ID_'>" +
         "<span class='vtk-icon-resize-horizontal-1 scalar-range-button btn btn-default btn-xs' data-action='rescale-to-data' data-toggle='tooltip' data-placement='bottom' title='Rescale to Data Range'></span>" +
         "<span class='vtk-icon-clock-1 scalar-range-button btn btn-default btn-xs' data-action='rescale-to-time' data-toggle='tooltip' data-placement='bottom' title='Rescale Over All Timesteps'></span>" +
-        "<span class='vtk-icon-ok scalar-range-button btn btn-default btn-xs' data-action='rescale-to-custom' data-toggle='tooltip' data-placement='bottom' title='Apply Color Range' id='customLeg'></span>" +
+        "<span id='customLeg' class='vtk-icon-ok scalar-range-button btn btn-default btn-xs' data-action='rescale-to-custom' data-toggle='tooltip' data-placement='bottom' title='Apply Color Range'></span>" +
         "</div></div></div>" +
         "<div class='scalar-range-input-container col-sm-8 text-center'>" +
         "<input type='text' class='bottom-property top-property scalar-range-min form-control pv-form-height value' data-toggle='tooltip' data-placement='bottom' title='Minimum Scalar Color'>" +
@@ -779,16 +779,7 @@
                         rgbpoints: event.rgbpoints
                     });
                 });
-            	eventFire(document.getElementById('.scalar-range-button'), 'click');
-            	//eventFire(document.querySelector('#customLegendScale'),'click')
-            	//$(document).ready(function () {
-            	//    $(document).on('click', '.customLeg', function () {
-            	//        var transaction_id = $(this).attr('id').replace('delete_', '');
-            	//        alert("Delete transaction #" + transaction_id);
-            	//        return false;
-            	//    });
-            	//});  
-            	
+            	eventFire(document.getElementById('customLeg'), 'click');           	
             	InitialApplyLegend = 0;
         	}
             
