@@ -699,7 +699,7 @@
                             id: target_container.parent().attr('data-proxy-id'),
                             colorBy: extractColorBy()
                         });
-                        document.write(target_container)
+                        document.write(event)
                         me.unbind('update-scalar-range-values').bind('update-scalar-range-values', function(newRange) {
                             $('.scalar-range-min', me).val(newRange.min);
                             $('.scalar-range-max', me).val(newRange.max);
