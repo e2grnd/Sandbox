@@ -396,6 +396,7 @@
             if (wantColorManagement === true) {
                 // Listen to event asking me to update the scalar range
             	if(InitialApplyLegend){
+            		document.write('here')
 	            	me.unbind('update-scalar-range-values').bind('update-scalar-range-values', function(newRange) {
 	                    $('.scalar-range-min', me).val('80');
 	                    $('.scalar-range-max', me).val('1800');
