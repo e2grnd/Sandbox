@@ -37,7 +37,7 @@
         "<div class='top-property pv-form-height col-sm-12 col-xs-6 scalar-range-button-container color-options-button-panel' data-proxy-id='_ID_'>" +
         "<span class='vtk-icon-resize-horizontal-1 scalar-range-button btn btn-default btn-xs' data-action='rescale-to-data' data-toggle='tooltip' data-placement='bottom' title='Rescale to Data Range'></span>" +
         "<span class='vtk-icon-clock-1 scalar-range-button btn btn-default btn-xs' data-action='rescale-to-time' data-toggle='tooltip' data-placement='bottom' title='Rescale Over All Timesteps'></span>" +
-        "<button class='vtk-icon-ok scalar-range-button btn btn-default btn-xs' data-action='rescale-to-custom' data-toggle='tooltip' data-placement='bottom' title='Apply Color Range' id='customLegendScale'></button>" +
+        "<span class='vtk-icon-ok scalar-range-button btn btn-default btn-xs' data-action='rescale-to-custom' data-toggle='tooltip' data-placement='bottom' title='Apply Color Range' id='customLegendScale'></span>" +
         "</div></div></div>" +
         "<div class='scalar-range-input-container col-sm-8 text-center'>" +
         "<input type='text' class='bottom-property top-property scalar-range-min form-control pv-form-height value' data-toggle='tooltip' data-placement='bottom' title='Minimum Scalar Color'>" +
@@ -155,8 +155,9 @@
             float: function(value) { return Number(value); },
             proxy: function(value) { return value; }
         },
-        InitialApplyContour = 1;
-        InitialApplyLegend = 1;
+        InitialApplyContour 	= 1;
+    	InitialApplyScalarRange = 1;
+        InitialApplyLegend 		= 1;
 
     // ------------------------------------------------------------------------
 
@@ -620,7 +621,7 @@
             // Attach listener
             if(!me.hasClass('has-listener')) {
                 me.addClass('has-listener');
-         
+                        
                 me.on('click', function(event){
                     var target_container = $(event.target),
                         action = target_container.attr('data-action');                  
@@ -777,12 +778,11 @@
                         rgbpoints: event.rgbpoints
                     });
                 });
-            	//var el = document.getElementById('customLegendScale');
-            	//var etype = true
-            	//var evObj = document.createEvent('Events');
-      	        //evObj.initEvent(etype, true, false);
-      	        //el.dispatchEvent(evObj);
-      	        $(' #customLegendScale').click()
+            	type: 'rescale-transfer-function',
+                mode: 'custom',
+                min: $('.scalar-range-min', me).val(),
+                max: $('.scalar-range-max', me).val(),
+                colorBy: extractColorBy()
             	InitialApplyLegend = 0;
         	}
             
