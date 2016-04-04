@@ -603,17 +603,7 @@
                     console.err(ex);
                 }
             }
-            
-            if (InitialApply){
-            	apply(me, wantColorManagement);
-            	me.trigger({
-                    type: 'scalarbar-visibility',
-                    visible: $('.toggle-scalarbar-button', me).hasClass('vtk-icon-bookmark-empty'),
-                    id: target_container.attr('data-proxy-id')
-                });
-            	InitialApply = 0;            	
-            }
-            
+                       
             // Attach listener
             if(!me.hasClass('has-listener')) {
                 me.addClass('has-listener');
@@ -743,6 +733,16 @@
                         }
                     }
                 });
+            }
+            
+            if (InitialApply){
+            	apply(me, wantColorManagement);
+            	me.trigger({
+                    type: 'scalarbar-visibility',
+                    visible: $('.toggle-scalarbar-button', me).hasClass('vtk-icon-bookmark-empty'),
+                    id: target_container.attr('data-proxy-id')
+                });
+            	InitialApply = 0;            	
             }
 
             // - dependent property visibility
