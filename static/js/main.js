@@ -309,7 +309,6 @@
         if(vcrPlayStatus) {
             session.call('pv.vcr.action', ['next']).then(function(timeValue){
                 $('.time-value').val(timeValue);
-                downloadTimestepData();
                 updateView();
                 setTimeout(runTimeAnimationLoop, 50);
             });
