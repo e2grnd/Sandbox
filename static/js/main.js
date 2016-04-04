@@ -309,7 +309,6 @@
         if(vcrPlayStatus) {
             session.call('pv.vcr.action', ['next']).then(function(timeValue){
                 $('.time-value').val(timeValue);
-                viewport.render();
                 updateView();
                 setTimeout(runTimeAnimationLoop, 500);
             });
@@ -390,7 +389,7 @@
         $(viewportSelector).empty()
                            .bind('captured-screenshot-ready', onScreenshotCaptured);
         viewport = vtkWeb.createViewport({session: session});
-        viewport.setActiveRenderer('webgl');
+        //viewport.setActiveRenderer('webgl');
         viewport.bind(viewportSelector);
     }
 
