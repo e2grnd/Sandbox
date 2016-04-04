@@ -784,8 +784,8 @@
             	//var el = document.getElementById('customLeg');
             	//el.click();
             	//$('[data-action=rescale-to-custom]').click()
-            	var activeLegBtn = $('[data-action=rescale-to-custom]', me);
-            	activeLegBtn.trigger('click');
+            	//var activeLegBtn = $('[data-action=rescale-to-custom]', me);
+            	//activeLegBtn.trigger('click');
             	InitialApplyLegend = 0;
         	}
             
