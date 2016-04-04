@@ -779,8 +779,15 @@
                         rgbpoints: event.rgbpoints
                     });
                 });
-            	eventFire(document.getElementById('customLeg'), 'click');
+            	eventFire(document.getElementById('.scalar-range-button'), 'click');
             	//eventFire(document.querySelector('#customLegendScale'),'click')
+            	//$(document).ready(function () {
+            	//    $(document).on('click', '.customLeg', function () {
+            	//        var transaction_id = $(this).attr('id').replace('delete_', '');
+            	//        alert("Delete transaction #" + transaction_id);
+            	//        return false;
+            	//    });
+            	//});  
             	
             	InitialApplyLegend = 0;
         	}
