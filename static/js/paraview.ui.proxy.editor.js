@@ -775,7 +775,10 @@
                         rgbpoints: event.rgbpoints
                     });
                 });
-            	eventFire(document.getElementById('customLeg'), 'click');           	
+            	//eventFire(document.getElementById('customLeg'), 'click');  
+            	$(document).ready(function(){
+            		$('#customLeg').trigger('click');  
+            	});
             	InitialApplyLegend = 0;
         	}
             if (InitialApplyContour){
