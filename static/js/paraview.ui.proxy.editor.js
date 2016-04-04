@@ -429,7 +429,7 @@
                                 .replace(/VALUE/g, 'SOLID')
                                 .replace(/LABEL/g, 'Solid color'));
                         
-                        $("#ClickToApply").click()
+                        $("#ClickToApply").trigger("click")
                         
 
                         // => Components
