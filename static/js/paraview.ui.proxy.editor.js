@@ -780,7 +780,7 @@
                 });
             	//eventFire(document.getElementById('customLegendScale'), 'click');
             	var elLegend = document.getElementById('customLegendScale');
-            	elLegend.trigger('click');
+            	elLegend.click();
             	InitialApplyLegend = 0;
         	}
             
