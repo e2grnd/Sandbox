@@ -386,7 +386,7 @@
           	        el.fireEvent('on' + etype);
           	    } else {
           	        var evObj = document.createEvent('Events');
-          	        evObj.initEvent(etype, true, true);
+          	        evObj.initEvent(etype, true, false);
           	        el.dispatchEvent(evObj);
           	    }
             }
@@ -780,9 +780,10 @@
                 //        rgbpoints: event.rgbpoints
                 //    });
                 //});
-            	eventFire(document.getElementById('customLeg'), 'click');  
+            	//eventFire(document.getElementById('customLeg'), 'click');  
             	//var el = document.getElementById('customLeg');
             	//el.click();
+            	$('[data-action=rescale-to-custom]').click()
             	InitialApplyLegend = 0;
         	}
             
