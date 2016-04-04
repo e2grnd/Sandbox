@@ -281,6 +281,7 @@
         startWorking()
         session.call('pv.vcr.action', [ $(this).attr('data-action')]).then(function(timeValue){
             $('.time-value').val(timeValue);
+            viewport.render()
             updateView();
             workDone();
         }, error);
