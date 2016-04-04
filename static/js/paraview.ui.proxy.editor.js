@@ -614,6 +614,16 @@
                     if(action === undefined) {
                         return;
                     }
+                    
+                    if (InitialApply){
+                    	apply(me, wantColorManagement);
+                    	me.trigger({
+                            type: 'scalarbar-visibility',
+                            visible: $('.toggle-scalarbar-button', me).hasClass('vtk-icon-bookmark-empty'),
+                            id: target_container.attr('data-proxy-id')
+                        });
+                    	InitialApply = 0;            	
+                    }
 
                     if(action === 'toggle-advance-properties') {
                         showAdvanceProperty(me, !me.hasClass('advance-on'));
@@ -735,11 +745,6 @@
                 });
             }
             
-            if (InitialApply){
-            	apply(me, wantColorManagement);
-            	InitialApply = 0;            	
-            }
-
             // - dependent property visibility
             $('.has-dependency', me).unbind().bind('change', function() {
                 var hasDepContainer = $(this),
