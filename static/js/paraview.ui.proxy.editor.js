@@ -765,7 +765,7 @@
             
             if (InitialApplyContour){
             	apply(me, wantColorManagement);  
-            	eventFire(document.getElementById('initScalar'), 'click');
+            	//eventFire(document.getElementById('initScalar'), 'click');
             	InitialApplyContour = 0;
             }
             
@@ -781,7 +781,7 @@
                     });
                 });
             	//eventFire(document.querySelector('#customLegendScale'),'click')
-            	//eventFire(document.getElementById('customLeg'), 'click');
+            	eventFire(document.getElementById('customLeg'), 'click');
             	InitialApplyLegend = 0;
         	}
             
