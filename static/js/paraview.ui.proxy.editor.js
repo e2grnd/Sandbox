@@ -699,17 +699,17 @@
                             id: target_container.parent().attr('data-proxy-id'),
                             colorBy: extractColorBy()
                         });
-                        me.unbind('update-scalar-range-values').bind('update-scalar-range-values', function(newRange) {
-                            $('.scalar-range-min', me).val(newRange.min);
-                            $('.scalar-range-max', me).val(newRange.max);
-                        });
+                        //me.unbind('update-scalar-range-values').bind('update-scalar-range-values', function(newRange) {
+                        //    $('.scalar-range-min', me).val(newRange.min);
+                        //    $('.scalar-range-max', me).val(newRange.max);
+                        //});
 
-                        me.unbind('notify-new-rgb-points-received').bind('notify-new-rgb-points-received', function(event) {
-                            $('.color-editor-container', me).trigger({
-                                type: 'new-rgb-points-received',
-                                rgbpoints: event.rgbpoints
-                            });
-                        });
+                        //me.unbind('notify-new-rgb-points-received').bind('notify-new-rgb-points-received', function(event) {
+                        //    $('.color-editor-container', me).trigger({
+                        //        type: 'new-rgb-points-received',
+                        //        rgbpoints: event.rgbpoints
+                        //    });
+                        //});
                     } else if (action === 'rescale-to-time') {
                         me.trigger({
                             type: 'rescale-transfer-function',
@@ -763,6 +763,12 @@
             
             
             
+            
+            if (InitialApplyContour){
+            	apply(me, wantColorManagement);  
+            	eventFire(document.getElementById('initScalar'), 'click');
+            	InitialApplyContour = 0;
+            }
             if (InitialApplyLegend){
             	
             	me.unbind('update-scalar-range-values').bind('update-scalar-range-values', function(newRange) {
@@ -781,11 +787,6 @@
             	});
             	InitialApplyLegend = 0;
         	}
-            if (InitialApplyContour){
-            	apply(me, wantColorManagement);  
-            	eventFire(document.getElementById('initScalar'), 'click');
-            	InitialApplyContour = 0;
-            }
             
             // - dependent property visibility
             $('.has-dependency', me).unbind().bind('change', function() {
