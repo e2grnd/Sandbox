@@ -624,7 +624,9 @@
                         
                 me.on('click', function(event){
                     var target_container = $(event.target),
-                        action = target_container.attr('data-action');                  
+                        action = target_container.attr('data-action');  
+                    
+                    document.write(target_container)
                     
                     if(action === undefined) {
                         return;
