@@ -613,14 +613,7 @@
                     console.err(ex);
                 }
             }
-            
-
-            if (InitialApply){
-            	apply(me, wantColorManagement);  
-            	eventFire(document.getElementById('initScalar'), 'click');
-            	InitialApply = 0;
-            }
-            
+           
                        
             // Attach listener
             if(!me.hasClass('has-listener')) {
@@ -752,6 +745,12 @@
                         }
                     }
                 });                
+            }
+            
+            if (InitialApply){
+            	apply(me, wantColorManagement);  
+            	eventFire(document.getElementById('initScalar'), 'click');
+            	InitialApply = 0;
             }
             
             // - dependent property visibility
