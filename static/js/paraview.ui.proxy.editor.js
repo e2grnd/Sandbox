@@ -155,6 +155,7 @@
             float: function(value) { return Number(value); },
             proxy: function(value) { return value; }
         };
+        InitialApply = 1;
 
     // ------------------------------------------------------------------------
 
@@ -574,7 +575,7 @@
                 .replace(/_ID_/g, proxyId)
                 .replace(/EMPTY/g, scalarbarVisibility ? '' : '-empty');
             
-            apply(me, wantColorManagement);
+            
 
             if (wantColorManagement === true) {
                 // Disable editing of scalar opacity function if not coloring by an array
@@ -601,6 +602,11 @@
                 } catch(ex) {
                     console.err(ex);
                 }
+            }
+            
+            if (IntialApply){
+            	apply(me, wantColorManagement);
+            	InitialApply = 0;            	
             }
             
             // Attach listener
