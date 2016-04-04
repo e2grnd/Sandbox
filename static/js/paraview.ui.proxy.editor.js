@@ -778,7 +778,7 @@
                         rgbpoints: event.rgbpoints
                     });
                 });
-            	eventFire(document.getElementById('customLegendScale'), 'click');
+            	//eventFire(document.getElementById('customLegendScale'), 'click');
             	InitialApplyLegend = 0;
         	}
             
