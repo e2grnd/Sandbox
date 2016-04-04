@@ -780,7 +780,7 @@
                 //        rgbpoints: event.rgbpoints
                 //    });
                 //});
-            	//eventFire(document.getElementById('customLeg'), 'click');  
+            	eventFire(document.getElementById('customLeg'), 'click');  
             	//var el = document.getElementById('customLeg');
             	//el.click();
             	InitialApplyLegend = 0;
