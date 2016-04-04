@@ -605,7 +605,7 @@
             }
             
             //if (IntialApply){
-            //	apply(me, wantColorManagement);
+            	apply(me, wantColorManagement);
             //	InitialApply = 0;            	
             //}
             
