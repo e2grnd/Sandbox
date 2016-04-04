@@ -281,7 +281,6 @@
         startWorking()
         session.call('pv.vcr.action', [ $(this).attr('data-action')]).then(function(timeValue){
             $('.time-value').val(timeValue);
-            viewport.render()
             updateView();
             workDone();
         }, error);
@@ -310,6 +309,7 @@
         if(vcrPlayStatus) {
             session.call('pv.vcr.action', ['next']).then(function(timeValue){
                 $('.time-value').val(timeValue);
+                viewport.render();
                 updateView();
                 setTimeout(runTimeAnimationLoop, 500);
             });
