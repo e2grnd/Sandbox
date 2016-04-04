@@ -394,7 +394,7 @@
             // Make sure all old tooltips are cleaned up...
             $('.tooltip').remove();
             
-            
+            /*
             if (wantColorManagement === true) {
                 // Listen to event asking me to update the scalar range
                 me.unbind('update-scalar-range-values').bind('update-scalar-range-values', function(newRange) {
@@ -409,6 +409,7 @@
                     });
                 });
             }
+            */
 
             // Update DOM
             for(var idx = 0; idx < count; ++idx) {
