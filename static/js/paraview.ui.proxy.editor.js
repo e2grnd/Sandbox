@@ -769,8 +769,8 @@
             
             if (InitialApplyLegend){
             	me.unbind('update-scalar-range-values').bind('update-scalar-range-values', function(newRange) {
-                    $('.scalar-range-min', me).val(80);
-                    $('.scalar-range-max', me).val(1800);
+                    $('.scalar-range-min', me).val('80');
+                    $('.scalar-range-max', me).val('1800');
                 });
             	me.unbind('notify-new-rgb-points-received').bind('notify-new-rgb-points-received', function(event) {
                     $('.color-editor-container', me).trigger({
@@ -778,13 +778,7 @@
                         rgbpoints: event.rgbpoints
                     });
                 });
-            	me.trigger({
-                    type: 'rescale-transfer-function',
-                    mode: 'custom',
-                    min: $('.scalar-range-min', me).val(),
-                    max: $('.scalar-range-max', me).val(),
-                    colorBy: extractColorBy()
-                });
+            	eventFire(document.getElementById('customLegendScale'), 'click');
             	InitialApplyLegend = 0;
         	}
             
