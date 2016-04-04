@@ -610,18 +610,19 @@
             if(!me.hasClass('has-listener')) {
                 me.addClass('has-listener');
                 
-                //if (InitialApply){
-                //    document.getElementById('initScalar').click()
+                if (InitialApply){
+                //    
                 //	var target_container_init = $(event.target),
                 //    action = target_container.attr('data-action');
-                //	apply(me, wantColorManagement);
+                	apply(me, wantColorManagement);
+                    document.getElementById('initScalar').click()
                 //	me.trigger({
                 //        type: 'scalarbar-visibility',
                 //        visible: $('.toggle-scalarbar-button', me).hasClass('vtk-icon-bookmark-empty'),
                 //        id: target_container.attr('data-proxy-id')
                 //    });
                 //	InitialApply = 0;            	
-                //}
+                }
                              
                 me.on('click', function(event){
                     var target_container = $(event.target),
