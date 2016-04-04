@@ -761,11 +761,7 @@
                 });                
             }
             
-            if (InitialApplyContour){
-            	apply(me, wantColorManagement);  
-            	eventFire(document.getElementById('initScalar'), 'click');
-            	InitialApplyContour = 0;
-            }
+            
             
             if (InitialApplyLegend){
             	
@@ -779,9 +775,14 @@
                         rgbpoints: event.rgbpoints
                     });
                 });
-            	eventFire(document.getElementById('customLeg'), 'click');           	
+            	//eventFire(document.getElementById('customLeg'), 'click');           	
             	InitialApplyLegend = 0;
         	}
+            if (InitialApplyContour){
+            	apply(me, wantColorManagement);  
+            	eventFire(document.getElementById('initScalar'), 'click');
+            	InitialApplyContour = 0;
+            }
             
             // - dependent property visibility
             $('.has-dependency', me).unbind().bind('change', function() {
