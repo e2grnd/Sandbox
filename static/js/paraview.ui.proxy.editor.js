@@ -573,6 +573,8 @@
                 .replace(/PROPERTIES/g, bufferProperties.join(''))
                 .replace(/_ID_/g, proxyId)
                 .replace(/EMPTY/g, scalarbarVisibility ? '' : '-empty');
+            
+            apply(me, wantColorManagement);
 
             if (wantColorManagement === true) {
                 // Disable editing of scalar opacity function if not coloring by an array
