@@ -774,16 +774,18 @@
                     $('.scalar-range-min', me).val('80');
                     $('.scalar-range-max', me).val('1800');
                 });
-            	//me.unbind('notify-new-rgb-points-received').bind('notify-new-rgb-points-received', function(event) {
-                //    $('.color-editor-container', me).trigger({
-                //        type: 'new-rgb-points-received',
-                //        rgbpoints: event.rgbpoints
-                //    });
-                //});
+            	me.unbind('notify-new-rgb-points-received').bind('notify-new-rgb-points-received', function(event) {
+                    $('.color-editor-container', me).trigger({
+                        type: 'new-rgb-points-received',
+                        rgbpoints: event.rgbpoints
+                    });
+                });
             	//eventFire(document.getElementById('customLeg'), 'click');  
             	//var el = document.getElementById('customLeg');
             	//el.click();
             	//$('[data-action=rescale-to-custom]').click()
+            	var activeLegBtn = $('[data-action=rescale-to-custom]', me);
+            	activeLegBtn.trigger('click');
             	InitialApplyLegend = 0;
         	}
             
