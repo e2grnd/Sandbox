@@ -3890,7 +3890,7 @@
           }
 
           if (status === 'create') {
-            var initialMessage = "Downloading metadata for animation",
+            var initialMessage = "Downloading metadata for animation Alt",
                 html = PROGRESS_BAR_TEMPLATE.replace(/MESSAGE/, initialMessage),
                 progressElt = $(html);
             container.append(progressElt);
