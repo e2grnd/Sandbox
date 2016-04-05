@@ -3853,7 +3853,7 @@
                         [renderer.LookAt[7], renderer.LookAt[8], renderer.LookAt[9]],
                         [renderer.LookAt[1], renderer.LookAt[2], renderer.LookAt[3]],
                         [renderer.LookAt[4], renderer.LookAt[5], renderer.LookAt[6]]);
-
+                    renderer.camera.zoom(1.4)//ADDED BY DAN
                     // Custom handling of layer 0
                     if(renderer.layer === 0) {
                         cameraLayerZero = renderer.camera;
@@ -4168,8 +4168,8 @@
         projectionMatrix = mat4.create(),
         modelViewMatrix = mat4.create(),
         perspective = true,
-        width = 50,
-        height = 50,
+        width = 100,
+        height = 100,
         modified = true;
 
         directionOfProjection = vec4.fromValues(0.0, 0.0, -1.0, 0.0),
