@@ -3760,7 +3760,7 @@
                 ctx2d.clearRect(0, 0, width, height);
 
                 // Render each layer on top of each other (Starting with the background one)
-                cameraLayerZero.setViewSize(width*0.5, height*0.5);
+                cameraLayerZero.setViewSize(width, height);
                 for(layer = sceneJSON.Renderers.length - 1; layer >= 0; layer--) {
                     localRenderer = sceneJSON.Renderers[layer];
                     localWidth = localRenderer.size[0] - localRenderer.origin[0];
@@ -3776,7 +3776,7 @@
                     localY = (localY < 0) ? 0 : localY;
 
                     // Update renderer camera aspect ratio
-                    localCamera.setViewSize(localWidth, localHeight); // FIXME maybe use the local width/height
+                    localCamera.setViewSize(localWidth*0.5, localHeight*0.5); // FIXME maybe use the local width/height
 
                     // Setup viewport
                     gl.viewport(localX, localY, localWidth, localHeight);
