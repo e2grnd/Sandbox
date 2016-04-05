@@ -4046,6 +4046,7 @@
             // Calculate zoom scale here
             if (zoomInit && cameraLayerZero != null){
             	cameraLayerZero.zoom(1.4);
+            	pushCameraState();
             	zoomInit = 0;
             }
         }).bind('render', function(){
