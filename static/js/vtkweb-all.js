@@ -3779,7 +3779,7 @@
                     localCamera.setViewSize(localWidth, localHeight); // FIXME maybe use the local width/height
 
                     // Setup viewport
-                    gl.viewport(localX, localY, localWidth*0.5, localHeight*0.5);
+                    gl.viewport(localX, localY, localWidth, localHeight*2);
 
                     // Render non-transparent objects for the current layer
                     nbObjects += objectHandler.renderSolid(layer, renderingContext, localCamera);
