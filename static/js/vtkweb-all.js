@@ -3848,8 +3848,9 @@
                 for(var idx = 0; idx < sceneJSON.Renderers.length; idx++) {
                     renderer = sceneJSON.Renderers[idx];
                     renderer.camera = createCamera();
-                    renderer.camera.zoom(0.2)//ADDED BY DAN
+                    
                     renderer.camera.setCenterOfRotation(sceneJSON.Center);
+                    renderer.camera.zoom(0.2)//ADDED BY DAN
                     renderer.camera.setCameraParameters( renderer.LookAt[0],
                         [renderer.LookAt[7], renderer.LookAt[8], renderer.LookAt[9]],
                         [renderer.LookAt[1], renderer.LookAt[2], renderer.LookAt[3]],
