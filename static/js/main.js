@@ -36,6 +36,7 @@
         pipelineDataModel = { metadata: null, source: null, representation: null, view: null, sources: []},
         activeProxyId = 0,
         module = {},
+        CachingData = 1,
         vcrPlayStatus = false,
         pipelineLoadedCallBack = null,
         error = function(e){workDone();console.log(e);};
@@ -292,7 +293,7 @@
         $('.vcr-play').hide();
         $('.vcr-stop').show();
         vcrPlayStatus = true;
-        viewport.downloadTimestepData();
+       	viewport.downloadTimestepData();
         runTimeAnimationLoop();
     }
 

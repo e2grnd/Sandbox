@@ -1424,7 +1424,54 @@
              *
              */
             downloadTimestepData: function(shaList) {
-                rendererContainer.trigger('downloadAllTimesteps');
+            	session.call('viewport.webgl.metadata.alltimesteps', []).then(function(result){
+                    if (result.hasOwnProperty('success') && result.success === true) {
+                      var metaDataList = result.metaDataList;
+
+                      // For progress events, I want to first know how many items to retrieve
+                      m_numberOfPartsToDownload = 0;
+                      for (var sha in metaDataList) {
+                        if (metaDataList.hasOwnProperty(sha)) {
+                          m_numberOfPartsToDownload += metaDataList[sha].numParts;
+                        }
+                      }
+
+                      m_numberOfPartsDownloaded = 0;
+
+                      setTimeout(function() {
+
+                        // Now go through and download the heavy data for anythin we don't already have
+                        for (var sha in metaDataList) {
+                          if (metaDataList.hasOwnProperty(sha)) {
+                            var numParts = metaDataList[sha].numParts,
+                                objId = metaDataList[sha].id,
+                                alreadyCached = true;
+                            // Before I go and fetch all the parts for this object, make sure
+                            // I don't already have them cached
+                            for (var i = 0; i < numParts; i+=1) {
+                              var obj = {
+                                'id': objId,
+                                'md5': sha,
+                                'part': i + 1
+                              };
+                              if (!objectHandler.isObjectRegistered(obj)) {
+                                alreadyCached = false;
+                                break;
+                              }
+                            }
+                            if (alreadyCached === false) {
+                              fetchCachedObject(sha);
+                            } 
+                          }
+                        }
+                      }, 500);
+                    }
+                  }, function(metaDataError) {
+                    console.log("Error retrieving metadata for all timesteps");
+                    console.log(metaDataError);
+                  });
+            	
+                  rendererContainer.trigger('downloadAllTimesteps');
             },
 
             /*
@@ -3890,7 +3937,7 @@
           }
 
           if (status === 'create') {
-            var initialMessage = "Downloading metadata for animation Alt",
+            var initialMessage = "Downloading metadata for animation",
                 html = PROGRESS_BAR_TEMPLATE.replace(/MESSAGE/, initialMessage),
                 progressElt = $(html);
             container.append(progressElt);
