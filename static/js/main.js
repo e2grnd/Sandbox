@@ -433,6 +433,7 @@
         pipeline.pipelineSVG({session: session});
         pipeline.bind('pipeline-visibility-change', onProxyVisibilityChange);
         pipeline.bind('pipeline-data-change', onPipelineDataChange);
+        session.call("viewport.axes.orientation.visibility.update", [[-1], 0])
         pipeline.trigger('pipeline-reload');
     }
 
