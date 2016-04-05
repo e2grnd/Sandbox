@@ -37,6 +37,7 @@
         activeProxyId = 0,
         module = {},
         CachingData = 1,
+        m_sceneDataStoredCheck = null,
         vcrPlayStatus = false,
         pipelineLoadedCallBack = null,
         error = function(e){workDone();console.log(e);};
@@ -293,7 +294,12 @@
         $('.vcr-play').hide();
         $('.vcr-stop').show();
         vcrPlayStatus = true;
-       	viewport.downloadTimestepData();
+        session.call("viewport.webgl.metadata", [-1]).then(function(data) {
+      		if (m_sceneDataStoredCheck === data){
+      		} else{
+      			viewport.downloadTimestepData();
+      		}
+      	});       	
         runTimeAnimationLoop();
     }
 
@@ -302,6 +308,9 @@
     function onTimeAnimationStop() {
         $('.vcr-play').show();
         $('.vcr-stop').hide();
+        session.call("viewport.webgl.metadata", [-1]).then(function(data) {
+        	m_sceneDataStoredCheck = data
+        }
         vcrPlayStatus = false;
     }
 
