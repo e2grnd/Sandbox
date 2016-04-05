@@ -293,7 +293,12 @@
         $('.vcr-play').hide();
         $('.vcr-stop').show();
         vcrPlayStatus = true;
-       	viewport.downloadTimestepData();
+        
+        if (NoCachedViews){
+       		viewport.downloadTimestepData();
+       		NoCachedViews = 0;
+    	}
+        
         runTimeAnimationLoop();
     }
 

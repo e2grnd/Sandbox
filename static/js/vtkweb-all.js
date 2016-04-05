@@ -1426,10 +1426,7 @@
              *
              */
             downloadTimestepData: function(shaList) {
-            	if (NoCachedViews){
                   	rendererContainer.trigger('downloadAllTimesteps');
-                  	NoCachedViews = 0;
-            	}
             },
 
             /*
