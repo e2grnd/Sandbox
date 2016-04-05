@@ -3865,7 +3865,7 @@
                         otherCamera.push(renderer.camera);
                     }
                     
-                    renderer.camera.zoom(0.05)//ADDED BY DAN
+                    renderer.camera.zoom(0.1)//ADDED BY DAN
                 }
                 background = buildBackground(gl, bgColor1, bgColor2);
 
