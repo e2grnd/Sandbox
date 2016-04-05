@@ -4047,12 +4047,6 @@
             if(renderer.hasClass('active')){
                 drawScene(false);
             }
-            // Calculate zoom scale here
-            if (zoomInit && cameraLayerZero != null){
-            	cameraLayerZero.zoom(1.4);
-            	pushCameraState();
-            	zoomInit = 0;
-            }
         }).bind('resetViewId', function(e){
             options.view = -1;
         }).bind('downloadAllTimesteps', function(event){
@@ -4134,8 +4128,8 @@
         }).bind('active', function(){
             if(renderer.hasClass('active')){
                 // Setup GL context
-                gl.viewportWidth = renderer.width();
-                gl.viewportHeight = renderer.height();
+                gl.viewportWidth = renderer.width()*0.5;
+                gl.viewportHeight = renderer.height()*0.5;
 
                 gl.clearColor(0.0, 0.0, 0.0, 1.0);
                 gl.clearDepth(1.0);
