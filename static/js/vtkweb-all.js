@@ -3856,6 +3856,8 @@
                         [renderer.LookAt[1], renderer.LookAt[2], renderer.LookAt[3]],
                         [renderer.LookAt[4], renderer.LookAt[5], renderer.LookAt[6]]);
                     
+                    renderer.camera.zoom(0.2)//ADDED BY DAN
+                    
                     // Custom handling of layer 0
                     if(renderer.layer === 0) {
                         cameraLayerZero = renderer.camera;
