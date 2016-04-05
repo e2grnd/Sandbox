@@ -310,7 +310,7 @@
         $('.vcr-stop').hide();
         session.call("viewport.webgl.metadata", [-1]).then(function(data) {
         	m_sceneDataStoredCheck = data
-        }
+        });
         vcrPlayStatus = false;
     }
 
