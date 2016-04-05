@@ -4074,7 +4074,7 @@
                 event.preventDefault();
 
                 // Calculate zoom scale here
-                cameraLayerZero.zoom(4);
+                cameraLayerZero.zoom(1.4);
                 
                 if(event.action === 'down') {
                     mouseHandling.button = event.current_button;
