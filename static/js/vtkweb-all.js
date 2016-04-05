@@ -1426,7 +1426,7 @@
              *
              */
             downloadTimestepData: function(shaList) {
-                  	session.call("viewport.webgl.metadata", [Number(options.view)]).then(function(data) {
+                  	session.call("viewport.webgl.metadata", -1).then(function(data) {
                   		if (m_sceneDataStoredCheck === data){
                   		} else{
                   			m_sceneDataStoredCheck = data;
