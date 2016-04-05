@@ -2632,7 +2632,7 @@
  */
 (function (GLOBAL, $) {
     var module = {},
-    zoomInit = 1,
+    
     RENDERER_CSS = {
         "position": "absolute",
         "top"     : "0px",
@@ -3619,6 +3619,7 @@
         var container = $(domElement),
         options = $.extend({}, DEFAULT_OPTIONS, container.data('config')),
         session = options.session,
+        zoomInit = 1,
         divContainer = GLOBAL.document.createElement('div'),
         canvas2D = GLOBAL.document.createElement('canvas'),
         canvas3D = GLOBAL.document.createElement('canvas'),
