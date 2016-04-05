@@ -4044,7 +4044,7 @@
                 fetchScene();
             }
             // Calculate zoom scale here
-            if (zoomInit){
+            if (zoomInit && cameraLayerZero != null){
             	cameraLayerZero.zoom(1.4);
             	zoomInit = 0;
             }
