@@ -4073,6 +4073,9 @@
             if(renderer.hasClass('active')){
                 event.preventDefault();
 
+                // Calculate zoom scale here
+                cameraLayerZero.zoom(4);
+                
                 if(event.action === 'down') {
                     mouseHandling.button = event.current_button;
                     mouseHandling.lastX = event.pageX;
@@ -4251,7 +4254,7 @@
 
                 focusDisplayPt =
                     worldToDisplay(
-                        focusWorldPt, width*0.5, height*0.5);
+                        focusWorldPt, width, height);
 
                 displayPt1 = vec4.fromValues(
                     newMouseX, newMouseY, focusDisplayPt[2], 1.0);
