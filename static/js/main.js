@@ -413,7 +413,6 @@
         if(viewport) {
             viewport.invalidateScene();
         }
-        session.call("viewport.axes.orientation.visibility.update", [[-1], 0])
     }
 
     // ------------------------------------------------------------------------
