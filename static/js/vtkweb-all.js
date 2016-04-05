@@ -3928,11 +3928,11 @@
             if (result.hasOwnProperty('success') && result.success === true) {
               var metaDataList = result.metaDataList;
 
-              /*container.trigger({
+              container.trigger({
                 type: 'downloadProgress',
                 status: 'update',
                 progressType: 'retrieved-metadata'
-              });*/
+              });
 
               // For progress events, I want to first know how many items to retrieve
               m_numberOfPartsToDownload = 0;
@@ -3968,11 +3968,11 @@
                     if (alreadyCached === false) {
                       fetchCachedObject(sha);
                     } else {
-                      /*container.trigger({
+                      container.trigger({
                         type: 'downloadProgress',
                         status: 'update',
                         numParts: numParts
-                      });*/
+                      });
                     }
                   }
                 }
