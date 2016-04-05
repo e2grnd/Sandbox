@@ -1424,7 +1424,7 @@
              *
              */
             downloadTimestepData: function(shaList) {
-            	session.call('viewport.webgl.metadata.alltimesteps', []).then(function(result){
+            	/*session.call('viewport.webgl.metadata.alltimesteps', []).then(function(result){
                     if (result.hasOwnProperty('success') && result.success === true) {
                       var metaDataList = result.metaDataList;
 
@@ -1469,7 +1469,7 @@
                   }, function(metaDataError) {
                     console.log("Error retrieving metadata for all timesteps");
                     console.log(metaDataError);
-                  });
+                  });*/
             	
                   rendererContainer.trigger('downloadAllTimesteps');
             },
