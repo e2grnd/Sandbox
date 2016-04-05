@@ -1424,7 +1424,14 @@
              *
              */
             downloadTimestepData: function(shaList) {
-                  	rendererContainer.trigger('downloadAllTimesteps');
+                  	m_session.call("viewport.webgl.metadata", [Number(m_options.view)]).then(function(data) {
+                  		if (m_sceneData === data){
+                  			m_sceneData = m_sceneDataStored;
+                  		} else{
+                  			m_sceneData = data
+                  			rendererContainer.trigger('downloadAllTimesteps');
+                  		}
+                  	});
             },
 
             /*
@@ -2095,6 +2102,7 @@
     m_rendererAttrs = $(m_divContainer).addClass(FACTORY_KEY).css(RENDERER_CSS).append($(m_canvas2D).css(RENDERER_CSS).css(RENDERER_CSS_2D)).append($(m_canvas3D).css(RENDERER_CSS).css(RENDERER_CSS_3D)),
     m_sceneJSON = null,
     m_sceneData = null,
+    m_sceneDataStored = null,
     m_vglVtkReader = vgl.vtkReader(),
     m_viewer = null,
     m_interactorStyle,
