@@ -709,8 +709,6 @@
                     repVal, pipelineDataModel.representation.ui, '_Representation',
                     viewVal, pipelineDataModel.view.ui, "_View"
                     );
-            
-            pipelineDataModel.view.OrientationAxesVisibility = 0;
 
             if (!$.isEmptyObject(colorBy) && colorBy.hasOwnProperty('array')) {
                 props = [].concat(colMgmtVal,

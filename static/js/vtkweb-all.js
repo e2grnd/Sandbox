@@ -2457,6 +2457,10 @@
             up = [up_[0], up_[1], up_[2]],
             pos = [pos_[0], pos_[1], pos_[2]];
         m_session.call("viewport.camera.update", [Number(m_options.view), fp, up, pos]);
+        m_session.call("viewport.axes.orientation.visibility.update", [-1], 0).then(function () {
+            onDoneQueue.push(onDone);
+            rendererContainer.trigger('invalidateScene');
+        });
       }
     }
 
