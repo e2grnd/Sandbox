@@ -3850,7 +3850,7 @@
                     renderer.camera = createCamera();
                     renderer.camera.setCenterOfRotation(sceneJSON.Center);
                     renderer.camera.setCameraParameters( renderer.LookAt[0],
-                        [renderer.LookAt[7]*0.2, renderer.LookAt[8]*0.2, renderer.LookAt[9]*0.2],
+                        [renderer.LookAt[7], renderer.LookAt[8], renderer.LookAt[9]],
                         [renderer.LookAt[1], renderer.LookAt[2], renderer.LookAt[3]],
                         [renderer.LookAt[4], renderer.LookAt[5], renderer.LookAt[6]]);
                     
