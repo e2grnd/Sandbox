@@ -405,7 +405,6 @@
         viewport = vtkWeb.createViewport({session: session});
         viewport.setActiveRenderer('webgl');
         viewport.bind(viewportSelector);
-        session.call("viewport.axes.center.visibility.update", [[-1], 0])
     }
 
     // ------------------------------------------------------------------------
@@ -414,6 +413,7 @@
         if(viewport) {
             viewport.invalidateScene();
         }
+        session.call("viewport.axes.orientation.visibility.update", [[-1], 0])
     }
 
     // ------------------------------------------------------------------------
