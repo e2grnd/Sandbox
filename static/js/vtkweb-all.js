@@ -3776,10 +3776,10 @@
                     localY = (localY < 0) ? 0 : localY;
 
                     // Update renderer camera aspect ratio
-                    localCamera.setViewSize(localWidth*0.5, localHeight*0.5); // FIXME maybe use the local width/height
+                    localCamera.setViewSize(localWidth, localHeight); // FIXME maybe use the local width/height
 
                     // Setup viewport
-                    gl.viewport(localX, localY, localWidth, localHeight);
+                    gl.viewport(localX, localY, localWidth*0.5, localHeight*0.5);
 
                     // Render non-transparent objects for the current layer
                     nbObjects += objectHandler.renderSolid(layer, renderingContext, localCamera);
