@@ -3724,8 +3724,8 @@
                     return;
                 }
                 var localRenderer, localWidth, localHeight, localX, localY,
-                width = renderer.width(),
-                height = renderer.height(),
+                width = renderer.width()*0.5,
+                height = renderer.height()*0.5,
                 nbObjects = 0, layer, localCamera;
 
                 // Update frame rate
