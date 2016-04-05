@@ -810,7 +810,6 @@
     },
 
     module = {},
-    zoomInit = 1;
 
     DEFAULT_VIEWPORT_OPTIONS = {
         session: null,
@@ -2633,6 +2632,7 @@
  */
 (function (GLOBAL, $) {
     var module = {},
+    zoomInit = 1,
     RENDERER_CSS = {
         "position": "absolute",
         "top"     : "0px",
