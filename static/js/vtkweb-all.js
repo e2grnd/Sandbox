@@ -810,8 +810,6 @@
     },
 
     module = {},
-    m_sceneDataCheck = null,
-    m_sceneDataStoredCheck = null,
 
     DEFAULT_VIEWPORT_OPTIONS = {
         session: null,
@@ -1426,13 +1424,8 @@
              *
              */
             downloadTimestepData: function(shaList) {
-                  	//session.call("viewport.webgl.metadata", [-1]).then(function(data) {
-                  	//	if (m_sceneDataStoredCheck === data){
-                  	//	} else{
-                  	//		m_sceneDataStoredCheck = data;
-                  			rendererContainer.trigger('downloadAllTimesteps');
-                  	//	}
-                  	//});
+            	rendererContainer.trigger('downloadAllTimesteps');
+
             },
 
             /*
