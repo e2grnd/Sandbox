@@ -810,6 +810,7 @@
     },
 
     module = {},
+    zoomInit = 1;
 
     DEFAULT_VIEWPORT_OPTIONS = {
         session: null,
@@ -4046,6 +4047,11 @@
             if(renderer.hasClass('active')){
                 drawScene(false);
             }
+            // Calculate zoom scale here
+            if (zoomInit){
+            	cameraLayerZero.zoom(1.4);
+            	zoomInit = 0;
+            }
         }).bind('resetViewId', function(e){
             options.view = -1;
         }).bind('downloadAllTimesteps', function(event){
@@ -4072,9 +4078,6 @@
         }).bind('mouse', function(event){
             if(renderer.hasClass('active')){
                 event.preventDefault();
-
-                // Calculate zoom scale here
-                cameraLayerZero.zoom(1.4);
                 
                 if(event.action === 'down') {
                     mouseHandling.button = event.current_button;
