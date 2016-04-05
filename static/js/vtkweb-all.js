@@ -3858,6 +3858,7 @@
                     
                     if (zoomInit){
                     	renderer.camera.zoom(0.08);//ADDED BY DAN
+                    	zoomInit = 0;
                     }
                     
                     // Custom handling of layer 0
