@@ -1429,7 +1429,7 @@
                   	session.call("viewport.webgl.metadata", [Number(options.view)]).then(function(data) {
                   		if (m_sceneDataStoredCheck === data){
                   		} else{
-                  			m_sceneDataStoredCheck = data
+                  			m_sceneDataStoredCheck = data;
                   			rendererContainer.trigger('downloadAllTimesteps');
                   		}
                   	});
