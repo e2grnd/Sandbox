@@ -1342,7 +1342,6 @@
             invalidateScene: function(onDone) {
                 onDoneQueue.push(onDone);
                 rendererContainer.trigger('invalidateScene');
-                NoCachedViews = 1;
             },
 
             /**
