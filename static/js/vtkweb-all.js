@@ -4128,8 +4128,8 @@
         }).bind('active', function(){
             if(renderer.hasClass('active')){
                 // Setup GL context
-                gl.viewportWidth = renderer.width()*0.5;
-                gl.viewportHeight = renderer.height()*0.5;
+                gl.viewportWidth = renderer.width();
+                gl.viewportHeight = renderer.height();
 
                 gl.clearColor(0.0, 0.0, 0.0, 1.0);
                 gl.clearDepth(1.0);
@@ -4168,8 +4168,8 @@
         projectionMatrix = mat4.create(),
         modelViewMatrix = mat4.create(),
         perspective = true,
-        width = 100,
-        height = 100,
+        width = 50,
+        height = 50,
         modified = true;
 
         directionOfProjection = vec4.fromValues(0.0, 0.0, -1.0, 0.0),
