@@ -3779,7 +3779,7 @@
                     localCamera.setViewSize(localWidth, localHeight); // FIXME maybe use the local width/height
 
                     // Setup viewport
-                    gl.viewport(localX*2, localY*2, localWidth*2, localHeight*2);
+                    gl.viewport(localX, localY, localWidth, localHeight);
 
                     // Render non-transparent objects for the current layer
                     nbObjects += objectHandler.renderSolid(layer, renderingContext, localCamera);
@@ -4251,7 +4251,7 @@
 
                 focusDisplayPt =
                     worldToDisplay(
-                        focusWorldPt, width, height);
+                        focusWorldPt, width*0.5, height*0.5);
 
                 displayPt1 = vec4.fromValues(
                     newMouseX, newMouseY, focusDisplayPt[2], 1.0);
