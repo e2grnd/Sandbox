@@ -4043,14 +4043,14 @@
             if(renderer.hasClass('active')){
                 fetchScene();
             }
-        }).bind('render', function(){
-            if(renderer.hasClass('active')){
-                drawScene(false);
-            }
             // Calculate zoom scale here
             if (zoomInit){
             	cameraLayerZero.zoom(1.4);
             	zoomInit = 0;
+            }
+        }).bind('render', function(){
+            if(renderer.hasClass('active')){
+                drawScene(false);
             }
         }).bind('resetViewId', function(e){
             options.view = -1;
