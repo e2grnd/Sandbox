@@ -3724,8 +3724,8 @@
                     return;
                 }
                 var localRenderer, localWidth, localHeight, localX, localY,
-                width = renderer.width()*0.5,
-                height = renderer.height()*0.5,
+                width = renderer.width(),
+                height = renderer.height(),
                 nbObjects = 0, layer, localCamera;
 
                 // Update frame rate
@@ -3760,7 +3760,7 @@
                 ctx2d.clearRect(0, 0, width, height);
 
                 // Render each layer on top of each other (Starting with the background one)
-                cameraLayerZero.setViewSize(width, height);
+                cameraLayerZero.setViewSize(width*0.5, height*0.5);
                 for(layer = sceneJSON.Renderers.length - 1; layer >= 0; layer--) {
                     localRenderer = sceneJSON.Renderers[layer];
                     localWidth = localRenderer.size[0] - localRenderer.origin[0];
