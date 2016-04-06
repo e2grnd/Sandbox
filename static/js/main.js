@@ -1030,7 +1030,7 @@
         proxyEditor.empty();
         activePipelineInspector();
         
-        document.write(viewportSelector.camera)
+        //document.write(viewportSelector.camera)
         //session.call('viewport.axes.orientation.visibility.update', [[-1],0])
 
         // Make sure everything is properly sized
