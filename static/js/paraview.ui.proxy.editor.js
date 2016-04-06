@@ -787,8 +787,8 @@
             	me.trigger({
                     type: 'rescale-transfer-function',
                     mode: 'custom',
-                    min: $('.scalar-range-min', me).val(),
-                    max: $('.scalar-range-max', me).val(),
+                    min: 80,
+                    max: 1800,
                     id: 370,
                     colorBy: extractColorBy()
                 });
