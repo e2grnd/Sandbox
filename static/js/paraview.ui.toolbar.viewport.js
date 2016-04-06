@@ -83,8 +83,6 @@
                 viewport.showStatistics(me.toggleClass('on').hasClass('on'));
             }
         }
-        
-        document.write(viewport.camera)
 
         /**
          * Event triggered when a Proxy has changed.
