@@ -750,8 +750,8 @@
             
             // Apply the legend on startup (Dan)
             if (InitialApplyContour){
-            	//apply(me, wantColorManagement); 
-            	//eventFire(document.getElementById('initScalar'), 'click');
+            	apply(me, wantColorManagement); 
+            	eventFire(document.getElementById('initScalar'), 'click');
             	InitialApplyContour = 0;
             }
             
@@ -767,14 +767,14 @@
                         rgbpoints: event.rgbpoints
                     });
                 });
-            	/*me.trigger({
+            	me.trigger({
                     type: 'rescale-transfer-function',
                     mode: 'custom',
                     min: 80,
                     max: 1800,
                     id: 370,   //Proxy Id
                     colorBy: extractColorBy()
-                });*/
+                });
             	InitialApplyLegend = 0;
         	}
             
