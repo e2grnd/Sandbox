@@ -3852,16 +3852,12 @@
                     renderer.camera.setCenterOfRotation(sceneJSON.Center);
                     
                     renderer.camera.setCameraParameters( renderer.LookAt[0],
-                        [renderer.LookAt[7], renderer.LookAt[8], renderer.LookAt[9]],
+                        [renderer.LookAt[7], renderer.LookAt[8], renderer.LookAt[9]-0.5],
                         [renderer.LookAt[1], renderer.LookAt[2], renderer.LookAt[3]],
                         [renderer.LookAt[4], renderer.LookAt[5], renderer.LookAt[6]]);
                     
-                    document.write(zoomInit)
-                    if (zoomInit){
-                    	renderer.camera.zoom(0.08);//Not good, zooms in with every update
-                    	zoomInit = 0;
-                    	document.write(zoomInit)
-                	}
+                    //renderer.camera.zoom(0.08);//Not good, zooms in with every update
+
                     
                     // Custom handling of layer 0
                     if(renderer.layer === 0) {
@@ -3870,10 +3866,8 @@
                         if(typeof(renderer.Background2) != "undefined") {
                             bgColor2 = renderer.Background2;
                         }
-                        document.write(3)
                     } else {
                         otherCamera.push(renderer.camera);
-                        document.write(2)
                     }
                     
                     //renderer.camera.zoom(1)//ADDED BY DAN
