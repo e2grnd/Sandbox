@@ -3842,6 +3842,7 @@
 
                 // Local variables
                 var bgColor1 = [0,0,0], bgColor2 = [0,0,0], renderer;
+                var zoomInit = 1;
 
                 // Create camera for each renderer + handle Background (Layer 0)
                 otherCamera = [];
