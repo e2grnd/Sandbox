@@ -4099,11 +4099,6 @@
 
                     mouseHandling.lastX = newMouseX;
                     mouseHandling.lastY = newMouseY;
-                    
-                    if(zoomInit){
-                    	cameraLayerZero.zoom(0.1);
-                    	zoomInit = 0;
-                    }
 
                     if (mouseHandling.button === 1) {
                     	panD = cameraLayerZero.calculatePanDeltas(
@@ -4148,6 +4143,11 @@
                 gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
 
                 initializeShader(gl, shaderProgram, pointShaderProgram);
+                
+                if(zoomInit){
+                	cameraLayerZero.zoom(0.1);
+                	zoomInit = 0;
+                }
                 
                 // Ready to render data
                 fetchScene();
