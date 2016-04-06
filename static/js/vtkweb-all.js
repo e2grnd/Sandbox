@@ -4146,12 +4146,9 @@
 
                 initializeShader(gl, shaderProgram, pointShaderProgram);
                 
-                cameraLayerZero.zoom(0.2)
-
                 // Ready to render data
                 fetchScene();
                 drawScene(false);
-                pushCameraState();
             }
         });
     }
