@@ -3845,7 +3845,6 @@
 
                 // Create camera for each renderer + handle Background (Layer 0)
                 otherCamera = [];
-
                 for(var idx = 0; idx < sceneJSON.Renderers.length; idx++) {
                     renderer = sceneJSON.Renderers[idx];
                     renderer.camera = createCamera();
@@ -3857,6 +3856,9 @@
                         [renderer.LookAt[1], renderer.LookAt[2], renderer.LookAt[3]],
                         [renderer.LookAt[4], renderer.LookAt[5], renderer.LookAt[6]]);
                     
+                    //renderer.camera.zoom(0.08);//Not good, zooms in with every update
+
+                    
                     // Custom handling of layer 0
                     if(renderer.layer === 0) {
                         cameraLayerZero = renderer.camera;
@@ -3867,7 +3869,8 @@
                     } else {
                         otherCamera.push(renderer.camera);
                     }
-
+                    
+                    //renderer.camera.zoom(1)//ADDED BY DAN
                 }
                 background = buildBackground(gl, bgColor1, bgColor2);
 
