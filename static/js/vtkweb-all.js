@@ -4258,7 +4258,7 @@
 
                 focusDisplayPt =
                     worldToDisplay(
-                        focusWorldPt, width, height);
+                        focusWorldPt, width*0.5, height*0.5);
 
                 displayPt1 = vec4.fromValues(
                     newMouseX, newMouseY, focusDisplayPt[2], 1.0);
@@ -4267,10 +4267,10 @@
                     lastMouseX, lastMouseY, focusDisplayPt[2], 1.0);
 
                 worldPt1 = displayToWorld(
-                    displayPt1, width*0.5, height*0.5);
+                    displayPt1, width, height);
 
                 worldPt2 = displayToWorld(
-                    displayPt2, width*0.5, height*0.5);
+                    displayPt2, width, height);
 
                 dx = worldPt1[0] - worldPt2[0];
                 dy = worldPt1[1] - worldPt2[1];
