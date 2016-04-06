@@ -3864,7 +3864,10 @@
                         if(typeof(renderer.Background2) != "undefined") {
                             bgColor2 = renderer.Background2;
                         }
-                        cameraLayerZero.zoom(0.1)
+                        if (zoomInit){
+                        	cameraLayerZero.zoom(0.1);
+                        	zoomInit=0;
+                    	}
                     } else {
                         otherCamera.push(renderer.camera);
                     }
