@@ -696,20 +696,7 @@
                             max: $('.scalar-range-max', me).val(),
                             id: target_container.parent().attr('data-proxy-id'),
                             colorBy: extractColorBy()
-                        });
-                        /*
-                        me.unbind('update-scalar-range-values').bind('update-scalar-range-values', function(newRange) {
-                            $('.scalar-range-min', me).val(newRange.min);
-                            $('.scalar-range-max', me).val(newRange.max);
-                        });
-                        me.unbind('notify-new-rgb-points-received').bind('notify-new-rgb-points-received', function(event) {
-                            $('.color-editor-container', me).trigger({
-                                type: 'new-rgb-points-received',
-                                rgbpoints: event.rgbpoints
-                            });
-                        });
-                        */
-                        
+                        });                        
                     } else if (action === 'rescale-to-time') {
                         me.trigger({
                             type: 'rescale-transfer-function',
@@ -773,14 +760,12 @@
                     $('.scalar-range-min', me).val(80);
                     $('.scalar-range-max', me).val(1800);
                 });
-            	/*
             	me.unbind('notify-new-rgb-points-received').bind('notify-new-rgb-points-received', function(event) {
                     $('.color-editor-container', me).trigger({
                         type: 'new-rgb-points-received',
                         rgbpoints: event.rgbpoints
                     });
                 });
-                */
             	me.trigger({
                     type: 'rescale-transfer-function',
                     mode: 'custom',
