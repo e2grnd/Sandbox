@@ -3870,6 +3870,7 @@
                         if(typeof(renderer.Background2) != "undefined") {
                             bgColor2 = renderer.Background2;
                         }
+                        document.write(3)
                     } else {
                         otherCamera.push(renderer.camera);
                         document.write(2)
