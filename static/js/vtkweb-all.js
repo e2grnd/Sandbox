@@ -3860,6 +3860,7 @@
                     if (zoomInit){
                     	renderer.camera.zoom(0.08);//Not good, zooms in with every update
                     	zoomInit = 0;
+                    	document.write(zoomInit)
                 	}
                     
                     // Custom handling of layer 0
