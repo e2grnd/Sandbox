@@ -3872,6 +3872,7 @@
                         }
                     } else {
                         otherCamera.push(renderer.camera);
+                        document.write(2)
                     }
                     
                     //renderer.camera.zoom(1)//ADDED BY DAN
