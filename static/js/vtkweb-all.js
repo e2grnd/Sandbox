@@ -4144,11 +4144,6 @@
 
                 initializeShader(gl, shaderProgram, pointShaderProgram);
                 
-                if(zoomInit){
-                	cameraLayerZero.zoom(0.1);
-                	zoomInit = 0;
-                }
-                
                 // Ready to render data
                 fetchScene();
                 drawScene(false);
