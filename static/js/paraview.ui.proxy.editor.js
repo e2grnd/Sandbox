@@ -767,14 +767,14 @@
                         rgbpoints: event.rgbpoints
                     });
                 });
-            	me.trigger({
+            	/*me.trigger({
                     type: 'rescale-transfer-function',
                     mode: 'custom',
                     min: 80,
                     max: 1800,
                     id: 370,   //Proxy Id
                     colorBy: extractColorBy()
-                });
+                });*/
             	InitialApplyLegend = 0;
         	}
             
