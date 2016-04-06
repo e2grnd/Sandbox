@@ -393,7 +393,6 @@
             // Make sure all old tooltips are cleaned up...
             $('.tooltip').remove();
             
-
             if (wantColorManagement === true) {
                 // Listen to event asking me to update the scalar range
                 me.unbind('update-scalar-range-values').bind('update-scalar-range-values', function(newRange) {
@@ -408,7 +407,6 @@
                     });
                 });
             }
-
 
             // Update DOM
             for(var idx = 0; idx < count; ++idx) {
@@ -699,7 +697,7 @@
                             id: target_container.parent().attr('data-proxy-id'),
                             colorBy: extractColorBy()
                         });
-                        
+                        /*
                         me.unbind('update-scalar-range-values').bind('update-scalar-range-values', function(newRange) {
                             $('.scalar-range-min', me).val(newRange.min);
                             $('.scalar-range-max', me).val(newRange.max);
@@ -710,6 +708,7 @@
                                 rgbpoints: event.rgbpoints
                             });
                         });
+                        */
                         
                     } else if (action === 'rescale-to-time') {
                         me.trigger({
