@@ -4167,7 +4167,7 @@
         top = 1.0,
         near = 0.01,
         far = 10000.0,
-        position = vec4.set(vec4.create(), 0.0, 0.0, -0.8, 1.0),
+        position = vec4.set(vec4.create(), 0.0, 0.0, 0.0, 1.0),
         focalPoint = vec4.set(vec4.create(), 0.0, 0.0, -1.0, 1.0),
         viewUp = vec4.set(vec4.create(), 0.0, 1.0, 0.0, 0.0),
         rightDir = vec4.set(vec4.create(), 1.0, 0.0, 0.0, 0.0),
@@ -4267,10 +4267,10 @@
                     lastMouseX, lastMouseY, focusDisplayPt[2], 1.0);
 
                 worldPt1 = displayToWorld(
-                    displayPt1, width, height);
+                    displayPt1, width*0.5, height*0.5);
 
                 worldPt2 = displayToWorld(
-                    displayPt2, width, height);
+                    displayPt2, width*0.5, height*0.5);
 
                 dx = worldPt1[0] - worldPt2[0];
                 dy = worldPt1[1] - worldPt2[1];
