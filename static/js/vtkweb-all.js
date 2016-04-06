@@ -4167,7 +4167,7 @@
         top = 1.0,
         near = 0.01,
         far = 10000.0,
-        position = vec4.set(vec4.create(), 0.0, 0.0, -0.5, 1.0),
+        position = vec4.set(vec4.create(), 0.0, 0.0, -0.8, 1.0),
         focalPoint = vec4.set(vec4.create(), 0.0, 0.0, -1.0, 1.0),
         viewUp = vec4.set(vec4.create(), 0.0, 1.0, 0.0, 0.0),
         rightDir = vec4.set(vec4.create(), 1.0, 0.0, 0.0, 0.0),
