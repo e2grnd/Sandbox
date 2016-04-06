@@ -3845,7 +3845,7 @@
 
                 // Create camera for each renderer + handle Background (Layer 0)
                 otherCamera = [];
-                document.write(sceneJSON.Renderers.length)
+
                 for(var idx = 0; idx < sceneJSON.Renderers.length; idx++) {
                     renderer = sceneJSON.Renderers[idx];
                     renderer.camera = createCamera();
@@ -3864,6 +3864,7 @@
                         if(typeof(renderer.Background2) != "undefined") {
                             bgColor2 = renderer.Background2;
                         }
+                        cameraLayerZero.zoom(0.1)
                     } else {
                         otherCamera.push(renderer.camera);
                     }
