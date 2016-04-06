@@ -750,8 +750,8 @@
             
             // Apply the legend on startup (Dan)
             if (InitialApplyContour){
-            	apply(me, wantColorManagement); 
-            	eventFire(document.getElementById('initScalar'), 'click');
+            	//apply(me, wantColorManagement); 
+            	//eventFire(document.getElementById('initScalar'), 'click');
             	InitialApplyContour = 0;
             }
             
