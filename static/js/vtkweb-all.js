@@ -3842,7 +3842,6 @@
 
                 // Local variables
                 var bgColor1 = [0,0,0], bgColor2 = [0,0,0], renderer;
-                var zoomInit = 1;
 
                 // Create camera for each renderer + handle Background (Layer 0)
                 otherCamera = [];
@@ -3865,10 +3864,6 @@
                         if(typeof(renderer.Background2) != "undefined") {
                             bgColor2 = renderer.Background2;
                         }
-                        if (zoomInit){
-                        	cameraLayerZero.zoom(0.1);
-                        	zoomInit=0;
-                    	}
                     } else {
                         otherCamera.push(renderer.camera);
                     }
@@ -4104,6 +4099,11 @@
 
                     mouseHandling.lastX = newMouseX;
                     mouseHandling.lastY = newMouseY;
+                    
+                    if(zoomInit){
+                    	cameraLayerZero.zoom(0.1);
+                    	zoomInit = 0;
+                    }
 
                     if (mouseHandling.button === 1) {
                     	panD = cameraLayerZero.calculatePanDeltas(
