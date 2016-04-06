@@ -774,13 +774,6 @@
                     id: 370,
                     colorBy: extractColorBy()
                 });
-            	
-            	//eventFire(document.getElementById('customLeg'), 'click');  
-            	//var el = document.getElementById('customLeg');
-            	//el.click();
-            	//$('[data-action=rescale-to-custom]').click()
-            	//var activeLegBtn = $('[data-action=rescale-to-custom]');
-            	//activeLegBtn.trigger('click');
             	InitialApplyLegend = 0;
         	}
             
