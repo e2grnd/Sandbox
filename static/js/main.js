@@ -298,7 +298,15 @@
         $('.vcr-stop').show();
         vcrPlayStatus = true;
         session.call("viewport.webgl.metadata", [-1]).then(function(data) {
-      		if (m_sceneDataStoredCheck === data){
+        	var timeStepMD = json.loads(data);
+        	var objects = timeStepMD['Objects'];
+        	var flagCached = 1;
+        	for (obj in objects){
+        		if(!objectHandler.isObjectsRegistered(obj)){
+        			flagCached = 0;
+        		}
+        	}
+      		if (flagCached){
       		} else{
       			viewport.downloadTimestepData();
       		}
