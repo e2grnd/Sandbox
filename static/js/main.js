@@ -711,6 +711,7 @@
                     viewVal, pipelineDataModel.view.ui, "_View"
                     );
 
+               document.write(pipelineDataModel.representation.ui)
             if (!$.isEmptyObject(colorBy) && colorBy.hasOwnProperty('array')) {
                 props = [].concat(colMgmtVal,
                                   extractRepresentation(pipelineDataModel.representation.properties),
