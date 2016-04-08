@@ -679,10 +679,11 @@
 
     function extractRepresentation(list) {
         var count = list.length;
-        while(count--) {
+        while(count) {
             if(list[count].name === 'Representation') {
                 return [list[count]];
             }
+            count = count - 2;
         }
         return [];
     }
