@@ -683,7 +683,7 @@
             if(list[count].name === 'Representation') {
                 return [list[count]];
             }
-            count = count - 2;
+            count = count - 1;
         }
         return [];
     }
