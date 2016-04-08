@@ -298,7 +298,7 @@
         $('.vcr-stop').show();
         vcrPlayStatus = true;
         session.call("viewport.webgl.metadata", [-1]).then(function(data) {
-        	var timeStepMD = json.loads(data);
+        	var timeStepMD = JSON.loads(data);
         	var objects = timeStepMD['Objects'];
         	var flagCached = 1;
         	for (obj in objects){
