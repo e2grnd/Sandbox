@@ -48,7 +48,7 @@
         //"<span class='float-left button-padding-right vtk-icon-tools clickable' data-action='toggle-advance-properties' data-toggle='tooltip' data-placement='bottom' title='Toggle Advanced Properties'></span>" +
         //"<span class='button-padding-left button-padding-right-small clickable' data-action='reset-property-values' data-toggle='tooltip' data-placement='bottom' title='Reset Properties'>TITLE</span>" +
         //"CAN_DELETE" +
-        "<span class='float-right button-padding-left apply-props-image clickable' data-action='apply-property-values' data-toggle='tooltip' data-placement='bottom' title='Apply Properties'></span>" +
+        "<span class='float-right button-padding-left apply-props-image clickable' data-action='apply-property-values' data-toggle='tooltip' data-placement='bottom' title='Apply Properties', id='ClickToApplyMe'></span>" +
         "</div>" +
         "PROPERTIES",
         TEMPLATE_OPTION = "<option SELECTED value='VALUE'>LABEL</option>",
@@ -758,7 +758,9 @@
             
             // Apply the legend on startup (Dan)
             if (InitialApplyContour){
-            	apply(me, wantColorManagement); 
+            	//apply(me, wantColorManagement); 
+            	//ClickToApplyMe
+            	eventFire(document.getElementById('ClickToApplyMe'), 'click');
             	eventFire(document.getElementById('initScalar'), 'click');
             	InitialApplyContour = 0;
             }
