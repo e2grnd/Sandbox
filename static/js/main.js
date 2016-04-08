@@ -677,13 +677,13 @@
 
     // ------------------------------------------------------------------------
 
+    // Change this to [count-1] and count = count - 2 to get rid of representation option
     function extractRepresentation(list) {
         var count = list.length;
-        while(count-1) {
-            if(list[count-1].name === 'Representation') {
-                return [list[count-1]];
+        while(count--) {
+            if(list[count].name === 'Representation') {
+                return [list[count]];
             }
-            count = count - 2;
         }
         return [];
     }
