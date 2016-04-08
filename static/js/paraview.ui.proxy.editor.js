@@ -430,7 +430,7 @@
                         for(var i = 0; i < internalCount; ++i) {
                             var arrayId = arrayList[i].location + ':' + arrayList[i].name;
                             for (var j = 0; j < length(omitNames); j++) {
-                            	if (arrayList[i].name == omitNames[j] {
+                            	if (arrayList[i].name == omitNames[j]) {
                             		flagPrint = 0;
                             	}
                             }
