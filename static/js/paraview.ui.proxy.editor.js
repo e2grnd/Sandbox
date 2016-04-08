@@ -423,10 +423,18 @@
                         var range = [];
                         // => Array
                         var internalCount = arrayList.length;
+                        var omitNames = ['GlobalNodeId', 'PedigreeNodeId', 'GlobalElementId', 'ObjectId',
+                                         'PedigreeElementId'];
+                        var flagPrint = 1;
                         
                         for(var i = 0; i < internalCount; ++i) {
                             var arrayId = arrayList[i].location + ':' + arrayList[i].name;
-                            if(arrayList[i].location !== 'FIELDS') {
+                            for (var j = 0; j < length(omitNames); j++) {
+                            	if (arrayList[i].name == omitNames[j] {
+                            		flagPrint = 0;
+                            	}
+                            }
+                            if(arrayList[i].location !== 'FIELDS' && flagPrint) {
                                 arrayOptions.push(TEMPLATE_OPTION
                                     .replace(/SELECTED/g, (activeArrayStr === arrayId) ? 'SELECTED' : '')
                                     .replace(/VALUE/g, 'ARRAY:' + arrayId)
