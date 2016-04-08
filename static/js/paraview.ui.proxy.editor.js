@@ -425,9 +425,9 @@
                         var internalCount = arrayList.length;
                         var omitNames = ['GlobalNodeId', 'PedigreeNodeId', 'GlobalElementId', 'ObjectId',
                                          'PedigreeElementId'];
-                        var flagPrint = 1;
                         
                         for(var i = 0; i < internalCount; ++i) {
+                        	var flagPrint = 1;
                             var arrayId = arrayList[i].location + ':' + arrayList[i].name;
                             for (var j = 0; j < omitNames.length; j++) {
                             	if (arrayList[i].name == omitNames[j]) {
