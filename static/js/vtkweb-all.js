@@ -3756,7 +3756,7 @@
                     background.render(renderingContext, cameraLayerZero);
                     cameraLayerZero.enablePerspective();
                     //if (initZoom){
-                    	cameraLayerZero.zoom(0.2);
+                    	cameraLayerZero.zoom(0.08);
                     	//document.write('Here');
                     //	initZoom = 0;
                     //}
