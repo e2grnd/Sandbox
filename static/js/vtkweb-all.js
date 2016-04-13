@@ -1768,7 +1768,7 @@
                 force_render = true;
 
                 var renderCfg = {
-                    size: [ container.innerWidth()*0.5, container.innerHeight()*0.5 ],
+                    size: [ container.innerWidth(), container.innerHeight()],
                     view: Number(options.view),
                     mtime: fetch ? 0 : lastMTime,
                     quality: quality,
@@ -4302,8 +4302,8 @@
             },
             setViewSize : function(w, h) {
                 //console.log('[CAMERA] width: ' + w + ' height: ' + h);
-                aspect = w/h;
-                width = w;
+                aspect = w/h*0.5;
+                width = w*0.5;
                 height = h;
                 modified = true;
             },
