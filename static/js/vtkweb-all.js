@@ -3777,7 +3777,7 @@
                     localY = (localY < 0) ? 0 : localY;
 
                     // Update renderer camera aspect ratio
-                    localCamera.setViewSize(localWidth, localHeight); // FIXME maybe use the local width/height
+                    localCamera.setViewSize(localWidth*0.1, localHeight*0.1); // FIXME maybe use the local width/height
 
                     // Setup viewport
                     gl.viewport(localX, localY, localWidth*0.1, localHeight*0.1);
