@@ -2455,7 +2455,7 @@
             pos_ = cam.position(),
             fp = [fp_[0], fp_[1], fp_[2]],
             up = [up_[0], up_[1], up_[2]],
-            pos = [pos_[0], pos_[1], pos_[2]];
+            pos = [pos_[0], pos_[1], pos_[2]]*0.5;
         m_session.call("viewport.camera.update", [Number(m_options.view), fp, up, pos]);
       }
     }
@@ -3780,8 +3780,7 @@
                     localCamera.setViewSize(localWidth, localHeight); // FIXME maybe use the local width/height
 
                     // Setup viewport
-                    gl.viewport(localX-(localWidth-localX)*0.5, localY-(localHeight-localY)*0.5, localWidth+(localWidth-localX)*0.5, localHeight+(localHeight-localY)*0.5);
-                    //gl.viewport(localX, localY, localWidth, localHeight);
+                    gl.viewport(localX, localY, localWidth, localHeight);
 
                     // Render non-transparent objects for the current layer
                     nbObjects += objectHandler.renderSolid(layer, renderingContext, localCamera);
@@ -3828,7 +3827,7 @@
                 pos_ = cameraLayerZero.getPosition(),
                 fp = [fp_[0], fp_[1], fp_[2]],
                 up = [up_[0], up_[1], up_[2]],
-                pos = [pos_[0], pos_[1], pos_[2]];
+                pos = [pos_[0], pos_[1], pos_[2]]*0.5;
                 session.call("viewport.camera.update", [Number(options.view), fp, up, pos]);
             }
         }
