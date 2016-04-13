@@ -3822,7 +3822,6 @@
 
         function pushCameraState() {
             if(cameraLayerZero != null) {
-            	var x,
                 var fp_ = cameraLayerZero.getFocalPoint(),
                 up_ = cameraLayerZero.getViewUp(),
                 pos_ = cameraLayerZero.getPosition(),
