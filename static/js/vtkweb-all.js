@@ -2453,9 +2453,9 @@
             fp_ = cam.focalPoint(),
             up_ = cam.viewUpDirection(),
             pos_ = cam.position(),
-            fp = [fp_[0], fp_[1], fp_[2]*0.5],
+            fp = [fp_[0], fp_[1], fp_[2]],
             up = [up_[0], up_[1], up_[2]],
-            pos = [pos_[0], pos_[1], pos_[2]];
+            pos = [pos_[0], pos_[1], pos_[2]*0.5];
         m_session.call("viewport.camera.update", [Number(m_options.view), fp, up, pos]);
       }
     }
@@ -3825,9 +3825,9 @@
                 var fp_ = cameraLayerZero.getFocalPoint(),
                 up_ = cameraLayerZero.getViewUp(),
                 pos_ = cameraLayerZero.getPosition(),
-                fp = [fp_[0], fp_[1], fp_[2]*0.5],
+                fp = [fp_[0], fp_[1], fp_[2]],
                 up = [up_[0], up_[1], up_[2]],
-                pos = [pos_[0], pos_[1], pos_[2]];
+                pos = [pos_[0], pos_[1], pos_[2]*0.5];
                 session.call("viewport.camera.update", [Number(options.view), fp, up, pos]);
             }
         }
