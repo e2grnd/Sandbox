@@ -3754,13 +3754,7 @@
                 if(background != null) {
                     cameraLayerZero.enableOrtho();
                     background.render(renderingContext, cameraLayerZero);
-                    cameraLayerZero.enablePerspective();
-                    //if (initZoom){
-                    	cameraLayerZero.zoom(0.08);
-                    	//document.write('Here');
-                    //	initZoom = 0;
-                    //}
-                    
+                    cameraLayerZero.enablePerspective();                    
                 }
                 gl.enable(gl.DEPTH_TEST);
 
@@ -4334,7 +4328,7 @@
                 position[2] = focalPoint[2] - d * directionOfProjection[2];
 
                 modified = true;
-                this.getCameraMatrices();
+                //this.getCameraMatrices();
             },
             pan : function(dx, dy, dz) {
                 position[0] += dx;
