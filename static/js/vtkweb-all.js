@@ -4302,9 +4302,9 @@
             },
             setViewSize : function(w, h) {
                 //console.log('[CAMERA] width: ' + w + ' height: ' + h);
-                aspect = w/h*0.5;
+                aspect = w/h;
                 width = w*0.5;
-                height = h;
+                height = h*0.5;
                 modified = true;
             },
             enableOrtho : function() {
