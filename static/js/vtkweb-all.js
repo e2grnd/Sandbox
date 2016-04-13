@@ -4303,8 +4303,8 @@
             setViewSize : function(w, h) {
                 //console.log('[CAMERA] width: ' + w + ' height: ' + h);
                 aspect = w/h;
-                width = w*0.5;
-                height = h*0.5;
+                width = w*0.1;
+                height = h*0.1;
                 modified = true;
             },
             enableOrtho : function() {
