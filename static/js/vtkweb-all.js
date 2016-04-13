@@ -3761,7 +3761,7 @@
                 ctx2d.clearRect(0, 0, width, height);
 
                 // Render each layer on top of each other (Starting with the background one)
-                cameraLayerZero.setViewSize(width, height);
+                cameraLayerZero.setViewSize(width*0.1, height*0.1);
                 for(layer = sceneJSON.Renderers.length - 1; layer >= 0; layer--) {
                     localRenderer = sceneJSON.Renderers[layer];
                     localWidth = localRenderer.size[0] - localRenderer.origin[0];
@@ -4303,8 +4303,8 @@
             setViewSize : function(w, h) {
                 //console.log('[CAMERA] width: ' + w + ' height: ' + h);
                 aspect = w/h;
-                width = w*0.1;
-                height = h*0.1;
+                width = w;
+                height = h;
                 modified = true;
             },
             enableOrtho : function() {
