@@ -3755,11 +3755,11 @@
                     cameraLayerZero.enableOrtho();
                     background.render(renderingContext, cameraLayerZero);
                     cameraLayerZero.enablePerspective();
-                    if (initZoom){
+                    //if (initZoom){
                     	cameraLayerZero.zoom(0.2);
                     	//document.write('Here');
-                    	initZoom = 0;
-                    }
+                    //	initZoom = 0;
+                    //}
                     
                 }
                 gl.enable(gl.DEPTH_TEST);
