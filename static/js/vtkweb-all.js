@@ -3757,6 +3757,7 @@
                     cameraLayerZero.enablePerspective();
                     if (initZoom){
                     	cameraLayerZero.zoom(0.2);
+                    	document.write('Here');
                     	initZoom = 0;
                     }
                     
