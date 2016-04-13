@@ -3631,6 +3631,7 @@
         sceneJSON = null,
         objectHandler = create3DObjectHandler(),
         cameraLayerZero = null,
+        initZoom = 1;
         otherCamera = [],
         mouseHandling = {
             button: null,
@@ -3754,6 +3755,11 @@
                     cameraLayerZero.enableOrtho();
                     background.render(renderingContext, cameraLayerZero);
                     cameraLayerZero.enablePerspective();
+                    if (initZoom){
+                    	cameraLayerZero.zoom(0.2);
+                    	initZoom = 0;
+                    }
+                    
                 }
                 gl.enable(gl.DEPTH_TEST);
 
@@ -4055,7 +4061,6 @@
             if(renderer.hasClass('active')){
                 drawScene(false);
             }
-            cameraLayerZero.zoom(0.2)
         }).bind('resetViewId', function(e){
             options.view = -1;
         }).bind('downloadAllTimesteps', function(event){
