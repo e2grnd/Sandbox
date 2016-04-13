@@ -3826,7 +3826,7 @@
                 up_ = cameraLayerZero.getViewUp(),
                 pos_ = cameraLayerZero.getPosition(),
                 fp = [fp_[0], fp_[1], fp_[2]],
-                fp[:] = [x*3 for x in fp], 
+                fp = [x * 3 for x in fp], 
                 up = [up_[0], up_[1], up_[2]],
                 pos = [pos_[0], pos_[1], pos_[2]];
                 session.call("viewport.camera.update", [Number(options.view), fp, up, pos]);
