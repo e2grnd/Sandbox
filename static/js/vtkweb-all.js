@@ -1768,7 +1768,7 @@
                 force_render = true;
 
                 var renderCfg = {
-                    size: [ container.innerWidth(), container.innerHeight() ],
+                    size: [ container.innerWidth()*0.5, container.innerHeight()*0.5 ],
                     view: Number(options.view),
                     mtime: fetch ? 0 : lastMTime,
                     quality: quality,
