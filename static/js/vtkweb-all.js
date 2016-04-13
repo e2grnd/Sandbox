@@ -3828,7 +3828,7 @@
                 fp = [fp_[0], fp_[1], fp_[2]],
                 up = [up_[0], up_[1], up_[2]],
                 pos = [pos_[0], pos_[1], pos_[2]];
-                document.write(fp,'   ',up,'   ',pos)
+                //document.write(fp,'   ',up,'   ',pos)
                 session.call("viewport.camera.update", [Number(options.view), fp, up, pos]);
             }
         }
@@ -4055,6 +4055,7 @@
             if(renderer.hasClass('active')){
                 drawScene(false);
             }
+            cameraLayerZero.zoom(0.2)
         }).bind('resetViewId', function(e){
             options.view = -1;
         }).bind('downloadAllTimesteps', function(event){
