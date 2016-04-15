@@ -20,12 +20,10 @@
                  style='margin: 5px 0;'
                  data-toggle='tooltip'
                  data-placement='bottom'
-                 title='Toggle Inspector Panel'/>  
-            <!--  
+                 title='Toggle Inspector Panel'/>   
             <span
                 class='vtk-icon-flow-cascade clickable padding inspector-selector' data-type='pipeline' data-toggle='tooltip' data-placement='bottom' title='Show Pipeline'>
             </span>
-            -->
             <span
                 class='vtk-icon-resize-full-alt-1 reset-camera clickable' data-toggle='tooltip' data-placement='bottom' title='Rescale'>
             </span>
@@ -138,7 +136,7 @@
             if (filePath !== "") {
             	pv.startWorking
             	connection.session.call('pv.proxy.manager.create.reader', [filePath]).then(pv.invalidatePipeline, pv.invalidatePipeline);
-            	//pv.activePipelineInspector;
+            	pv.activePipelineInspector;
             }
 
             // Update stop method to use the connection
