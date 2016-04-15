@@ -1869,7 +1869,7 @@
             $(container).parent().trigger("stop-loading");
             ctx2d.canvas.width = $(container).width();
             ctx2d.canvas.height = $(container).height();
-            ctx2d.drawImage(bgImage, 0, 0, bgImage.width*0.5, bgImage.height*0.5);
+            ctx2d.drawImage(bgImage, 0, 0, bgImage.width, bgImage.height);
             renderStatistics();
         }
 
@@ -2632,7 +2632,6 @@
  */
 (function (GLOBAL, $) {
     var module = {},
-    zoomInit = 1,
     RENDERER_CSS = {
         "position": "absolute",
         "top"     : "0px",
@@ -3865,6 +3864,7 @@
                     if(renderer.layer === 0) {
                         cameraLayerZero = renderer.camera;
                         bgColor1 = bgColor2 = renderer.Background1;
+                        document.write(bgColor1[0],"   ",bgColor1[1],"   ",bgColor1[2])
                         if(typeof(renderer.Background2) != "undefined") {
                             bgColor2 = renderer.Background2;
                         }
