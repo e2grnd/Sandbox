@@ -15,17 +15,15 @@
     <div class='row pv-gray-darker head-toolbar hide-on-start'>
         <div class='col-xs-12 col-sm-4 col-md-3 col-lg-2 '>
             <img src='/static/Triangle.png'
-                 class='clickable padding toggle-inspector inspector-selector'
+                 class='clickable padding toggle-inspector'
                  height='18'
                  style='margin: 5px 0;'
                  data-toggle='tooltip'
                  data-placement='bottom'
                  title='Toggle Inspector Panel'/>   
-            <!--  
             <span
                 class='vtk-icon-flow-cascade clickable padding inspector-selector' data-type='pipeline' data-toggle='tooltip' data-placement='bottom' title='Show Pipeline'>
             </span>
-            -->
             <span
                 class='vtk-icon-resize-full-alt-1 reset-camera clickable' data-toggle='tooltip' data-placement='bottom' title='Rescale'>
             </span>
@@ -141,6 +139,7 @@
             	pv.activePipelineInspector;
             }
             
+            // Hide pipeline on loadup
             $('.toggle-inspector').click();
 
             // Update stop method to use the connection
