@@ -176,9 +176,9 @@
         // Toggle inspector visibility
         $('.toggle-inspector').click(function(){
             if(inspectorContainer.is(':visible')) {
-                inspectorContainer.show();
-            } else {
                 inspectorContainer.hide();
+            } else {
+                inspectorContainer.show();
             }
         });
 
