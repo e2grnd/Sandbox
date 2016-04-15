@@ -3865,8 +3865,8 @@
                         cameraLayerZero = renderer.camera;
                         bgColor1 = bgColor2 = renderer.Background1; //THIS IS WHERE THE BACKGROUND COLOR IS SET
                         bgColor1 = [0.48,0.49,0.59];
-                        bgColor2 = [1,1,1];
-                        document.write(bgColor1[0],"   ",bgColor1[1],"   ",bgColor1[2])
+                        bgColor2 = [0.48,0.49,0.59];
+                        //document.write(bgColor1[0],"   ",bgColor1[1],"   ",bgColor1[2])
                         if(typeof(renderer.Background2) != "undefined") {
                             bgColor2 = renderer.Background2;
                         }
