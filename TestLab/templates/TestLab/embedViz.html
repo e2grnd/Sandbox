@@ -46,8 +46,8 @@
         </div>
     </div>
 
-    <div class="row hide-on-start">
-        <div class='col-xs-12 col-sm-4 col-md-3 col-lg-2 scroll-overflow fix-height pv-gray-lighter-transparent lower-right-round-corner inspector-container hide-on-start' style='z-index: 1000; overflow-y: auto; overflow-x: hidden;'>
+    <div class="row">
+        <div class='col-xs-12 col-sm-4 col-md-3 col-lg-2 scroll-overflow fix-height pv-gray-lighter-transparent lower-right-round-corner inspector-container' style='z-index: 1000; overflow-y: auto; overflow-x: hidden;'>
             <div class="row inspector" data-type="pipeline">
                 <div class='clickable col-xS-12 col-sm-12 col-md-12 col-lg-12 nopadding pv-pipeline'>
                 </div>
@@ -136,7 +136,7 @@
             if (filePath !== "") {
             	pv.startWorking
             	connection.session.call('pv.proxy.manager.create.reader', [filePath]).then(pv.invalidatePipeline, pv.invalidatePipeline);
-            	pv.activePipelineInspector;
+            	//pv.activePipelineInspector;
             }
 
             // Update stop method to use the connection
