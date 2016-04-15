@@ -189,7 +189,7 @@
 
             inspectors.hide();
             $('.inspector[data-type="TYPE"]'.replace(/TYPE/g, activeType)).show();
-            //inspectorContainer.show();
+            ///inspectorContainer.show();
 
             if(activeType === 'pipeline') {
                 inspectorContainer.scrollTop(0);
