@@ -3859,7 +3859,6 @@
                     
                     //renderer.camera.zoom(0.08);//Not good, zooms in with every update
 
-                    
                     // Custom handling of layer 0
                     if(renderer.layer === 0) {
                         cameraLayerZero = renderer.camera;
@@ -3870,8 +3869,6 @@
                     } else {
                         otherCamera.push(renderer.camera);
                     }
-                    
-                    //renderer.camera.zoom(1)//ADDED BY DAN
                 }
                 background = buildBackground(gl, bgColor1, bgColor2);
 
