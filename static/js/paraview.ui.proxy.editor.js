@@ -499,6 +499,8 @@
                     if(dependency.length > 0) {
                         propertiesWithDependencies[dependency] = true;
                     }
+                    
+                    document.write(prop.name)
 
                     html = html.replace(/_ID_/g, prop.id)
                                .replace(/NAME/g, prop.name)
@@ -626,7 +628,7 @@
                 }
                 
             }
-            document.write(property)
+            
                        
             // Attach listener
             if(!me.hasClass('has-listener')) {
