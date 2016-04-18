@@ -3877,6 +3877,8 @@
 
                 // Fetch the object that we are missing
                 objectHandler.fetchMissingObjects(fetchObject);
+                
+                session.call('viewport.camera.zoomonload', [-1, 0.1]);
 
                 // Draw scene
                 drawScene(false);
@@ -4387,7 +4389,7 @@
 
         };
         
-        session.call('viewport.camera.zoomonload', [-1, 0.1]);
+
     }
 
     // ----------------------------------------------------------------------
