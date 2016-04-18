@@ -1368,7 +1368,7 @@
                 session.call("viewport.camera.reset", [Number(config.view)]).then(function () {
                     rendererContainer.trigger('invalidateScene');
                 });
-                session.call("viewport.camera.zoomonload", [Number(m_options.view), 0.1]);
+                session.call("viewport.camera.zoomonload", [Number(config.view), 0.1]);
            
                 return 
             },
