@@ -624,6 +624,7 @@
                 } catch(ex) {
                     console.err(ex);
                 }
+                document.write(property)
             }
            
                        
@@ -822,7 +823,7 @@
                     }
                 });
                 
-                document.write(depList)
+                
             }).trigger('change');
 
             // - Handle color by changes
