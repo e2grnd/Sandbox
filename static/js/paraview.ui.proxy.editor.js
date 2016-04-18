@@ -208,12 +208,7 @@
             } else {
                 values.push(convert(strValue));
             }
-            if (values == 'Surface'){
-            	
-            } else {
-            	document.write(values)
-            }
-            
+           	document.write(valueList)           
         });
 
         if(changeCount === 0) {
