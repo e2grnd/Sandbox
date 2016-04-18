@@ -500,7 +500,7 @@
                         propertiesWithDependencies[dependency] = true;
                     }
                     
-                    document.write(prop.name)
+                    document.write(dependency)
 
                     html = html.replace(/_ID_/g, prop.id)
                                .replace(/NAME/g, prop.name)
