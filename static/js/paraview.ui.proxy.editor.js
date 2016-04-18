@@ -346,6 +346,7 @@
                 count = properties.length,
                 propertiesWithDependencies = {},
                 arrayOptions = [],
+                removeOptions = [],
                 paletteOptions = [],
                 componentOptions = [],
                 scalarbarVisibility = (colorByInfo.scalarBar === 1) ? true : false,
@@ -359,6 +360,7 @@
                 widgetKey = opts.widgetKey,
                 widgetData = $.extend(true, {}, opts.widgetData);
                
+                removeOptions = ['3D Glyphs','Points','Surface With Edges','Volume'];
 
             /*
              * Update the application data object and store it
@@ -532,7 +534,6 @@
                         var optionsBuffer = [],
                             optionTypeSimpleArray = ui.values.hasOwnProperty('length');
                         
-                        document.write(ui.values)
 
                         for(var key in ui.values) {
                             if(!optionTypeSimpleArray) {
@@ -542,10 +543,18 @@
                                 } else {
                                     selected = (key == value || ui.values[key].toString() == value) ? 'SELECTED' : '';
                                 }
-                                optionsBuffer.push(TEMPLATE_OPTION.replace(/VALUE/g, ui.values[key])
-                                                                  .replace(/SELECTED/g, selected)
-                                                                  .replace(/LABEL/g, key)
-                                                                  .replace(/SIZE/g, ui.size));
+                                
+                                
+                                
+                                if (ui.values[key] in removeOptions){
+                                
+                                } else{
+	                                optionsBuffer.push(TEMPLATE_OPTION.replace(/VALUE/g, ui.values[key])
+	                                                                  .replace(/SELECTED/g, selected)
+	                                                                  .replace(/LABEL/g, key)
+	                                                                  .replace(/SIZE/g, ui.size));
+                                }
+                                
                             } else {
                                 var selected = '';
                                 if(ui.widget === 'list-n') {
@@ -553,10 +562,15 @@
                                 } else {
                                     selected = (ui.values[key] == value) ? 'SELECTED' : '';
                                 }
-                                optionsBuffer.push(TEMPLATE_OPTION.replace(/VALUE/g, ui.values[key])
-                                                                    .replace(/SELECTED/g, selected)
-                                                                    .replace(/LABEL/g, ui.values[key])
-                                                                    .replace(/SIZE/g, ui.size));
+                                if (ui.values[key] in removeOptions){
+                                    
+                                } else{
+                                	optionsBuffer.push(TEMPLATE_OPTION.replace(/VALUE/g, ui.values[key])
+						                                              .replace(/SELECTED/g, selected)
+						                                              .replace(/LABEL/g, ui.values[key])
+						                                              .replace(/SIZE/g, ui.size));
+                                }
+                                
                             }
                         }
                         if(optionsBuffer.length) {
