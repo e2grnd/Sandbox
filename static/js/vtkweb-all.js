@@ -2457,6 +2457,7 @@
             up = [up_[0], up_[1], up_[2]],
             pos = [pos_[0], pos_[1], pos_[2]];
         m_session.call("viewport.camera.update", [Number(m_options.view), fp, up, pos]);
+        m_session.call('viewport.camera.zoomonload', [Number(m_options.view), 0.1]);
       }
     }
 
@@ -3830,6 +3831,7 @@
                 pos = [pos_[0], pos_[1], pos_[2]];
                 //document.write(fp,'   ',up,'   ',pos)
                 session.call("viewport.camera.update", [Number(options.view), fp, up, pos]);
+                session.call('viewport.camera.zoomonload', [Number(m_options.view), 0.1]);
             }
         }
 
@@ -3849,7 +3851,6 @@
                 for(var idx = 0; idx < sceneJSON.Renderers.length; idx++) {
                     renderer = sceneJSON.Renderers[idx];
                     renderer.camera = createCamera();
-                    session.call('viewport.camera.zoomonload', [-1, 0.1]);
                     
                     renderer.camera.setCenterOfRotation(sceneJSON.Center);
                     
