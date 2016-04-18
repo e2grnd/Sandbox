@@ -477,7 +477,13 @@
                             .replace(/REP_ID/g, colorByInfo.representation)
                             .replace(/ARRAY_OPTIONS/g, arrayOptions.join(''))
                             .replace(/PALETTE_OPTIONS/g, paletteOptions.join('')));
-                        document.write(colorByInfo.representation)
+                        
+                        if (colorByInfo.representation == 464){
+                        	
+                        } else{
+                        	document.write(colorByInfo.representation)
+                        }
+                        
                     } else {
                         // Start group
                         bufferProperties.push(TEMPLATE_START_GROUP.replace(/NAME/g, ui.slice(1)).replace(/EXPANDED/g, (ui[0] === '+') ? '' : 'pv-collapse'));
