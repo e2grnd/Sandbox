@@ -2485,8 +2485,6 @@
       } catch(error) {
         console.log(error);
       }
-      
-      m_session.call('viewport.camera.zoomonload', [-1, 0.1]);
     }
 
     // ------------------------------------------------------------------
@@ -3885,8 +3883,6 @@
             } catch(error) {
                 console.log(error);
             }
-            
-            session.call('viewport.camera.zoomonload', [-1, 0.1]);
         }
 
         // ------------------------------------------------------------------
@@ -4390,6 +4386,8 @@
             }
 
         };
+        
+        session.call('viewport.camera.zoomonload', [-1, 0.1]);
     }
 
     // ----------------------------------------------------------------------
