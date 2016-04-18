@@ -175,6 +175,7 @@
             values = [],
             changeCount = property_container.hasClass('has-change') ? 1 : 0;
 
+        document.write(prop_name)
         $('.value', property_container).each(function(){
             var me = $(this),
                 convert = DATA_CONVERTOR[me.attr('data-type')]
@@ -478,11 +479,6 @@
                             .replace(/ARRAY_OPTIONS/g, arrayOptions.join(''))
                             .replace(/PALETTE_OPTIONS/g, paletteOptions.join('')));
                         
-                        if (colorByInfo.representation == 464){
-                        	
-                        } else{
-                        	document.write(colorByInfo.representation)
-                        }
                         
                     } else {
                         // Start group
