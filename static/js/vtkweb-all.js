@@ -3630,6 +3630,7 @@
         pointShaderProgram = gl.createProgram(),
         renderer = $(divContainer).addClass(FACTORY_KEY).css(RENDERER_CSS).append($(canvas2D).css(RENDERER_CSS).css(RENDERER_CSS_2D)).append($(canvas3D).css(RENDERER_CSS).css(RENDERER_CSS_3D)),
         sceneJSON = null,
+        sceneData = null,
         objectHandler = create3DObjectHandler(),
         cameraLayerZero = null,
         initZoom = 1;
@@ -3659,6 +3660,10 @@
                 stat_value: 0
             });
             session.call("viewport.webgl.metadata", [Number(options.view)]).then(function(data) {
+            	if (sceneData === data) {
+                    updateScene();
+                    return;
+                  }
                 sceneJSON = JSON.parse(data);
                 container.trigger({
                     type: 'stats',
