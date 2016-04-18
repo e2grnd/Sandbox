@@ -2205,7 +2205,7 @@
         status: 'create'
       });
 
-      m_session.call('viewport.webgl.metadata.alltimesteps', []).then(function(result){
+      m_session.call('viewport.webgl.metadata.onload', []).then(function(result){
         if (result.hasOwnProperty('success') && result.success === true) {
           var metaDataList = result.metaDataList;
 
@@ -3938,7 +3938,7 @@
             status: 'create'
           });
 
-          session.call('viewport.webgl.metadata.alltimesteps', []).then(function(result){
+          session.call('viewport.webgl.metadata.onload', []).then(function(result){
             if (result.hasOwnProperty('success') && result.success === true) {
               var metaDataList = result.metaDataList;
 
