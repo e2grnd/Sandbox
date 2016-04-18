@@ -547,9 +547,13 @@
                                     selected = (key == value || ui.values[key].toString() == value) ? 'SELECTED' : '';
                                 }
                                 
-                                if (ui.values[key] == 'Points'){
+                                for(var i = 0; i < removeOptions.length; i++) {
+                                	if (ui.values[key] == removeOptions[i]){
+                                		flagOutput = 0;
+                                	}
+                                }
                                 
-                                } else{
+                                if (flagOutput){
 	                                optionsBuffer.push(TEMPLATE_OPTION.replace(/VALUE/g, ui.values[key])
 	                                                                  .replace(/SELECTED/g, selected)
 	                                                                  .replace(/LABEL/g, key)
@@ -563,8 +567,6 @@
                                 } else {
                                     selected = (ui.values[key] == value) ? 'SELECTED' : '';
                                 }
-                                
-                                //document.write(removeOptions.length)
                                 
                                 for(var i = 0; i < removeOptions.length; i++) {
                                 	if (ui.values[key] == removeOptions[i]){
