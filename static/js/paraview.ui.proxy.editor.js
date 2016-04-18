@@ -564,7 +564,7 @@
                                     selected = (ui.values[key] == value) ? 'SELECTED' : '';
                                 }
                                 
-                                document.write(removeOptions.length)
+                                //document.write(removeOptions.length)
                                 
                                 for(var i = 0; i < removeOptions.length; i++) {
                                 	if (ui.values[key] == removeOptions[i]){
