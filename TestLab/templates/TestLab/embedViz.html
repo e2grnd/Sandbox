@@ -139,7 +139,8 @@
             	pv.activePipelineInspector;
             }
             
-            //connection.session.call('viewport.webgl.metadata.onload', []);
+            connection.session.call('viewport.webgl.metadata.onload', []).then(function(result){
+            });
 
             // Hide pipeline on loadup
             $('.toggle-inspector').click();
