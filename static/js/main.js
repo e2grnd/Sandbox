@@ -323,8 +323,8 @@
 
     function runTimeAnimationLoop() {
         if(vcrPlayStatus) {
-        	prevTime = timeValue;
             session.call('pv.vcr.action', ['next']).then(function(timeValue){
+            	prevTime = $('.time-value').val();
                 $('.time-value').val(timeValue);
                 updateView();
                 setTimeout(runTimeAnimationLoop, (timeValue-prevTime)*1000);
