@@ -624,9 +624,9 @@
                 } catch(ex) {
                     console.err(ex);
                 }
-                document.write(property)
+                
             }
-           
+            document.write(property)
                        
             // Attach listener
             if(!me.hasClass('has-listener')) {
