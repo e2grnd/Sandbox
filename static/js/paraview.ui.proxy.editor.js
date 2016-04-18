@@ -500,8 +500,6 @@
                         propertiesWithDependencies[dependency] = true;
                     }
                     
-                    document.write(ui.type)
-
                     html = html.replace(/_ID_/g, prop.id)
                                .replace(/NAME/g, prop.name)
                                .replace(/LABEL/g, ui.name)
@@ -533,6 +531,8 @@
                         html = html.replace(/VALUE/g, value).replace(/SIZE/g, ui.size).replace(/TYPE/g, ui.type);
                         var optionsBuffer = [],
                             optionTypeSimpleArray = ui.values.hasOwnProperty('length');
+                        
+                        document.write(ui.values)
 
                         for(var key in ui.values) {
                             if(!optionTypeSimpleArray) {
