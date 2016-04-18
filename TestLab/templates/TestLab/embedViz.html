@@ -141,6 +141,8 @@
 
             // Hide pipeline on loadup
             $('.toggle-inspector').click();
+            
+            connection.session.call('viewport.camera.zoomonload', [-1, 0.1]);
 
             // Update stop method to use the connection
             stop = function() {
@@ -150,7 +152,7 @@
             };
         };
         
-        connection.session.call('viewport.camera.zoomonload', [-1, 0.1]);
+        
         
         function getParameter(name) {
             name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
