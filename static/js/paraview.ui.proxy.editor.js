@@ -546,7 +546,7 @@
                                 
                                 
                                 
-                                if (ui.values[key] in removeOptions){
+                                if (ui.values[key] == 'Points'){
                                 
                                 } else{
 	                                optionsBuffer.push(TEMPLATE_OPTION.replace(/VALUE/g, ui.values[key])
@@ -562,7 +562,7 @@
                                 } else {
                                     selected = (ui.values[key] == value) ? 'SELECTED' : '';
                                 }
-                                if (ui.values[key] in removeOptions){
+                                if (ui.values[key] == 'Points'){
                                     
                                 } else{
                                 	optionsBuffer.push(TEMPLATE_OPTION.replace(/VALUE/g, ui.values[key])
