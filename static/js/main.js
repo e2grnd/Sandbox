@@ -287,9 +287,6 @@
             $('.time-value').val(timeValue);
             updateView();
             workDone();
-            session.call("viewport.webgl.metadata", [-1]).then(function(data) {
-            	m_sceneDataStoredCheck = data
-            });
         }, error);
     }
 
@@ -313,9 +310,6 @@
     function onTimeAnimationStop() {
         $('.vcr-play').show();
         $('.vcr-stop').hide();
-        session.call("viewport.webgl.metadata", [-1]).then(function(data) {
-        	m_sceneDataStoredCheck = data
-        });
         vcrPlayStatus = false;
     }
 
