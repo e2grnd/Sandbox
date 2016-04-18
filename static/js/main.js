@@ -323,11 +323,17 @@
 
     function runTimeAnimationLoop() {
         if(vcrPlayStatus) {
+            //REAL TIME ANIMATION
+        	//session.call('pv.vcr.action', ['next']).then(function(timeValue){
+            //	prevTime = $('.time-value').val();
+            //    $('.time-value').val(timeValue);
+            //    updateView();
+            //    setTimeout(runTimeAnimationLoop, (timeValue-prevTime)*1000);
+            //});
             session.call('pv.vcr.action', ['next']).then(function(timeValue){
-            	prevTime = $('.time-value').val();
                 $('.time-value').val(timeValue);
                 updateView();
-                setTimeout(runTimeAnimationLoop, (timeValue-prevTime)*1000);
+                setTimeout(runTimeAnimationLoop, 50);
             });
         }
     }
