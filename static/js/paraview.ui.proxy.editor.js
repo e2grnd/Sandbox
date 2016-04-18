@@ -548,10 +548,11 @@
                                 }
                                 
                                 
-                                for (var ii in xrange(length(removeOptions)))
+                                for(var ii = 0; ii < removeOptions.length; ++i){
                                 	if (ui.values[key] == removeOptions[ii]){
                                 		flagOutput = 0;
                                 	}
+                            	}
                                 
                                 if (flagOutput){
                                 	optionsBuffer.push(TEMPLATE_OPTION.replace(/VALUE/g, ui.values[key])
@@ -568,10 +569,11 @@
                                     selected = (ui.values[key] == value) ? 'SELECTED' : '';
                                 }
                                 
-                                for (var ii in xrange(length(removeOptions)))
+                                for(var ii = 0; ii < removeOptions.length; ++i){
                                 	if (ui.values[key] == removeOptions[ii]){
                                 		flagOutput = 0;
                                 	}
+                            	}
                                 
                                 if (flagOutput){
                                 	optionsBuffer.push(TEMPLATE_OPTION.replace(/VALUE/g, ui.values[key])
