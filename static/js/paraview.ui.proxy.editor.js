@@ -547,7 +547,7 @@
                                     selected = (key == value || ui.values[key].toString() == value) ? 'SELECTED' : '';
                                 }
                                 
-                                document.write(removeOptions.length)
+                                //document.write(removeOptions.length)
                                 /*
                                 for(var ii = 0; ii < removeOptions.length; i){
                                 	if (ui.values[key] == removeOptions[ii]){
@@ -561,6 +561,10 @@
                                             						  .replace(/LABEL/g, key)
                                             						  .replace(/SIZE/g, ui.size));
                                 } */
+                                optionsBuffer.push(TEMPLATE_OPTION.replace(/VALUE/g, ui.values[key])
+              						  							  .replace(/SELECTED/g, selected)
+              						  							  .replace(/LABEL/g, key)
+              						  							  .replace(/SIZE/g, ui.size));
                                 
                             } else {
                                 var selected = '';
@@ -583,6 +587,10 @@
                                             						  .replace(/LABEL/g, key)
                                             						  .replace(/SIZE/g, ui.size));
                                 }*/ 
+                                optionsBuffer.push(TEMPLATE_OPTION.replace(/VALUE/g, ui.values[key])
+              						  							  .replace(/SELECTED/g, selected)
+              						  							  .replace(/LABEL/g, key)
+              						  							  .replace(/SIZE/g, ui.size));
                                 
                             }
                         }
