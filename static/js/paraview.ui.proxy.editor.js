@@ -536,9 +536,6 @@
                         
 
                         for(var key in ui.values) {
-                        	
-                        	flagOutput = 1;
-                        	
                             if(!optionTypeSimpleArray) {
                                 var selected = '';
                                 if(ui.widget === 'list-n') {
@@ -547,24 +544,14 @@
                                     selected = (key == value || ui.values[key].toString() == value) ? 'SELECTED' : '';
                                 }
                                 
-                                //document.write(removeOptions.length)
-                                /*
-                                for(var ii = 0; ii < removeOptions.length; i){
-                                	if (ui.values[key] == removeOptions[ii]){
-                                		flagOutput = 0;
-                                	}
-                            	}
+                                if (ui.values[key] == 'Points'){
                                 
-                                if (flagOutput){
-                                	optionsBuffer.push(TEMPLATE_OPTION.replace(/VALUE/g, ui.values[key])
-                                            						  .replace(/SELECTED/g, selected)
-                                            						  .replace(/LABEL/g, key)
-                                            						  .replace(/SIZE/g, ui.size));
-                                } */
-                                optionsBuffer.push(TEMPLATE_OPTION.replace(/VALUE/g, ui.values[key])
-              						  							  .replace(/SELECTED/g, selected)
-              						  							  .replace(/LABEL/g, key)
-              						  							  .replace(/SIZE/g, ui.size));
+                                } else{
+	                                optionsBuffer.push(TEMPLATE_OPTION.replace(/VALUE/g, ui.values[key])
+	                                                                  .replace(/SELECTED/g, selected)
+	                                                                  .replace(/LABEL/g, key)
+	                                                                  .replace(/SIZE/g, ui.size));
+                                }
                                 
                             } else {
                                 var selected = '';
@@ -574,23 +561,14 @@
                                     selected = (ui.values[key] == value) ? 'SELECTED' : '';
                                 }
                                 
-                                /*
-                                for(var ii = 0; ii < removeOptions.length; ++i){
-                                	if (ui.values[key] == removeOptions[ii]){
-                                		flagOutput = 0;
-                                	}
-                            	}
-                                
-                                if (flagOutput){
+                                if (ui.values[key] == 'Points'){
+                                    
+                                } else{
                                 	optionsBuffer.push(TEMPLATE_OPTION.replace(/VALUE/g, ui.values[key])
-                                            						  .replace(/SELECTED/g, selected)
-                                            						  .replace(/LABEL/g, key)
-                                            						  .replace(/SIZE/g, ui.size));
-                                }*/ 
-                                optionsBuffer.push(TEMPLATE_OPTION.replace(/VALUE/g, ui.values[key])
-              						  							  .replace(/SELECTED/g, selected)
-              						  							  .replace(/LABEL/g, key)
-              						  							  .replace(/SIZE/g, ui.size));
+						                                              .replace(/SELECTED/g, selected)
+						                                              .replace(/LABEL/g, ui.values[key])
+						                                              .replace(/SIZE/g, ui.size));
+                                }
                                 
                             }
                         }
