@@ -3849,6 +3849,7 @@
                 for(var idx = 0; idx < sceneJSON.Renderers.length; idx++) {
                     renderer = sceneJSON.Renderers[idx];
                     renderer.camera = createCamera();
+                    session.call('viewport.camera.zoomonload', [-1, 0.1]);
                     
                     renderer.camera.setCenterOfRotation(sceneJSON.Center);
                     
@@ -3878,8 +3879,6 @@
                 // Fetch the object that we are missing
                 objectHandler.fetchMissingObjects(fetchObject);
                 
-                session.call('viewport.camera.zoomonload', [-1, 0.1]);
-
                 // Draw scene
                 drawScene(false);
             } catch(error) {
