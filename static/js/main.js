@@ -285,9 +285,9 @@
             $('.time-value').val(timeValue);
             updateView();
             workDone();
-            session.call("viewport.webgl.metadata", [-1]).then(function(data) {
-            	m_sceneDataStoredCheck = data
-            });
+            //session.call("viewport.webgl.metadata", [-1]).then(function(data) {
+            //	m_sceneDataStoredCheck = data
+            //});
         }, error);
     }
 
@@ -297,12 +297,12 @@
         $('.vcr-play').hide();
         $('.vcr-stop').show();
         vcrPlayStatus = true;
-        session.call("viewport.webgl.metadata", [-1]).then(function(data) {
-      		if (m_sceneDataStoredCheck === data){
-      		} else{
-      			viewport.downloadTimestepData();
-      		}
-      	});       	
+        //session.call("viewport.webgl.metadata", [-1]).then(function(data) {
+      	//	if (m_sceneDataStoredCheck === data){
+      	//	} else{
+      	//		viewport.downloadTimestepData();
+      	//	}
+      	//});       	
         runTimeAnimationLoop();
     }
 
@@ -311,9 +311,9 @@
     function onTimeAnimationStop() {
         $('.vcr-play').show();
         $('.vcr-stop').hide();
-        session.call("viewport.webgl.metadata", [-1]).then(function(data) {
-        	m_sceneDataStoredCheck = data
-        });
+        //session.call("viewport.webgl.metadata", [-1]).then(function(data) {
+        //	m_sceneDataStoredCheck = data
+        //});
         vcrPlayStatus = false;
     }
 

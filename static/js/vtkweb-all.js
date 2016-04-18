@@ -2146,6 +2146,7 @@
           updateScene();
           return;
         }
+        downloadAllTimesteps();
         m_sceneData = data;
         m_sceneJSON = JSON.parse(data);
         m_vglVtkReader.setVtkScene(m_sceneJSON);
@@ -3663,7 +3664,9 @@
             	if (sceneData === data) {
                     updateScene();
                     return;
-                  }
+                }
+            	//Download ALL
+            	downloadAllTimesteps();
                 sceneJSON = JSON.parse(data);
                 container.trigger({
                     type: 'stats',
