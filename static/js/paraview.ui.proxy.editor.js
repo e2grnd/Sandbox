@@ -547,8 +547,9 @@
                                     selected = (key == value || ui.values[key].toString() == value) ? 'SELECTED' : '';
                                 }
                                 
-                                
-                                for(var ii = 0; ii < removeOptions.length; ++i){
+                                document.write(removeOptions.length)
+                                /*
+                                for(var ii = 0; ii < removeOptions.length; i){
                                 	if (ui.values[key] == removeOptions[ii]){
                                 		flagOutput = 0;
                                 	}
@@ -559,7 +560,7 @@
                                             						  .replace(/SELECTED/g, selected)
                                             						  .replace(/LABEL/g, key)
                                             						  .replace(/SIZE/g, ui.size));
-                                } 
+                                } */
                                 
                             } else {
                                 var selected = '';
@@ -569,6 +570,7 @@
                                     selected = (ui.values[key] == value) ? 'SELECTED' : '';
                                 }
                                 
+                                /*
                                 for(var ii = 0; ii < removeOptions.length; ++i){
                                 	if (ui.values[key] == removeOptions[ii]){
                                 		flagOutput = 0;
@@ -580,7 +582,7 @@
                                             						  .replace(/SELECTED/g, selected)
                                             						  .replace(/LABEL/g, key)
                                             						  .replace(/SIZE/g, ui.size));
-                                } 
+                                }*/ 
                                 
                             }
                         }
