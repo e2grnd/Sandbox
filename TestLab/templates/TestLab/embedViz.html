@@ -139,13 +139,13 @@
             	pv.activePipelineInspector;
             }
             
-            connection.session.call('viewport.webgl.metadata.onload', []).then(function(result){
-            });
-
             // Hide pipeline on loadup
             $('.toggle-inspector').click();
             
             $('.reset-camera').click();
+            
+            $('.vcr-fetch-times').click();
+            
             
             // Update stop method to use the connection
             stop = function() {
