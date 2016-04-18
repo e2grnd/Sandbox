@@ -2,6 +2,8 @@
     var session,
         viewport,
         pipeline,
+        timeValue = 0.0,
+        prevTime,
         proxyEditor,
         settingsEditor,
         rvSettingsProxyId = null,
@@ -321,10 +323,11 @@
 
     function runTimeAnimationLoop() {
         if(vcrPlayStatus) {
+        	prevTime = timeValue
             session.call('pv.vcr.action', ['next']).then(function(timeValue){
                 $('.time-value').val(timeValue);
                 updateView();
-                setTimeout(runTimeAnimationLoop, timeValue*1000);
+                setTimeout(runTimeAnimationLoop, (timeValue-prevTime)*1000);
             });
         }
     }
