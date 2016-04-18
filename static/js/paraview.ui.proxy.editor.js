@@ -561,6 +561,8 @@
                                     selected = (ui.values[key] == value) ? 'SELECTED' : '';
                                 }
                                 
+                                document.write(removeOptions.length)
+                                
                                 if (ui.values[key] == 'Points'){
                                     
                                 } else{
