@@ -536,6 +536,9 @@
                         
 
                         for(var key in ui.values) {
+                        	
+                        	var flagOutput = 1;
+                        	
                             if(!optionTypeSimpleArray) {
                                 var selected = '';
                                 if(ui.widget === 'list-n') {
@@ -563,15 +566,17 @@
                                 
                                 document.write(removeOptions.length)
                                 
-                                if (ui.values[key] == 'Points'){
-                                    
-                                } else{
+                                for(var i = 0; i < removeOptions.length; i++) {
+                                	if (ui.values[key] == removeOptions[i]){
+                                		flagOutput = 0;
+                                	}
+                                }
+                                if (flagOutput){
                                 	optionsBuffer.push(TEMPLATE_OPTION.replace(/VALUE/g, ui.values[key])
 						                                              .replace(/SELECTED/g, selected)
 						                                              .replace(/LABEL/g, ui.values[key])
 						                                              .replace(/SIZE/g, ui.size));
-                                }
-                                
+                                }                                
                             }
                         }
                         if(optionsBuffer.length) {
