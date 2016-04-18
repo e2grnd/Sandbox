@@ -536,6 +536,9 @@
                         
 
                         for(var key in ui.values) {
+                        	
+                        	flagOutput = 1;
+                        	
                             if(!optionTypeSimpleArray) {
                                 var selected = '';
                                 if(ui.widget === 'list-n') {
@@ -545,15 +548,17 @@
                                 }
                                 
                                 
+                                for (var ii in xrange(length(removeOptions)))
+                                	if (ui.values[key] == removeOptions[ii]){
+                                		flagOutput = 0;
+                                	}
                                 
-                                if (ui.values[key] == 'Points'){
-                                
-                                } else{
-	                                optionsBuffer.push(TEMPLATE_OPTION.replace(/VALUE/g, ui.values[key])
-	                                                                  .replace(/SELECTED/g, selected)
-	                                                                  .replace(/LABEL/g, key)
-	                                                                  .replace(/SIZE/g, ui.size));
-                                }
+                                if (flagOutput){
+                                	optionsBuffer.push(TEMPLATE_OPTION.replace(/VALUE/g, ui.values[key])
+                                            						  .replace(/SELECTED/g, selected)
+                                            						  .replace(/LABEL/g, key)
+                                            						  .replace(/SIZE/g, ui.size));
+                                } 
                                 
                             } else {
                                 var selected = '';
@@ -562,14 +567,18 @@
                                 } else {
                                     selected = (ui.values[key] == value) ? 'SELECTED' : '';
                                 }
-                                if (ui.values[key] == 'Points'){
-                                    
-                                } else{
+                                
+                                for (var ii in xrange(length(removeOptions)))
+                                	if (ui.values[key] == removeOptions[ii]){
+                                		flagOutput = 0;
+                                	}
+                                
+                                if (flagOutput){
                                 	optionsBuffer.push(TEMPLATE_OPTION.replace(/VALUE/g, ui.values[key])
-						                                              .replace(/SELECTED/g, selected)
-						                                              .replace(/LABEL/g, ui.values[key])
-						                                              .replace(/SIZE/g, ui.size));
-                                }
+                                            						  .replace(/SELECTED/g, selected)
+                                            						  .replace(/LABEL/g, key)
+                                            						  .replace(/SIZE/g, ui.size));
+                                } 
                                 
                             }
                         }
