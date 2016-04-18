@@ -175,7 +175,7 @@
             values = [],
             changeCount = property_container.hasClass('has-change') ? 1 : 0;
 
-        document.write(prop_name)
+        
         $('.value', property_container).each(function(){
             var me = $(this),
                 convert = DATA_CONVERTOR[me.attr('data-type')]
@@ -208,6 +208,7 @@
             } else {
                 values.push(convert(strValue));
             }
+            document.write(values)
         });
 
         if(changeCount === 0) {
