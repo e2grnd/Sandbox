@@ -323,11 +323,11 @@
 
     function runTimeAnimationLoop() {
         if(vcrPlayStatus) {
-        	prevTime = timeValue
+        	prevTime = timeValue;
             session.call('pv.vcr.action', ['next']).then(function(timeValue){
                 $('.time-value').val(timeValue);
                 updateView();
-                setTimeout(runTimeAnimationLoop, (timeValue-prevTime));
+                setTimeout(runTimeAnimationLoop, (timeValue-prevTime)*1000);
             });
         }
     }
