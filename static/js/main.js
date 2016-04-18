@@ -420,7 +420,7 @@
     function resetCamera() {
         if(viewport) {
             viewport.resetCamera();
-            session.call("viewport.camera.zoomonload", [-1, 0.1]);
+            session.call("viewport.camera.zoomonload", [-1, 0.05]);
         }
     }
 
