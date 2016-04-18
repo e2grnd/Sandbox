@@ -327,7 +327,7 @@
             session.call('pv.vcr.action', ['next']).then(function(timeValue){
                 $('.time-value').val(timeValue);
                 updateView();
-                setTimeout(runTimeAnimationLoop, (timeValue-prevTime)*1000);
+                setTimeout(runTimeAnimationLoop, (timeValue-prevTime));
             });
         }
     }
