@@ -207,10 +207,11 @@
                 }
             } else {
                 values.push(convert(strValue));
-            }
-           	document.write(valueList)           
+            }          
         });
 
+        document.write(values) 
+        
         if(changeCount === 0) {
             return null;
         }
