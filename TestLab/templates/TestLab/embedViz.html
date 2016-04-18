@@ -142,6 +142,9 @@
             // Hide pipeline on loadup
             $('.toggle-inspector').click();
             
+            //For compatibility asthetics on initial load only
+            session.call("viewport.camera.zoomonload", [Number(config.view), 0.08]);
+            
             // Update stop method to use the connection
             stop = function() {
                 if (reallyStop === true) {
