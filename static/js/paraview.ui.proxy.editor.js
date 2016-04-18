@@ -209,8 +209,6 @@
                 values.push(convert(strValue));
             }          
         });
-
-        document.write(values) 
         
         if(changeCount === 0) {
             return null;
@@ -823,6 +821,8 @@
                         }
                     }
                 });
+                
+                document.write(depList)
             }).trigger('change');
 
             // - Handle color by changes
