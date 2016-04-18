@@ -138,6 +138,8 @@
             	connection.session.call('pv.proxy.manager.create.reader', [filePath]).then(pv.invalidatePipeline, pv.invalidatePipeline);
             	pv.activePipelineInspector;
             }
+            
+            connection.session.call('viewport.webgl.metadata.onload', []);
 
             // Hide pipeline on loadup
             $('.toggle-inspector').click();
