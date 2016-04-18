@@ -299,8 +299,8 @@
         $('.vcr-play').hide();
         $('.vcr-stop').show();
         vcrPlayStatus = true;
-        session.call("viewport.webgl.metadata", [-1]).then(function(data) {
-      		if (m_sceneDataStoredCheck === data){
+        session.call("viewport.webgl.check.cached", [-1]).then(function(result) {
+      		if (result){
       		} else{
       			viewport.downloadTimestepData();
       		}

@@ -2202,7 +2202,7 @@
     function downloadAllTimesteps() {
       m_container.trigger({
         type: 'downloadProgress',
-        status: 'update'
+        status: 'create'
       });
 
       m_session.call('viewport.webgl.metadata.alltimesteps', []).then(function(result){
@@ -3935,7 +3935,7 @@
         function downloadAllTimesteps() {
           container.trigger({
             type: 'downloadProgress',
-            status: 'update'
+            status: 'create'
           });
 
           session.call('viewport.webgl.metadata.alltimesteps', []).then(function(result){
