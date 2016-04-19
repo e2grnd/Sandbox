@@ -2234,7 +2234,7 @@
                     objId = metaDataList[sha].id,
                     alreadyCached = true;
                 // Before I go and fetch all the parts for this object, make sure
-                // I don't already have them cached
+                // I don't already have them cached!
                 for (var i = 0; i < numParts; i+=1) {
                   var key = getKey({
                     'id': objId,
