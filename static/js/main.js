@@ -298,11 +298,13 @@
         vcrPlayStatus = true;
         session.call("viewport.webgl.check.cached", [-1]).then(function(result) {
       		if (result){
+      			runTimeAnimationLoop();
       		} else{
       			viewport.downloadTimestepData();
+      			runTimeAnimationLoop();
       		}
       	});       	
-        runTimeAnimationLoop();
+        //runTimeAnimationLoop();
     }
 
     // ------------------------------------------------------------------------
