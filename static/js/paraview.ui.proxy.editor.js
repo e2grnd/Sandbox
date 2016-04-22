@@ -429,11 +429,30 @@
                         var omitNames = ['GlobalNodeId', 'PedigreeNodeId', 'GlobalElementId', 'ObjectId',
                                          'PedigreeElementId'];
                         
+                        var PrintFirstName = ['Temp [F]'];
+                        
+                        for(var i = 0; i < internalCount; ++i) {
+                        	var flagPrint = 1;
+                            var arrayId = arrayList[i].location + ':' + arrayList[i].name;
+                            if (arrayList[i].name != PrintFirstName[0]) {
+                            	flagPrint = 0;
+                            }
+                            if(arrayList[i].location !== 'FIELDS' && flagPrint) {
+                                arrayOptions.push(TEMPLATE_OPTION
+                                    .replace(/SELECTED/g, (activeArrayStr === arrayId) ? 'SELECTED' : '')
+                                    .replace(/VALUE/g, 'ARRAY:' + arrayId)
+                                    .replace(/LABEL/g, arrayList[i].name));
+                                if(activeArrayStr === arrayId && arrayList[i].hasOwnProperty('range')) {
+                                    range = arrayList[i].range;
+                                }
+                            }
+                        }
+                        
                         for(var i = 0; i < internalCount; ++i) {
                         	var flagPrint = 1;
                             var arrayId = arrayList[i].location + ':' + arrayList[i].name;
                             for (var j = 0; j < omitNames.length; j++) {
-                            	if (arrayList[i].name == omitNames[j]) {
+                            	if (arrayList[i].name == omitNames[j] || arrayList[i].name == PrintFirstName[0]) {
                             		flagPrint = 0;
                             	}
                             }
