@@ -50,7 +50,8 @@
 		  
 	    var formData = new FormData();
 	    
-	    var hostIP = "104.196.120.212";
+	  //var hostIP = "104.196.120.212";
+	    var hostIP = "104.196.122.159";
 	    
 	    var destinationURI = "http://" + hostIP + "/uploadFile.php";
 	    
