@@ -1,6 +1,6 @@
 (function (GLOBAL, $) {
 
-	var status, readyState, percent; 
+	var percent, status, readyState, myVar = 1; 
 	
 	function checkForAjaxSupport() {
 		
@@ -34,7 +34,7 @@
 	  var notice = document.getElementById("support-notice");
 	  var uploadBtn = document.getElementById('upload-button-id');
 	  
-	  notice.innerHTML = "Upload VTK File to Server";
+	  notice.innerHTML = "Upload VTK/EX2 File to Server";
 	  uploadBtn.removeAttribute('disabled');
 	  
 	  // Initialize the file upload
@@ -50,7 +50,7 @@
 		  
 	    var formData = new FormData();
 	    
-	  //var hostIP = "104.196.120.212";
+	    //var hostIP = "104.196.120.212";
 	    var hostIP = "104.196.122.159";
 	    
 	    var destinationURI = "http://" + hostIP + "/uploadFile.php";
@@ -81,7 +81,18 @@
 	         
 	    // Send XMLHttpRequest 
 	    sendXHRequest(formData, destinationURI);
-	    getFileName();
+	    
+	    poll(
+	    function(){
+	    	return (readyState == 4 && status == '200');
+	    }, 
+	    getFileName, 
+	    function(){
+	    	console.log('An Error Occurred');
+	    	},
+	    300000, 
+	    200)
+
 	  }
 	}
 	
@@ -116,15 +127,17 @@
 	
 	// Handle the end of the transmission
 	function onloadHandler(evt) {
+		//var div = document.getElementById('upload-status');
+		//div.innerHTML += '<' + 'br>File uploaded. Waiting for response.';
 	}
 	
 	
 	// Handle the progress
 	function onprogressHandler(evt) {
-	  var div = document.getElementById('progress');
-	  percent = evt.loaded/evt.total*100;
-	  percent = percent.toFixed(2)
-	  div.innerHTML = 'Upload Progress: ' + percent + '%';
+	    var div = document.getElementById('progress');
+	    percent = evt.loaded/evt.total*100;
+	    percent = percent.toFixed(2)
+	    div.innerHTML = 'Upload Progress: ' + percent + '%';
 	}
 	
 	// Handle the response from the server
@@ -139,21 +152,16 @@
 	  catch(e) {
 	    return;
 	  }
+	  
 	  if (readyState == 4 && status == '200') {
-		  div2.innerHTML = 'Upload Status: Done';
+		  //div2.innerHTML = 'Upload Successful';
 	  } 
 	}
 	
 	function getFileName() {
-				 
-		while (float(percent) <= 99.9999){
-			document.write('looping')
-		}
-		
-		document.write('done looping')
 		
 	    var fullPath = document.getElementById('file-id').value;
-
+	    
 		if (fullPath) {
 			var startIndex = (fullPath.indexOf('\\') >= 0 ? fullPath.lastIndexOf('\\') : fullPath.lastIndexOf('/'));
 			var filename = fullPath.substring(startIndex);
@@ -165,6 +173,26 @@
 		    frameChanges.src = sourceName;	
 		}
 		
+	}
+	
+	function poll(fn, callback, errback, timeout, interval) {
+	    var endTime = Number(new Date()) + (timeout || 2000);
+	    interval = interval || 100;
+
+	    (function p() {
+	            // If the condition is met, we're done! 
+	            if(fn()) {
+	                callback();
+	            }
+	            // If the condition isn't met but the timeout hasn't elapsed, go again
+	            else if (Number(new Date()) < endTime) {
+	                setTimeout(p, interval);
+	            }
+	            // Didn't match and too much time, reject!
+	            else {
+	                errback(new Error('timed out for ' + fn + ': ' + arguments));
+	            }
+	    })();
 	}
 
 }(window, jQuery));
