@@ -466,6 +466,7 @@
                                 }
                             }
                         }
+                        
                         arrayOptions.push(TEMPLATE_OPTION
                                 .replace(/SELECTED/g, '')
                                 .replace(/VALUE/g, 'SOLID')
