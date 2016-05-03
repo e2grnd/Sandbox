@@ -363,7 +363,7 @@
 	            	});  
 	      		}
 	      	});    
-        	}
+        }
 //        	session.call('viewport.webgl.metadata.nexttimestep', []).then(function(result){
 //        		if (result){
 //	        		session.call('pv.vcr.action', ['next']).then(function(timeValue){
@@ -373,7 +373,6 @@
 //	                });        	
 //        		}
 //        	});            
-        }
     }
 
     // ------------------------------------------------------------------------
