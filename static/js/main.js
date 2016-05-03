@@ -348,7 +348,7 @@
         			session.call('pv.vcr.action', ['next']).then(function(timeValue){
 	                    $('.time-value').val(timeValue);
 	                    updateView();
-	                    setTimeout(runAnimationLoopingThroughNext, 500);
+	                    setTimeout(runAnimationLoopingThroughNext, 50);
 	                });
 	      		} else{
 	      			//viewport.downloadTimestepData();
