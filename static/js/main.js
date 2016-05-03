@@ -296,14 +296,15 @@
         $('.vcr-play').hide();
         $('.vcr-stop').show();
         vcrPlayStatus = true;
-        session.call("viewport.webgl.check.cached", [-1]).then(function(result) {
-      		if (result){
-      		} else{
-      			//viewport.downloadTimestepData();
-      			runAnimationLoopingThroughNext();
-      		}
-      	});       	
-        runTimeAnimationLoop();
+//        session.call("viewport.webgl.check.cached", [-1]).then(function(result) {
+//      		if (result){
+//      		} else{
+//      			//viewport.downloadTimestepData();
+//      			runAnimationLoopingThroughNext();
+//      		}
+//      	});       
+        runAnimationLoopingThroughNext()
+//        runTimeAnimationLoop();
     }
 
     // ------------------------------------------------------------------------
@@ -328,7 +329,7 @@
             session.call('pv.vcr.action', ['next']).then(function(timeValue){
                 $('.time-value').val(timeValue);
                 updateView();
-                setTimeout(runTimeAnimationLoop, 500);
+                setTimeout(runTimeAnimationLoop, 50);
             });
         }
     }
@@ -342,15 +343,36 @@
             //    updateView();
             //    setTimeout(runTimeAnimationLoop, (timeValue-prevTime)*1000);
             //});
-        	session.call('viewport.webgl.metadata.nexttimestep', []).then(function(result){
+        	session.call("viewport.webgl.check.cached", [-1]).then(function(result) {
         		if (result){
-	        		session.call('pv.vcr.action', ['next']).then(function(timeValue){
+        			session.call('pv.vcr.action', ['next']).then(function(timeValue){
 	                    $('.time-value').val(timeValue);
 	                    updateView();
-	                    setTimeout(runAnimationLoopingThroughNext, 5000);
-	                });        	
-        		}
-        	});            
+	                    setTimeout(runAnimationLoopingThroughNext, 500);
+	                });
+	      		} else{
+	      			//viewport.downloadTimestepData();
+	      			session.call('viewport.webgl.metadata.nexttimestep', []).then(function(result){
+	            		if (result){
+	    	        		session.call('pv.vcr.action', ['next']).then(function(timeValue){
+	    	                    $('.time-value').val(timeValue);
+	    	                    updateView();
+	    	                    setTimeout(runAnimationLoopingThroughNext, 500);
+	    	                });        	
+	            		}
+	            	});  
+	      		}
+	      	});    
+        	}
+//        	session.call('viewport.webgl.metadata.nexttimestep', []).then(function(result){
+//        		if (result){
+//	        		session.call('pv.vcr.action', ['next']).then(function(timeValue){
+//	                    $('.time-value').val(timeValue);
+//	                    updateView();
+//	                    setTimeout(runAnimationLoopingThroughNext, 5000);
+//	                });        	
+//        		}
+//        	});            
         }
     }
 
