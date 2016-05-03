@@ -352,7 +352,10 @@
 	                    updateView();
 	                    setTimeout(runAnimationLoopingThroughNext, 50);
 	                });
-	      		} 
+	      		}
+        		else{
+        			setTimeout(runAnimationLoopingThroughNext, 50);
+        		}
 	      	});    
         }
 //        	session.call('viewport.webgl.metadata.nexttimestep', []).then(function(result){
