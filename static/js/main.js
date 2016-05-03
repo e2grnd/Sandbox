@@ -296,15 +296,14 @@
         $('.vcr-play').hide();
         $('.vcr-stop').show();
         vcrPlayStatus = true;
-//        session.call("viewport.webgl.check.cached", [-1]).then(function(result) {
-//      		if (result){
-//      		} else{
-//      			//viewport.downloadTimestepData();
-//      			runAnimationLoopingThroughNext();
-//      		}
-//      	});       
-        runAnimationLoopingThroughNext()
-//        runTimeAnimationLoop();
+        session.call("viewport.webgl.check.cached", [-1]).then(function(result) {
+      		if (result){
+      		} else{
+      			viewport.downloadTimestepData();
+      			//runAnimationLoopingThroughNext();
+      		}
+      	});       
+        runTimeAnimationLoop();
     }
 
     // ------------------------------------------------------------------------
