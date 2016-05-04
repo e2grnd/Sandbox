@@ -4000,7 +4000,7 @@
                   }
                 }
 
-              }, 500);
+              }, 50);
             }
           }, function(metaDataError) {
             console.log("Error retrieving metadata for all timesteps");
