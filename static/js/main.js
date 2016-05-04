@@ -300,7 +300,6 @@
       		if (result){
       		} else{
       			viewport.downloadTimestepData();
-      			//runAnimationLoopingThroughNext();
       		}
       	});       
         runTimeAnimationLoop();
@@ -331,48 +330,6 @@
                 setTimeout(runTimeAnimationLoop, 50);
             });
         }
-    }
-    
-    function runAnimationLoopingThroughNext() {
-        if(vcrPlayStatus) {
-            //REAL TIME ANIMATION
-        	//session.call('pv.vcr.action', ['next']).then(function(timeValue){
-            //	prevTime = $('.time-value').val();
-            //    $('.time-value').val(timeValue);
-            //    updateView();
-            //    setTimeout(runTimeAnimationLoop, (timeValue-prevTime)*1000);
-            //});
-        	session.call('viewport.webgl.metadata.nexttimestep', []).then(function(result){
-        		if (result){
-        			session.call('pv.vcr.action', ['next']).then(function(timeValue){
-	                    $('.time-value').val(timeValue);
-	                    updateView();
-	                    setTimeout(runAnimationLoopingThroughNext, 50);
-	                });
-	      		}
-        	});  
-//        	session.call("viewport.webgl.check.cached", [-1]).then(function(result) {
-//        		if (result){
-//        			session.call('pv.vcr.action', ['next']).then(function(timeValue){
-//	                    $('.time-value').val(timeValue);
-//	                    updateView();
-//	                    setTimeout(runAnimationLoopingThroughNext, 50);
-//	                });
-//	      		}
-//        		else{
-//        			setTimeout(runAnimationLoopingThroughNext, 50);
-//        		}
-//	      	});    
-        }
-//        	session.call('viewport.webgl.metadata.nexttimestep', []).then(function(result){
-//        		if (result){
-//	        		session.call('pv.vcr.action', ['next']).then(function(timeValue){
-//	                    $('.time-value').val(timeValue);
-//	                    updateView();
-//	                    setTimeout(runAnimationLoopingThroughNext, 5000);
-//	                });        	
-//        		}
-//        	});            
     }
 
     // ------------------------------------------------------------------------
