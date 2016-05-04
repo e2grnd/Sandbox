@@ -299,7 +299,7 @@
         session.call("viewport.webgl.check.cached", [-1]).then(function(result) {
       		if (result){
       		} else{
-      			viewport.downloadTimestepData();
+      			//viewport.downloadTimestepData();
       			viewport.downloadNextTimestepData();
       			//runAnimationLoopingThroughNext();
       		}
