@@ -4044,50 +4044,6 @@
           });
         }
         
-        
-        function fetchCachedObject2(sha) {
-            var viewId = Number(options.view);
-
-            session.call('viewport.webgl.cached.data', [sha]).then(function(result) {
-              if (result.success === false) {
-                console.log("Fetching cached data for " + sha + " failed, reason:");
-                consolelog(result.reason);
-                return;
-              }
-              var dataObject = result.data;
-              if (dataObject.hasOwnProperty('partsList')) {
-                for (var dIdx = 0; dIdx < dataObject.partsList.length; dIdx += 1) {
-                  // Create a complete scene part object and cache it
-                  var newObject = {
-                    md5: dataObject.md5,
-                    part: dIdx + 1,
-                    vid: viewId,
-                    id: dataObject.id,
-                    data: atob(dataObject.partsList[dIdx]),
-                    hasTransparency: dataObject.transparency,
-                    layer: dataObject.layer,
-                    render: function(){}
-                  };
-
-                  // Process object
-                  initializeObject(gl, newObject);
-
-                  // Register it for rendering
-                  objectHandler.registerObject(newObject);
-                }
-
-//                container.trigger({
-//                  type: 'downloadProgress',
-//                  status: 'update',
-//                  numParts: dataObject.partsList.length
-//                });
-              }
-            }, function(err) {
-              console.log('viewport.webgl.cached.data rpc method failed');
-              console.log(err);
-            });
-          }
-
         // ------------------------------------------------------------------
         // Add renderer into the DOM
         container.append(renderer);
