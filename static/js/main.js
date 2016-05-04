@@ -299,8 +299,7 @@
         session.call("viewport.webgl.check.cached", [-1]).then(function(result) {
       		if (result){
       		} else{
-      			//viewport.downloadTimestepData();
-      			viewport.downloadNextTimestepData();
+      			viewport.downloadTimestepData();
       			//runAnimationLoopingThroughNext();
       		}
       	});       
@@ -326,7 +325,6 @@
             //    updateView();
             //    setTimeout(runTimeAnimationLoop, (timeValue-prevTime)*1000);
             //});
-        	//viewport.downloadNextTimestepData();
             session.call('pv.vcr.action', ['next']).then(function(timeValue){
                 $('.time-value').val(timeValue);
                 updateView();

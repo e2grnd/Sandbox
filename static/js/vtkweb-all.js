@@ -1429,11 +1429,6 @@
             	rendererContainer.trigger('downloadAllTimesteps');
 
             },
-            
-            downloadNextTimestepData: function(shaList) {
-            	rendererContainer.trigger('downloadNextTimestep');
-
-            },
 
             /*
              *
@@ -2548,10 +2543,6 @@
       if(m_rendererAttrs.hasClass('active')){
         downloadAllTimesteps();
       }
-    }).bind('downloadNextTimestep', function(event){
-        if(m_rendererAttrs.hasClass('active')){
-          downloadNextTimestep();
-        }
     }).bind('clearCache', function(event){
       if(m_rendererAttrs.hasClass('active')){
         clearCache();
@@ -4008,58 +3999,6 @@
           });
         }
         
-        
-        function downloadNextTimestep() {
-
-            session.call('viewport.webgl.metadata.alltimesteps', []).then(function(result){
-              if (result.hasOwnProperty('success') && result.success === true) {
-                var metaDataList = result.metaDataList;
-
-                // For progress events, I want to first know how many items to retrieve
-                m_numberOfPartsToDownload = 0;
-                for (var sha in metaDataList) {
-                  if (metaDataList.hasOwnProperty(sha)) {
-                    m_numberOfPartsToDownload += metaDataList[sha].numParts;
-                  }
-                }
-
-                m_numberOfPartsDownloaded = 0;
-
-                setTimeout(function() {
-
-                  // Now go through and download the heavy data for anythin we don't already have
-                  for (var sha in metaDataList) {
-                    if (metaDataList.hasOwnProperty(sha)) {
-                      var numParts = metaDataList[sha].numParts,
-                          objId = metaDataList[sha].id,
-                          alreadyCached = true;
-                      // Before I go and fetch all the parts for this object, make sure
-                      // I don't already have them cached
-                      for (var i = 0; i < numParts; i+=1) {
-                        var obj = {
-                          'id': objId,
-                          'md5': sha,
-                          'part': i + 1
-                        };
-                        if (!objectHandler.isObjectRegistered(obj)) {
-                          alreadyCached = false;
-                          break;
-                        }
-                      }
-                      if (alreadyCached === false) {
-                        fetchCachedObject2(sha);
-                      } 
-                    }
-                  }
-
-                }, 500);
-              }
-            }, function(metaDataError) {
-              console.log("Error retrieving metadata for all timesteps");
-              console.log(metaDataError);
-            });
-          }
-
         // ------------------------------------------------------------------
 
         function fetchCachedObject(sha) {
@@ -4168,10 +4107,6 @@
         }).bind('downloadAllTimesteps', function(event){
             if(renderer.hasClass('active')){
                 downloadAllTimesteps();
-            }
-        }).bind('downloadNextTimestep', function(event){
-            if(renderer.hasClass('active')){
-                downloadNextTimestep();
             }
         }).bind('downloadProgress', function(event){
             if(renderer.hasClass('active')){
