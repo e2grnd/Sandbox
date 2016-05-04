@@ -325,7 +325,7 @@
             //    updateView();
             //    setTimeout(runTimeAnimationLoop, (timeValue-prevTime)*1000);
             //});
-        	viewport.downloadNextTimestep();
+        	viewport.downloadNextTimestepData();
             session.call('pv.vcr.action', ['next']).then(function(timeValue){
                 $('.time-value').val(timeValue);
                 updateView();
