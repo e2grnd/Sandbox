@@ -300,6 +300,7 @@
       		if (result){
       		} else{
       			viewport.downloadTimestepData();
+      			viewport.downloadNextTimestepData();
       			//runAnimationLoopingThroughNext();
       		}
       	});       

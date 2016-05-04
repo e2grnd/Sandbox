@@ -4000,7 +4000,7 @@
                   }
                 }
 
-              }, 50);
+              }, 200);
             }
           }, function(metaDataError) {
             console.log("Error retrieving metadata for all timesteps");
@@ -4011,7 +4011,7 @@
         
         function downloadNextTimestep() {
 
-            session.call('viewport.webgl.metadata.nexttimestep', []).then(function(result){
+            session.call('viewport.webgl.metadata.alltimesteps', []).then(function(result){
               if (result.hasOwnProperty('success') && result.success === true) {
                 var metaDataList = result.metaDataList;
 
