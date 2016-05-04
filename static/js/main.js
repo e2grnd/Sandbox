@@ -296,13 +296,13 @@
         $('.vcr-play').hide();
         $('.vcr-stop').show();
         vcrPlayStatus = true;
-//        session.call("viewport.webgl.check.cached", [-1]).then(function(result) {
-//      		if (result){
-//      		} else{
-//      			viewport.downloadTimestepData();
-//      			//runAnimationLoopingThroughNext();
-//      		}
-//      	});       
+        session.call("viewport.webgl.check.cached", [-1]).then(function(result) {
+      		if (result){
+      		} else{
+      			viewport.downloadTimestepData();
+      			//runAnimationLoopingThroughNext();
+      		}
+      	});       
         runTimeAnimationLoop();
     }
 
@@ -325,7 +325,7 @@
             //    updateView();
             //    setTimeout(runTimeAnimationLoop, (timeValue-prevTime)*1000);
             //});
-        	viewport.downloadNextTimestepData();
+        	//viewport.downloadNextTimestepData();
             session.call('pv.vcr.action', ['next']).then(function(timeValue){
                 $('.time-value').val(timeValue);
                 updateView();
