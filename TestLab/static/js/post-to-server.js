@@ -46,13 +46,13 @@
 		
 	  var uploadBtn = document.getElementById('upload-button-id');
 	  
+	  console.log('Herro');
+	  
 	  uploadBtn.onclick = function (evt) {
 		  
 	    var formData = new FormData();
 	    
 	    var hostIP = "104.196.138.200";
-	    //var hostIP = "104.196.120.212";
-	    //var hostIP = "104.196.122.159";
 	    
 	    var destinationURI = "http://" + hostIP + "/uploadFile.php";
 	    
@@ -60,6 +60,8 @@
 	    var fileInput = document.getElementById('file-id');
 	    var file_data = fileInput.files[0];
 	    formData.append('file', file_data);   
+	    
+	    console.log(formData);
 	    
 	    //Could also use ajax directly, by both uncommenting this ajax
 	    //code and commenting out the below sendXHRequest(...)
