@@ -55,7 +55,7 @@
         TEMPLATE_VALUE = "<div class='col-sm-12'style='margin: 5px 0'>" +
         "<input type='text' class='form-control pv-form-height value' data-type='TYPE' value='VALUE' cancel-value='VALUE' style='width: 90%;display: inline-block;'>" +
         "<span class='vtk-icon-trash clickable float-right' data-action='delete-value'></span></div>",
-        // ID, NAME, LABEL, TYPE(str,number), DEPENDENCY, VALUE, VALUE1-6, CHECKED, OPTIONS, MIN, MAX, VALUES
+        // ID, NAME, LABEL, TYPE(str,number), DEPENDENCY, VALUE, VALUE1-6, CHECKED, OPTIONS, MIN, MAX, VALUES.
         TEMPLATE_PROPERTIES = {
             checkbox: function(layout) {
                 return "<div class='row property' data-advanced='ADVANCED' data-proxy-id='_ID_' data-size='1' data-property-name='NAME' data-dependency='DEPENDENCY'>" +
