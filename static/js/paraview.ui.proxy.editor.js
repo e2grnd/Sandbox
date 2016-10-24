@@ -850,12 +850,12 @@
                     colorBy: extractColorBy()
                 });
             	
-            	var rgbHottapVals = extractRGBObject()
-                me.trigger({
-                        type: 'update-rgb-points',
-                        colorBy: extractColorBy(),
-                        rgbInfo: rgbHottapVals
-                });
+//            	var rgbHottapVals = extractRGBObject()
+//                me.trigger({
+//                        type: 'update-rgb-points',
+//                        colorBy: extractColorBy(),
+//                        rgbInfo: rgbHottapVals
+//                });
             	
             	InitialApplyLegend = 0;
         	}
