@@ -827,7 +827,7 @@
                     type: 'rescale-transfer-function',
                     mode: 'custom',
                     min: 80,
-                    max: 1800,
+                    max: 2600,
                     id: 370,   //Proxy Id
                     colorBy: extractColorBy()
                 });
