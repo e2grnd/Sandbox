@@ -232,7 +232,6 @@
                 propertyList.push(change);
             }
         });
-        console.log(propertyList)
         var cb = {};
         if (doColorExtract === true) {
             cb = extractColorBy();
@@ -366,7 +365,7 @@
                 widgetKey = opts.widgetKey,
                 widgetData = $.extend(true, {}, opts.widgetData);
                
-                removeOptions = ['3D Glyphs','Outline','Points','Volume']; //REMOVES REPRESENTATIONS FROM VISUALIZER OPTIONS - DAN
+                removeOptions = ['3D Glyphs','Points','Surface','Outline','Wireframe','Volume']; //REMOVES REPRESENTATIONS FROM VISUALIZER OPTIONS - DAN
 
             /*
              * Update the application data object and store it
@@ -562,7 +561,7 @@
                         html = html.replace(/VALUE/g, value).replace(/SIZE/g, ui.size).replace(/TYPE/g, ui.type);
                         var optionsBuffer = [],
                             optionTypeSimpleArray = ui.values.hasOwnProperty('length');
-                       
+                        
 
                         for(var key in ui.values) {
                         	
@@ -577,28 +576,17 @@
                                 }
                                 
                                 for(var i = 0; i < removeOptions.length; i++) {
-                                	if (ui.values[key] == 'Surface With Edges'){
-                                		if (flagOutput){
-        	                                optionsBuffer.push(TEMPLATE_OPTION.replace(/VALUE/g, ui.values[key])
-        	                                                                  .replace(/SELECTED/g, selected)
-        	                                                                  .replace(/LABEL/g, key)
-        	                                                                  .replace(/SIZE/g, ui.size));
-                                        }
+                                	if (ui.values[key] == removeOptions[i]){
+                                		flagOutput = 0;
                                 	}
                                 }
                                 
-//                                for(var i = 0; i < removeOptions.length; i++) {
-//                                	if (ui.values[key] == removeOptions[i]){
-//                                		flagOutput = 0;
-//                                	}
-//                                }
-//                                
-//                                if (flagOutput){
-//	                                optionsBuffer.push(TEMPLATE_OPTION.replace(/VALUE/g, ui.values[key])
-//	                                                                  .replace(/SELECTED/g, selected)
-//	                                                                  .replace(/LABEL/g, key)
-//	                                                                  .replace(/SIZE/g, ui.size));
-//                                }
+                                if (flagOutput){
+	                                optionsBuffer.push(TEMPLATE_OPTION.replace(/VALUE/g, ui.values[key])
+	                                                                  .replace(/SELECTED/g, selected)
+	                                                                  .replace(/LABEL/g, key)
+	                                                                  .replace(/SIZE/g, ui.size));
+                                }
                                 
                             } else {
                                 var selected = '';
@@ -609,27 +597,16 @@
                                 }
                                 
                                 for(var i = 0; i < removeOptions.length; i++) {
-                                	if (ui.values[key] == 'Surface With Edges'){
-                                		if (flagOutput){
-        	                                optionsBuffer.push(TEMPLATE_OPTION.replace(/VALUE/g, ui.values[key])
-        	                                                                  .replace(/SELECTED/g, selected)
-        	                                                                  .replace(/LABEL/g, key)
-        	                                                                  .replace(/SIZE/g, ui.size));
-                                        }
+                                	if (ui.values[key] == removeOptions[i]){
+                                		flagOutput = 0;
                                 	}
                                 }
-                                
-//                                for(var i = 0; i < removeOptions.length; i++) {
-//                                	if (ui.values[key] == removeOptions[i]){
-//                                		flagOutput = 0;
-//                                	}
-//                                }
-//                                if (flagOutput){
-//                                	optionsBuffer.push(TEMPLATE_OPTION.replace(/VALUE/g, ui.values[key])
-//						                                              .replace(/SELECTED/g, selected)
-//						                                              .replace(/LABEL/g, ui.values[key])
-//						                                              .replace(/SIZE/g, ui.size));
-//                                }                                
+                                if (flagOutput){
+                                	optionsBuffer.push(TEMPLATE_OPTION.replace(/VALUE/g, ui.values[key])
+						                                              .replace(/SELECTED/g, selected)
+						                                              .replace(/LABEL/g, ui.values[key])
+						                                              .replace(/SIZE/g, ui.size));
+                                }                                
                             }
                         }
                         if(optionsBuffer.length) {
@@ -834,7 +811,6 @@
                     }
                 });                
             }
-            
             
             // Apply the legend on startup (Dan) - 
             if (InitialApplyContour){
