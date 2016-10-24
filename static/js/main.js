@@ -551,7 +551,6 @@
         proxyEditor.bind('request-scalar-range', onRequestScalarRange);
         proxyEditor.bind('push-new-surface-opacity', onSurfaceOpacityChanged);
         proxyEditor.bind('initialize-color-editor-widget', onInitializeColorEditorWidget);
-        proxyEditor.bind('reinitialize-color-editor-widget', onReInitializeColorEditorWidget);
         proxyEditor.bind('update-rgb-points', onUpdateRgbPoints);
         proxyEditor.bind('getHOTTAP-rgb-points', onHOTTAPRgbPoints);
     }
@@ -572,38 +571,16 @@
     function onProxyApply(event) {
         startWorking();
         session.call('pv.proxy.manager.update', [event.properties]).then(invalidatePipeline, invalidatePipeline);
-        console.log(event.colorBy)
+//        console.log(event.colorBy.representation)
         // Args: representation, colorMode, arrayLocation='POINTS', arrayName='', vectorMode='Magnitude', vectorComponent = 0, rescale=False
         var args = [].concat(event.colorBy.representation, event.colorBy.mode, event.colorBy.array, event.colorBy.component);
         startWorking();
         session.call('pv.color.manager.color.by', args).then(invalidatePipeline, error);
-
-        var colorEditorElt = $('.color-editor-container', proxyEditor);
-        proxyEditor.trigger({
-            type: 'reinitialize-color-editor-widget',
-            container: colorEditorElt,
-            colorBy: event.colorBy
-        });
-
-        colorEditorElt.on('color-editor-cp-update', function(cpEvt) {
-        	proxyEditor.trigger({
-                type: 'update-rgb-points',
-                colorBy: event.colorBy,
-                rgbInfo: cpEvt.rgbInfo
-            });
-        });
-        
-//        startWorking();
-//        session.call('pv.color.manager.rgb.points.get', [event.colorBy.array[2]]).then(function(result) {
-//        	
-////        	if(event.colorBy.palette) {
-////                startWorking();
-////                session.call('pv.color.manager.select.preset', [ event.colorBy.representation, event.colorBy.palette ]).then(invalidatePipeline, error);
-////            }
-//            workDone();
-//        }, error);
-        
-        
+        // Update palette ?
+        if(event.colorBy.palette) {
+            startWorking();
+            session.call('pv.color.manager.select.preset', [ event.colorBy.representation, event.colorBy.palette ]).then(invalidatePipeline, error);
+        }
     }
 
     // ------------------------------------------------------------------------
@@ -803,36 +780,6 @@
         session.call('pv.color.manager.rgb.points.get', [colorArray[1]]).then(function(result) {
         }, error);
         return result;
-    }
-    
-    function onReInitializeColorEditorWidget(event) {
-        var container = event.container,
-            colorArray = event.colorBy.array,
-            initOptions = {
-                'topMargin': 10,
-                'rightMargin': 15,
-                'bottomMargin': 10,
-                'leftMargin': 15,
-                'widgetKey': 'pv.color.editor.settings'
-            };
-
-        if (colorArray.length >= 2 && colorArray[1] !== '') {
-            startWorking();
-            session.call('pv.color.manager.rgb.points.get', [colorArray[1]]).then(function(result) {
-                initOptions['rgbInfo'] = result;
-                initOptions['widgetData'] = retrieveWidgetSettings(initOptions['widgetKey']);
-                if(event.colorBy.palette) {
-	                startWorking();
-	                session.call('pv.color.manager.select.preset', [ event.colorBy.representation, event.colorBy.palette ]).then(invalidatePipeline, error);
-	            }
-                container.colorEditor(initOptions);
-                container.bind('store-widget-settings', onStoreWidgetSettings);
-                workDone();
-            }, error);
-        } else {
-            console.log("WARNING: Initializing the color editor while not coloring by an array.");
-            container.colorEditor(initOptions);
-        }
     }
     
     function onInitializeColorEditorWidget(event) {
