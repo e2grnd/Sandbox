@@ -812,12 +812,7 @@
                 });                
             }
             
-            // Apply the legend on startup (Dan) - 
-            if (InitialApplyContour){
-            	eventFire(document.getElementById('ClickToApplyMe'), 'click');
-            	eventFire(document.getElementById('initScalar'), 'click');
-            	InitialApplyContour = 0;
-            }
+            
             
          // Adjust the range of the legend on startup (Dan).
             if (InitialApplyLegend){
@@ -850,6 +845,13 @@
             	
             	InitialApplyLegend = 0;
         	}
+            
+         // Apply the legend on startup (Dan) - 
+            if (InitialApplyContour){
+            	eventFire(document.getElementById('ClickToApplyMe'), 'click');
+            	eventFire(document.getElementById('initScalar'), 'click');
+            	InitialApplyContour = 0;
+            }
             
             // - dependent property visibility 
             $('.has-dependency', me).unbind().bind('change', function() {
