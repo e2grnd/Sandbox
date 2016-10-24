@@ -406,7 +406,7 @@
         $(viewportSelector).empty()
                            .bind('captured-screenshot-ready', onScreenshotCaptured);
         viewport = vtkWeb.createViewport({session: session});
-        viewport.setActiveRenderer('image');
+        viewport.setActiveRenderer('webgl');
         viewport.bind(viewportSelector);
     }
 
