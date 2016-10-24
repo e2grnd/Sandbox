@@ -579,7 +579,7 @@
         var rgbStored = {};
         // Update palette ?
         session.call('pv.color.manager.rgb.points.get', [event.colorBy.array[1]]).then(function(result) {
-        	console.log(result)
+        	console.log(result['continuous'])
             proxyEditor.trigger({
                 'type': 'notify-new-rgb-points-received',
                 'rgbpoints': result
