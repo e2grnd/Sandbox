@@ -166,6 +166,11 @@
             palette = $('.pv-color-panel select.palette').val();
         return { representation: $('.pv-color-panel').attr('data-proxy-id'),  mode: array[0], array: array.slice(1), component: component, palette: palette };
     }
+    
+    function extractRGBObject() {
+        return { continuous: {scalars: [80.0, 2599.9, 2600.0], colors: [[0, 0, 1], [1, 0, 0], [1, 1, 1]]},
+        	mode: "continuous", categorical: {scalars: [], colors: [], annotations: []} };
+    }
 
     function extractProperty(property_container) {
         var proxy_id = property_container.attr('data-proxy-id'),
@@ -826,8 +831,9 @@
             	
             	var colorEditorElt2 = $('.color-editor-container', me);
                 var currentColorBy = extractColorBy();
+                var rgbHottapVals = extractRGBObject()
                 console.log(currentColorBy);
-                console.log(currentColorBy['array']);
+                console.log(rgbHottapVals);
                 me.trigger({
                     type: 'initialize-color-editor-widget',
                     container: colorEditorElt2,
