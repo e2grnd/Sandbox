@@ -823,7 +823,6 @@
                         rgbpoints: event.rgbpoints
                     });
                 });
-            	console.log(rgbpoints)
             	console.log(event.rgbpoints)
             	me.trigger({
                     type: 'rescale-transfer-function',
