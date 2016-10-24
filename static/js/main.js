@@ -570,8 +570,8 @@
 
     function onProxyApply(event) {
         startWorking();
-        session.call('pv.color.manager.rgb.points.get', [event.colorBy.array[2]]).then(function(result) {
-        	console.log(event.colorBy.array[2])
+        session.call('pv.color.manager.rgb.points.get', [event.colorBy.array[1]]).then(function(result) {
+        	console.log(event.colorBy.array[1])
             console.log(result['continuous']['scalars'])
         	session.call('pv.proxy.manager.update', [event.properties]).then(invalidatePipeline, invalidatePipeline);
             // Args: representation, colorMode, arrayLocation='POINTS', arrayName='', vectorMode='Magnitude', vectorComponent = 0, rescale=False
