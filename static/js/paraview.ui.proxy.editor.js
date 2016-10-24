@@ -834,19 +834,19 @@
 
                 var currentColorBy = extractColorBy();
                 console.log(currentColorBy);
-                var rgbValues = me.trigger({
+                me.trigger({
                     type: 'initialize-color-editor-widget',
+                    container: colorEditorElt2,
                     colorBy: currentColorBy
                 });
-                console.log("RGB Values")
-                console.log(rgbValues)
-//                colorEditorElt2.on('color-editor-cp-update', function(cpEvt) {
-                me.trigger({
-                    type: 'update-rgb-points',
-                    colorBy: extractColorBy(),
-                    rgbInfo: rgbValues
+                colorEditorElt2.on('color-editor-cp-update', function(cpEvt) {
+                	console.log(cpEvt.rgbInfo);
+                    me.trigger({
+                        type: 'update-rgb-points',
+                        colorBy: extractColorBy(),
+                        rgbInfo: cpEvt.rgbInfo
+                    });
                 });
-//                });
                 console.log(colorEditorElt2)
 
             	me.trigger({
