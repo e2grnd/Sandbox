@@ -812,6 +812,15 @@
                 });                
             }
             
+            if (InitialApplyLegend){
+	            var rgbHottapVals = extractRGBObject()
+	            me.trigger({
+	                    type: 'update-rgb-points',
+	                    colorBy: extractColorBy(),
+	                    rgbInfo: rgbHottapVals
+	            });
+            }
+            
             // Apply the legend on startup (Dan) - 
             if (InitialApplyContour){
             	eventFire(document.getElementById('ClickToApplyMe'), 'click');
