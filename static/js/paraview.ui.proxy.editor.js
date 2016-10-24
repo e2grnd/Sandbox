@@ -366,7 +366,7 @@
                 widgetKey = opts.widgetKey,
                 widgetData = $.extend(true, {}, opts.widgetData);
                
-                removeOptions = ['3D Glyphs','Points','Volume']; //REMOVES REPRESENTATIONS FROM VISUALIZER OPTIONS - DAN
+                removeOptions = ['3D Glyphs','Outline','Points','Volume']; //REMOVES REPRESENTATIONS FROM VISUALIZER OPTIONS - DAN
 
             /*
              * Update the application data object and store it
