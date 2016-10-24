@@ -575,8 +575,8 @@
         var args = [].concat(event.colorBy.representation, event.colorBy.mode, event.colorBy.array, event.colorBy.component);
         startWorking();
         session.call('pv.color.manager.color.by', args).then(invalidatePipeline, error);
-        session.call('pv.color.manager.rgb.points.get', [event.colorBy.array[1]]).then(function(result) {
-        	session.call('pv.color.manager.rgb.points.set', [event.colorBy.array[1], result]).then(function(result) {
+        session.call('pv.color.manager.rgb.points.get', [event.colorBy.array[2]]).then(function(result) {
+        	session.call('pv.color.manager.rgb.points.set', [event.colorBy.array[2], result]).then(function(result) {
                 workDone();
                 viewport.invalidateScene();
             }, error);
