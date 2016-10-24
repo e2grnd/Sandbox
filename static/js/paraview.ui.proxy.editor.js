@@ -826,6 +826,7 @@
             	
             	var colorEditorElt = $('.color-editor-container', me);
                 var currentColorBy = extractColorBy();
+                console.log(currentColorBy)
                 me.trigger({
                     type: 'initialize-color-editor-widget',
                     container: colorEditorElt,
