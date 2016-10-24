@@ -366,7 +366,7 @@
                 widgetKey = opts.widgetKey,
                 widgetData = $.extend(true, {}, opts.widgetData);
                
-                removeOptions = ['3D Glyphs','Surface','Wireframe','Points','Volume']; //REMOVES REPRESENTATIONS FROM VISUALIZER OPTIONS - DAN
+                removeOptions = ['3D Glyphs','Points','Volume']; //REMOVES REPRESENTATIONS FROM VISUALIZER OPTIONS - DAN
 
             /*
              * Update the application data object and store it
@@ -562,7 +562,7 @@
                         html = html.replace(/VALUE/g, value).replace(/SIZE/g, ui.size).replace(/TYPE/g, ui.type);
                         var optionsBuffer = [],
                             optionTypeSimpleArray = ui.values.hasOwnProperty('length');
-                        
+                       
 
                         for(var key in ui.values) {
                         	
