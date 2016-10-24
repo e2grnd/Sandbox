@@ -582,7 +582,7 @@
 //            session.call('pv.color.manager.select.preset', [ event.colorBy.representation, event.colorBy.palette ]).then(invalidatePipeline, error);
 //        }
         
-        session.call('pv.color.manager.rgb.points.get', [event.colorBy.array[1]]).then(function(result) {
+        session.call('pv.color.manager.rgb.points.get', [event.colorBy.array[2]]).then(function(result) {
         	var colorEditorElt = $('.color-editor-container', proxyEditor);
             proxyEditor.trigger({
                 type: 'initialize-color-editor-widget',
