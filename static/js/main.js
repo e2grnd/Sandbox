@@ -586,17 +586,16 @@
                 colorBy: event.colorBy
             });
             colorEditorElt.on('color-editor-cp-update', function(cpEvt) {
-            	if(event.colorBy.palette) {
-                    startWorking();
-                    session.call('pv.color.manager.select.preset', [ event.colorBy.representation, event.colorBy.palette ]).then(invalidatePipeline, error);
-                }
             	proxyEditor.trigger({
                     type: 'update-rgb-points',
                     colorBy: event.colorBy,
                     rgbInfo: cpEvt.rgbInfo
                 });
             });
-
+//        	if(event.colorBy.palette) {
+//                startWorking();
+//                session.call('pv.color.manager.select.preset', [ event.colorBy.representation, event.colorBy.palette ]).then(invalidatePipeline, error);
+//            }
             workDone();
         }, error);
         
