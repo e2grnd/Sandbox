@@ -402,12 +402,7 @@
             $('.tooltip').remove();
             
             if (wantColorManagement === true) {
-                // Listen to event asking me to update the scalar range
-                me.unbind('update-scalar-range-values').bind('update-scalar-range-values', function(newRange) {
-                    $('.scalar-range-min', me).val(newRange.min);
-                    $('.scalar-range-max', me).val(newRange.max);
-                });
-                
+                         
                 var target_container = $(event.target),
             	action = target_container.attr('data-action')
             
@@ -433,6 +428,12 @@
 	                });
 	                colorEditorInitialized = true;
 	            }
+	            
+	            // Listen to event asking me to update the scalar range
+                me.unbind('update-scalar-range-values').bind('update-scalar-range-values', function(newRange) {
+                    $('.scalar-range-min', me).val(newRange.min);
+                    $('.scalar-range-max', me).val(newRange.max);
+                });
 
                 me.unbind('notify-new-rgb-points-received').bind('notify-new-rgb-points-received', function(event) {
                     $('.color-editor-container', me).trigger({
