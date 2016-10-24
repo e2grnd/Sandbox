@@ -823,10 +823,12 @@
                         rgbpoints: event.rgbpoints
                     });
                 });
-            	
+            	rgbInfo: {}
             	var colorEditorElt2 = $('.color-editor-container', me);
                 var currentColorBy = extractColorBy();
-                console.log(currentColorBy);
+                var opts = $.extend({}, $.fn.colorEditor.defaults, options);
+                rgbInfo = $.extend(true, {}, opts.rgbInfo)
+                console.log(rgbInfo);
                 me.trigger({
                     type: 'initialize-color-editor-widget',
                     container: colorEditorElt2,
