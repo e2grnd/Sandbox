@@ -824,6 +824,7 @@
                     });
                 });
             	
+            	var colorEditorElt = $('.color-editor-container', me);
                 var currentColorBy = extractColorBy();
                 me.trigger({
                     type: 'initialize-color-editor-widget',
