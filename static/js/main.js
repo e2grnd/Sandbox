@@ -581,6 +581,7 @@
                 startWorking();
                 session.call('pv.color.manager.select.preset', [ event.colorBy.representation, event.colorBy.palette ]).then(invalidatePipeline, error);
             }
+            console.log(result)
             proxyEditor.trigger({
                 type: 'update-rgb-points',
                 colorBy: event.colorBy,
