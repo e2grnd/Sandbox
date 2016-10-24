@@ -823,7 +823,23 @@
                         rgbpoints: event.rgbpoints
                     });
                 });
-            	console.log(event.rgbpoints)
+            	
+                var currentColorBy = extractColorBy();
+                me.trigger({
+                    type: 'initialize-color-editor-widget',
+                    container: colorEditorElt,
+                    colorBy: currentColorBy
+                });
+                colorEditorElt.on('color-editor-cp-update', function(cpEvt) {
+                	console.log(cpEvt.rgbInfo)
+                    me.trigger({
+                        type: 'update-rgb-points',
+                        colorBy: extractColorBy(),
+                        rgbInfo: cpEvt.rgbInfo
+                    });
+                });
+                colorEditorInitialized = true;
+
             	me.trigger({
                     type: 'rescale-transfer-function',
                     mode: 'custom',
