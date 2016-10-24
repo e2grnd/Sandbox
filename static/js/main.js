@@ -577,11 +577,7 @@
         startWorking();
         session.call('pv.color.manager.color.by', args).then(invalidatePipeline, error);
 
-//        if(event.colorBy.palette) {
-//            startWorking();
-//            session.call('pv.color.manager.select.preset', [ event.colorBy.representation, event.colorBy.palette ]).then(invalidatePipeline, error);
-//        }//
-        
+        startWorking();
         session.call('pv.color.manager.rgb.points.get', [event.colorBy.array[2]]).then(function(result) {
         	var colorEditorElt = $('.color-editor-container', proxyEditor);
             proxyEditor.trigger({
@@ -596,6 +592,11 @@
                     rgbInfo: cpEvt.rgbInfo
                 });
             });
+            
+            if(event.colorBy.palette) {
+                startWorking();
+                session.call('pv.color.manager.select.preset', [ event.colorBy.representation, event.colorBy.palette ]).then(invalidatePipeline, error);
+            }
             workDone();
         }, error);
         
