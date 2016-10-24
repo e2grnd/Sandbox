@@ -824,23 +824,24 @@
                     });
                 });
             	
-            	var colorEditorElt = $('.color-editor-container', me);
+            	var colorEditorElt2 = $('.color-editor-container', me);
                 var currentColorBy = extractColorBy();
-                console.log(currentColorBy)
+                console.log(currentColorBy);
                 me.trigger({
                     type: 'initialize-color-editor-widget',
-                    container: colorEditorElt,
+                    container: colorEditorElt2,
                     colorBy: currentColorBy
                 });
-                colorEditorElt.on('color-editor-cp-update', function(cpEvt) {
-                	console.log(cpEvt.rgbInfo)
+                fireNewRgbPoints();
+                colorEditorElt2.on('color-editor-cp-update', function(cpEvt) {
+                	console.log(cpEvt.rgbInfo);
                     me.trigger({
                         type: 'update-rgb-points',
                         colorBy: extractColorBy(),
                         rgbInfo: cpEvt.rgbInfo
                     });
                 });
-                colorEditorInitialized = true;
+                console.log(colorEditorElt2)
 
             	me.trigger({
                     type: 'rescale-transfer-function',
