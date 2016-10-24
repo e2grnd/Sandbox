@@ -824,7 +824,7 @@
                     });
                 });
             	var colorEditorElt2 = $('.color-editor-container', me);
-            	updateColorManagementVisibility(colorEditorElt,
+            	updateColorManagementVisibility(colorEditorElt2,
                         [$('.scalar-range-editor-container', me),  $('.scalar-opacity-editor-container', me)],
                         target_container,
                         [$('[data-action=toggle-scalar-opacity-editor]', me), $('[data-action=toggle-scalar-range-editor]', me)]);
