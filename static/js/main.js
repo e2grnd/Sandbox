@@ -579,16 +579,20 @@
         var rgbStored = {};
         // Update palette ?
         session.call('pv.color.manager.rgb.points.get', [event.colorBy.array[1]]).then(function(result) {
-        	console.log(result['continuous'])
-            proxyEditor.trigger({
-                'type': 'notify-new-rgb-points-received',
-                'rgbpoints': result
-            });
-            
             if(event.colorBy.palette) {
                 startWorking();
                 session.call('pv.color.manager.select.preset', [ event.colorBy.representation, event.colorBy.palette ]).then(invalidatePipeline, error);
             }
+//            proxyEditor.trigger({
+//                'type': 'notify-new-rgb-points-received',
+//                'rgbpoints': result
+//            });
+            proxyEditor.trigger({
+                type: 'update-rgb-points',
+                colorBy: event.colorBy,
+                rgbInfo: result
+            });
+            
             workDone();
         }, error);
     }
