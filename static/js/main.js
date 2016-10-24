@@ -584,7 +584,7 @@
             }
             session.call('pv.color.manager.rgb.points.set', [event.colorBy.array[2], result]).then(function(result) {
                 workDone();
-                viewport.invalidateScene();
+                //viewport.invalidateScene();
             }, error);
             proxyEditor.trigger({
                 'type': 'notify-new-rgb-points-received',
