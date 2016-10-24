@@ -576,25 +576,26 @@
         var args = [].concat(event.colorBy.representation, event.colorBy.mode, event.colorBy.array, event.colorBy.component);
         startWorking();
         session.call('pv.color.manager.color.by', args).then(invalidatePipeline, error);
-        var rgbStored = {};
-        // Update palette ?
-        session.call('pv.color.manager.rgb.points.get', [event.colorBy.array[1]]).then(function(result) {
-            if(event.colorBy.palette) {
-                startWorking();
-                session.call('pv.color.manager.select.preset', [ event.colorBy.representation, event.colorBy.palette ]).then(invalidatePipeline, error);
-            }
+//        var rgbStored = {};
+//        // Update palette ?
+//        session.call('pv.color.manager.rgb.points.get', [event.colorBy.array[1]]).then(function(result) {
+//            
+////            proxyEditor.trigger({
+////                'type': 'notify-new-rgb-points-received',
+////                'rgbpoints': result
+////            });
 //            proxyEditor.trigger({
-//                'type': 'notify-new-rgb-points-received',
-//                'rgbpoints': result
+//                type: 'update-rgb-points',
+//                colorBy: event.colorBy,
+//                rgbInfo: result
 //            });
-            proxyEditor.trigger({
-                type: 'update-rgb-points',
-                colorBy: event.colorBy,
-                rgbInfo: result
-            });
-            
-            workDone();
-        }, error);
+//            
+//            workDone();
+//        }, error);
+        if(event.colorBy.palette) {
+            startWorking();
+            session.call('pv.color.manager.select.preset', [ event.colorBy.representation, event.colorBy.palette ]).then(invalidatePipeline, error);
+        }
     }
 
     // ------------------------------------------------------------------------
