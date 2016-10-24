@@ -579,19 +579,18 @@
 
         // Update palette ?
         session.call('pv.color.manager.rgb.points.get', [event.colorBy.array[1]]).then(function(result) {
-        	console.log(result)
-        	console.log(result['continuous'])
             proxyEditor.trigger({
                 'type': 'notify-new-rgb-points-received',
                 'rgbpoints': result
             });
             workDone();
         }, error);
-        console.log(event.colorBy.palette)
-        if(event.colorBy.palette) {
-            startWorking();
-            session.call('pv.color.manager.select.preset', [ event.colorBy.representation, event.colorBy.palette ]).then(invalidatePipeline, error);
-        }
+        
+//        console.log(event.colorBy.palette)
+//        if(event.colorBy.palette) {
+//            startWorking();
+//            session.call('pv.color.manager.select.preset', [ event.colorBy.representation, event.colorBy.palette ]).then(invalidatePipeline, error);
+//        }
     }
 
     // ------------------------------------------------------------------------
