@@ -403,32 +403,6 @@
             
             if (wantColorManagement === true) {
                          
-                var target_container = $(event.target),
-            	action = target_container.attr('data-action')
-            
-	            var colorEditorElt = $('.color-editor-container', me);
-	            updateColorManagementVisibility(colorEditorElt,
-	                                            [$('.scalar-range-editor-container', me),  $('.scalar-opacity-editor-container', me)],
-	                                            target_container,
-	                                            [$('[data-action=toggle-scalar-opacity-editor]', me), $('[data-action=toggle-scalar-range-editor]', me)]);
-	            persistToggleState();
-	            if (colorEditorElt.is(':visible') && colorEditorInitialized === false) {
-	                var currentColorBy = extractColorBy();
-	                me.trigger({
-	                    type: 'initialize-color-editor-widget',
-	                    container: colorEditorElt,
-	                    colorBy: currentColorBy
-	                });
-	                colorEditorElt.on('color-editor-cp-update', function(cpEvt) {
-	                    me.trigger({
-	                        type: 'update-rgb-points',
-	                        colorBy: extractColorBy(),
-	                        rgbInfo: cpEvt.rgbInfo
-	                    });
-	                });
-	                colorEditorInitialized = true;
-	            }
-	            
 	            // Listen to event asking me to update the scalar range
                 me.unbind('update-scalar-range-values').bind('update-scalar-range-values', function(newRange) {
                     $('.scalar-range-min', me).val(newRange.min);
