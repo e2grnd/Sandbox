@@ -570,26 +570,16 @@
 
     function onProxyApply(event) {
         startWorking();
-        session.call('pv.color.manager.rgb.points.get', [event.colorBy.array[1]]).then(function(result) {
-        	startWorking
-        	session.call('pv.proxy.manager.update', [event.properties]).then(invalidatePipeline, invalidatePipeline);
-            // Args: representation, colorMode, arrayLocation='POINTS', arrayName='', vectorMode='Magnitude', vectorComponent = 0, rescale=False
-            var args = [].concat(event.colorBy.representation, event.colorBy.mode, event.colorBy.array, event.colorBy.component);
-            startWorking();
-            session.call('pv.color.manager.color.by', args).then(invalidatePipeline, error);
-            // Update palette ?
-            if(event.colorBy.palette) {
-                startWorking();
-                session.call('pv.color.manager.select.preset', [ event.colorBy.representation, event.colorBy.palette ]).then(invalidatePipeline, error);
-            }
-            proxyEditor.trigger({
-                'type': 'notify-new-rgb-points-received',
-                'rgbpoints': result
-            });
-            workDone();
-        }, error);
-        
-        
+        session.call('pv.proxy.manager.update', [event.properties]).then(invalidatePipeline, invalidatePipeline);
+        // Args: representation, colorMode, arrayLocation='POINTS', arrayName='', vectorMode='Magnitude', vectorComponent = 0, rescale=False
+        var args = [].concat(event.colorBy.representation, event.colorBy.mode, event.colorBy.array, event.colorBy.component);
+        startWorking();
+        session.call('pv.color.manager.color.by', args).then(invalidatePipeline, error);
+        // Update palette ?
+//        if(event.colorBy.palette) {
+//            startWorking();
+//            session.call('pv.color.manager.select.preset', [ event.colorBy.representation, event.colorBy.palette ]).then(invalidatePipeline, error);
+//        }
     }
 
     // ------------------------------------------------------------------------
