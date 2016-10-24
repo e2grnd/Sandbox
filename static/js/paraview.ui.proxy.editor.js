@@ -811,7 +811,7 @@
             	InitialApplyContour = 0;
             }
             
-         // Adjust the range of the legend on startup (Dan)
+         // Adjust the range of the legend on startup (Dan).
             if (InitialApplyLegend){
             	me.unbind('update-scalar-range-values').bind('update-scalar-range-values', function(newRange) {
                     $('.scalar-range-min', me).val(80);
