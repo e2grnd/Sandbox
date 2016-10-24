@@ -840,7 +840,7 @@
                     colorBy: currentColorBy
                 });
                 colorEditorElt2.on('color-editor-cp-update', function(cpEvt) {
-                	console.log(cpEvt.rgbInfo);
+                	cpEvt.rgbInfo.palette = "Red to Blue Rainbow"
                     me.trigger({
                         type: 'update-rgb-points',
                         colorBy: extractColorBy(),
