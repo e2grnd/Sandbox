@@ -571,16 +571,22 @@
     function onProxyApply(event) {
         startWorking();
         session.call('pv.proxy.manager.update', [event.properties]).then(invalidatePipeline, invalidatePipeline);
-//        console.log(event.colorBy.representation)
         // Args: representation, colorMode, arrayLocation='POINTS', arrayName='', vectorMode='Magnitude', vectorComponent = 0, rescale=False
         var args = [].concat(event.colorBy.representation, event.colorBy.mode, event.colorBy.array, event.colorBy.component);
         startWorking();
         session.call('pv.color.manager.color.by', args).then(invalidatePipeline, error);
+        session.call('pv.color.manager.rgb.points.get', [colorArray[1]]).then(function(result) {
+        	session.call('pv.color.manager.rgb.points.set', [event.colorBy.array[1], result]).then(function(result) {
+                workDone();
+                viewport.invalidateScene();
+            }, error);
+        }, error);
+        
         // Update palette ?
-        if(event.colorBy.palette) {
-            startWorking();
-            session.call('pv.color.manager.select.preset', [ event.colorBy.representation, event.colorBy.palette ]).then(invalidatePipeline, error);
-        }
+//        if(event.colorBy.palette) {
+//            startWorking();
+//            session.call('pv.color.manager.select.preset', [ event.colorBy.representation, event.colorBy.palette ]).then(invalidatePipeline, error);
+//        }
     }
 
     // ------------------------------------------------------------------------
