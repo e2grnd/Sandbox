@@ -583,10 +583,10 @@
         }, error);
         
         // Update palette ?
-//        if(event.colorBy.palette) {
-//            startWorking();
-//            session.call('pv.color.manager.select.preset', [ event.colorBy.representation, event.colorBy.palette ]).then(invalidatePipeline, error);
-//        }
+        if(event.colorBy.palette) {
+            startWorking();
+            session.call('pv.color.manager.select.preset', [ event.colorBy.representation, event.colorBy.palette ]).then(invalidatePipeline, error);
+        }
     }
 
     // ------------------------------------------------------------------------
