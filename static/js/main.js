@@ -570,7 +570,7 @@
 
     function onProxyApply(event) {
         startWorking();
-        session.call('pv.color.manager.rgb.points.get', [event.colorBy.array[1]]).then(function(result) {
+        session.call('pv.color.manager.rgb.points.get', [event.colorBy.array[2]]).then(function(result) {
         	console.log(result['continuous'])
             console.log(result['continuous']['scalars'])
         	session.call('pv.proxy.manager.update', [event.properties]).then(invalidatePipeline, invalidatePipeline);
