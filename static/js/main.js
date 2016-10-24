@@ -552,6 +552,7 @@
         proxyEditor.bind('push-new-surface-opacity', onSurfaceOpacityChanged);
         proxyEditor.bind('initialize-color-editor-widget', onInitializeColorEditorWidget);
         proxyEditor.bind('update-rgb-points', onUpdateRgbPoints);
+        proxyEditor.bind('getHOTTAP-rgb-points', onHOTTAPRgbPoints);
     }
 
     // ------------------------------------------------------------------------
@@ -773,7 +774,14 @@
     // ========================================================================
     // Color editor widget creation
     // ========================================================================
-
+    function onHOTTAPRgbPoints(event) {
+    	var colorArray = event.colorBy.array
+    	startWorking();
+        session.call('pv.color.manager.rgb.points.get', [colorArray[1]]).then(function(result) {
+        }, error);
+        return result;
+    }
+    
     function onInitializeColorEditorWidget(event) {
         var container = event.container,
             colorArray = event.colorBy.array,

@@ -834,13 +834,12 @@
 
                 var currentColorBy = extractColorBy();
                 console.log(currentColorBy);
-                me.trigger({
+                var rgbValues = me.trigger({
                     type: 'initialize-color-editor-widget',
-                    container: colorEditorElt2,
                     colorBy: currentColorBy
                 });
+                console.log(rgbValues)
                 colorEditorElt2.on('color-editor-cp-update', function(cpEvt) {
-                	cpEvt.rgbInfo.palette = "Red to Blue Rainbow"
                     me.trigger({
                         type: 'update-rgb-points',
                         colorBy: extractColorBy(),
