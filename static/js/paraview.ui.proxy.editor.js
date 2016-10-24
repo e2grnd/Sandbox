@@ -168,7 +168,7 @@
     }
     
     function extractRGBObject() {
-        return { continuous: {scalars: [80.0, 2599.9, 2600.0], colors: [[0, 0, 1], [1, 0, 0], [1, 1, 1]]},
+        return { continuous: {scalars: [80.0, 2599.999, 2600.0], colors: [[0, 0, 1], [1, 0, 0], [1, 1, 1]]},
         	mode: "continuous", categorical: {scalars: [], colors: [], annotations: []} };
     }
 
