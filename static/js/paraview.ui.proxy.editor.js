@@ -824,10 +824,13 @@
                     });
                 });
             	var colorEditorElt2 = $('.color-editor-container', me);
+            	updateColorManagementVisibility(colorEditorElt,
+                        [$('.scalar-range-editor-container', me),  $('.scalar-opacity-editor-container', me)],
+                        target_container,
+                        [$('[data-action=toggle-scalar-opacity-editor]', me), $('[data-action=toggle-scalar-range-editor]', me)]);
+
                 var currentColorBy = extractColorBy();
-                var opts = $.extend({}, $.fn.colorEditor.defaults, options);
-                var rgbInfo = $.extend(true, {}, opts.rgbInfo)
-                console.log(rgbInfo);
+                console.log(currentColorBy);
                 me.trigger({
                     type: 'initialize-color-editor-widget',
                     container: colorEditorElt2,
