@@ -415,6 +415,9 @@
                     });
                 });
                 
+                var target_container = $(event.target),
+                	action = target_container.attr('data-action')
+                
                 var colorEditorElt = $('.color-editor-container', me);
                 updateColorManagementVisibility(colorEditorElt,
                                                 [$('.scalar-range-editor-container', me),  $('.scalar-opacity-editor-container', me)],
