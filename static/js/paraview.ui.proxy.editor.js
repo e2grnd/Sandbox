@@ -832,7 +832,6 @@
                     container: colorEditorElt2,
                     colorBy: currentColorBy
                 });
-                fireNewRgbPoints();
                 colorEditorElt2.on('color-editor-cp-update', function(cpEvt) {
                 	console.log(cpEvt.rgbInfo);
                     me.trigger({
