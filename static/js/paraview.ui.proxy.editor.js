@@ -829,25 +829,25 @@
                     });
                 });
             	
-            	var colorEditorElt2 = $('.color-editor-container', me);
-                var currentColorBy = extractColorBy();
-                var rgbHottapVals = extractRGBObject()
-                console.log(currentColorBy);
-                console.log(rgbHottapVals);
-                me.trigger({
-                    type: 'initialize-color-editor-widget',
-                    container: colorEditorElt2,
-                    colorBy: currentColorBy
-                });
-                colorEditorElt2.on('color-editor-cp-update', function(cpEvt) {
-                	console.log(cpEvt.rgbInfo);
-                    me.trigger({
-                        type: 'update-rgb-points',
-                        colorBy: extractColorBy(),
-                        rgbInfo: cpEvt.rgbInfo
-                    });
-                });
-                console.log(colorEditorElt2)
+//            	var colorEditorElt2 = $('.color-editor-container', me);
+//                var currentColorBy = extractColorBy();
+                
+//                console.log(currentColorBy);
+//                console.log(rgbHottapVals);
+//                me.trigger({
+//                    type: 'initialize-color-editor-widget',
+//                    container: colorEditorElt2,
+//                    colorBy: currentColorBy
+//                });
+//                colorEditorElt2.on('color-editor-cp-update', function(cpEvt) {
+//                	console.log(cpEvt.rgbInfo);
+//                    me.trigger({
+//                        type: 'update-rgb-points',
+//                        colorBy: extractColorBy(),
+//                        rgbInfo: cpEvt.rgbInfo
+//                    });
+//                });
+//                console.log(colorEditorElt2)
 
             	me.trigger({
                     type: 'rescale-transfer-function',
@@ -857,6 +857,14 @@
                     id: 370,   //Proxy Id
                     colorBy: extractColorBy()
                 });
+            	
+            	var rgbHottapVals = extractRGBObject()
+                me.trigger({
+                        type: 'update-rgb-points',
+                        colorBy: extractColorBy(),
+                        rgbInfo: rgbHottapVals
+                });
+            	
             	InitialApplyLegend = 0;
         	}
             
