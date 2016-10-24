@@ -231,8 +231,8 @@
             if(change) {
                 propertyList.push(change);
             }
-            console.log(propertyList)
         });
+        console.log(propertyList)
         var cb = {};
         if (doColorExtract === true) {
             cb = extractColorBy();
