@@ -823,6 +823,9 @@
                         rgbpoints: event.rgbpoints
                     });
                 });
+            	
+            	var target_container = $(event.target),
+                	action = target_container.attr('data-action');
             	var colorEditorElt2 = $('.color-editor-container', me);
             	updateColorManagementVisibility(colorEditorElt2,
                         [$('.scalar-range-editor-container', me),  $('.scalar-opacity-editor-container', me)],
