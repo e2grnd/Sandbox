@@ -577,17 +577,28 @@
                                 }
                                 
                                 for(var i = 0; i < removeOptions.length; i++) {
-                                	if (ui.values[key] == removeOptions[i]){
-                                		flagOutput = 0;
+                                	if (ui.values[key] == 'Surface With Edges'){
+                                		if (flagOutput){
+        	                                optionsBuffer.push(TEMPLATE_OPTION.replace(/VALUE/g, ui.values[key])
+        	                                                                  .replace(/SELECTED/g, selected)
+        	                                                                  .replace(/LABEL/g, key)
+        	                                                                  .replace(/SIZE/g, ui.size));
+                                        }
                                 	}
                                 }
                                 
-                                if (flagOutput){
-	                                optionsBuffer.push(TEMPLATE_OPTION.replace(/VALUE/g, ui.values[key])
-	                                                                  .replace(/SELECTED/g, selected)
-	                                                                  .replace(/LABEL/g, key)
-	                                                                  .replace(/SIZE/g, ui.size));
-                                }
+//                                for(var i = 0; i < removeOptions.length; i++) {
+//                                	if (ui.values[key] == removeOptions[i]){
+//                                		flagOutput = 0;
+//                                	}
+//                                }
+//                                
+//                                if (flagOutput){
+//	                                optionsBuffer.push(TEMPLATE_OPTION.replace(/VALUE/g, ui.values[key])
+//	                                                                  .replace(/SELECTED/g, selected)
+//	                                                                  .replace(/LABEL/g, key)
+//	                                                                  .replace(/SIZE/g, ui.size));
+//                                }
                                 
                             } else {
                                 var selected = '';
@@ -598,16 +609,27 @@
                                 }
                                 
                                 for(var i = 0; i < removeOptions.length; i++) {
-                                	if (ui.values[key] == removeOptions[i]){
-                                		flagOutput = 0;
+                                	if (ui.values[key] == 'Surface With Edges'){
+                                		if (flagOutput){
+        	                                optionsBuffer.push(TEMPLATE_OPTION.replace(/VALUE/g, ui.values[key])
+        	                                                                  .replace(/SELECTED/g, selected)
+        	                                                                  .replace(/LABEL/g, key)
+        	                                                                  .replace(/SIZE/g, ui.size));
+                                        }
                                 	}
                                 }
-                                if (flagOutput){
-                                	optionsBuffer.push(TEMPLATE_OPTION.replace(/VALUE/g, ui.values[key])
-						                                              .replace(/SELECTED/g, selected)
-						                                              .replace(/LABEL/g, ui.values[key])
-						                                              .replace(/SIZE/g, ui.size));
-                                }                                
+                                
+//                                for(var i = 0; i < removeOptions.length; i++) {
+//                                	if (ui.values[key] == removeOptions[i]){
+//                                		flagOutput = 0;
+//                                	}
+//                                }
+//                                if (flagOutput){
+//                                	optionsBuffer.push(TEMPLATE_OPTION.replace(/VALUE/g, ui.values[key])
+//						                                              .replace(/SELECTED/g, selected)
+//						                                              .replace(/LABEL/g, ui.values[key])
+//						                                              .replace(/SIZE/g, ui.size));
+//                                }                                
                             }
                         }
                         if(optionsBuffer.length) {
