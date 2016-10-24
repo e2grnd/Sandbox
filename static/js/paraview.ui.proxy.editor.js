@@ -838,14 +838,15 @@
                     type: 'initialize-color-editor-widget',
                     colorBy: currentColorBy
                 });
+                console.log("RGB Values")
                 console.log(rgbValues)
-                colorEditorElt2.on('color-editor-cp-update', function(cpEvt) {
-                    me.trigger({
-                        type: 'update-rgb-points',
-                        colorBy: extractColorBy(),
-                        rgbInfo: cpEvt.rgbInfo
-                    });
+//                colorEditorElt2.on('color-editor-cp-update', function(cpEvt) {
+                me.trigger({
+                    type: 'update-rgb-points',
+                    colorBy: extractColorBy(),
+                    rgbInfo: rgbValues
                 });
+//                });
                 console.log(colorEditorElt2)
 
             	me.trigger({
