@@ -820,7 +820,7 @@
             if (InitialApplyLegend){
             	me.unbind('update-scalar-range-values').bind('update-scalar-range-values', function(newRange) {
                     $('.scalar-range-min', me).val(80);
-                    $('.scalar-range-max', me).val(1800);
+                    $('.scalar-range-max', me).val(2600);
                 });
             	me.unbind('notify-new-rgb-points-received').bind('notify-new-rgb-points-received', function(event) {
                     $('.color-editor-container', me).trigger({
@@ -828,26 +828,6 @@
                         rgbpoints: event.rgbpoints
                     });
                 });
-            	
-//            	var colorEditorElt2 = $('.color-editor-container', me);
-//                var currentColorBy = extractColorBy();
-                
-//                console.log(currentColorBy);
-//                console.log(rgbHottapVals);
-//                me.trigger({
-//                    type: 'initialize-color-editor-widget',
-//                    container: colorEditorElt2,
-//                    colorBy: currentColorBy
-//                });
-//                colorEditorElt2.on('color-editor-cp-update', function(cpEvt) {
-//                	console.log(cpEvt.rgbInfo);
-//                    me.trigger({
-//                        type: 'update-rgb-points',
-//                        colorBy: extractColorBy(),
-//                        rgbInfo: cpEvt.rgbInfo
-//                    });
-//                });
-//                console.log(colorEditorElt2)
 
             	me.trigger({
                     type: 'rescale-transfer-function',
