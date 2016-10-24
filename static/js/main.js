@@ -576,6 +576,11 @@
         var args = [].concat(event.colorBy.representation, event.colorBy.mode, event.colorBy.array, event.colorBy.component);
         startWorking();
         session.call('pv.color.manager.color.by', args).then(invalidatePipeline, error);
+        
+        if(event.colorBy.palette) {
+            startWorking();
+            session.call('pv.color.manager.select.preset', [ event.colorBy.representation, event.colorBy.palette ]).then(invalidatePipeline, error);
+        }
         // Update palette ?
         session.call('pv.color.manager.rgb.points.get', [event.colorBy.array[1]]).then(function(result) {
             proxyEditor.trigger({
@@ -584,10 +589,6 @@
             });
             workDone();
         }, error);
-        if(event.colorBy.palette) {
-            startWorking();
-            session.call('pv.color.manager.select.preset', [ event.colorBy.representation, event.colorBy.palette ]).then(invalidatePipeline, error);
-        }
     }
 
     // ------------------------------------------------------------------------
