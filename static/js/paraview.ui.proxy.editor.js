@@ -231,6 +231,7 @@
             if(change) {
                 propertyList.push(change);
             }
+            console.log(propertyList)
         });
         var cb = {};
         if (doColorExtract === true) {

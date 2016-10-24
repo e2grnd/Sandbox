@@ -570,7 +570,6 @@
 
     function onProxyApply(event) {
         startWorking();
-        
     	session.call('pv.proxy.manager.update', [event.properties]).then(invalidatePipeline, invalidatePipeline);
         // Args: representation, colorMode, arrayLocation='POINTS', arrayName='', vectorMode='Magnitude', vectorComponent = 0, rescale=False
         var args = [].concat(event.colorBy.representation, event.colorBy.mode, event.colorBy.array, event.colorBy.component);
