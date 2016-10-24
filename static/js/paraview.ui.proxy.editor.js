@@ -414,6 +414,29 @@
                         rgbpoints: event.rgbpoints
                     });
                 });
+                
+                var colorEditorElt = $('.color-editor-container', me);
+                updateColorManagementVisibility(colorEditorElt,
+                                                [$('.scalar-range-editor-container', me),  $('.scalar-opacity-editor-container', me)],
+                                                target_container,
+                                                [$('[data-action=toggle-scalar-opacity-editor]', me), $('[data-action=toggle-scalar-range-editor]', me)]);
+                persistToggleState();
+                if (colorEditorElt.is(':visible') && colorEditorInitialized === false) {
+                    var currentColorBy = extractColorBy();
+                    me.trigger({
+                        type: 'initialize-color-editor-widget',
+                        container: colorEditorElt,
+                        colorBy: currentColorBy
+                    });
+                    colorEditorElt.on('color-editor-cp-update', function(cpEvt) {
+                        me.trigger({
+                            type: 'update-rgb-points',
+                            colorBy: extractColorBy(),
+                            rgbInfo: cpEvt.rgbInfo
+                        });
+                    });
+                    colorEditorInitialized = true;
+                }
             }
 
             // Update DOM
