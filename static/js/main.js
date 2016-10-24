@@ -577,23 +577,29 @@
         startWorking();
         session.call('pv.color.manager.color.by', args).then(invalidatePipeline, error);
 
-        if(event.colorBy.palette) {
-            startWorking();
-            session.call('pv.color.manager.select.preset', [ event.colorBy.representation, event.colorBy.palette ]).then(invalidatePipeline, error);
-        }
-        var colorEditorElt = $('.color-editor-container', proxyEditor);
-        proxyEditor.trigger({
-            type: 'initialize-color-editor-widget',
-            container: colorEditorElt,
-            colorBy: event.colorBy
-        });
-        colorEditorElt.on('color-editor-cp-update', function(cpEvt) {
-        	proxyEditor.trigger({
-                type: 'update-rgb-points',
-                colorBy: event.colorBy,
-                rgbInfo: cpEvt.rgbInfo
+//        if(event.colorBy.palette) {
+//            startWorking();
+//            session.call('pv.color.manager.select.preset', [ event.colorBy.representation, event.colorBy.palette ]).then(invalidatePipeline, error);
+//        }
+        
+        session.call('pv.color.manager.rgb.points.get', [event.colorBy.array[1]]).then(function(result) {
+        	var colorEditorElt = $('.color-editor-container', proxyEditor);
+            proxyEditor.trigger({
+                type: 'initialize-color-editor-widget',
+                container: colorEditorElt,
+                colorBy: event.colorBy
             });
-        });
+            colorEditorElt.on('color-editor-cp-update', function(cpEvt) {
+            	proxyEditor.trigger({
+                    type: 'update-rgb-points',
+                    colorBy: event.colorBy,
+                    rgbInfo: cpEvt.rgbInfo
+                });
+            });
+            workDone();
+        }, error);
+        
+        
     }
 
     // ------------------------------------------------------------------------
