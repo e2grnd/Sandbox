@@ -571,28 +571,16 @@
     function onProxyApply(event) {
         startWorking();
         
-        	session.call('pv.proxy.manager.update', [event.properties]).then(invalidatePipeline, invalidatePipeline);
-            // Args: representation, colorMode, arrayLocation='POINTS', arrayName='', vectorMode='Magnitude', vectorComponent = 0, rescale=False
-            var args = [].concat(event.colorBy.representation, event.colorBy.mode, event.colorBy.array, event.colorBy.component);
+    	session.call('pv.proxy.manager.update', [event.properties]).then(invalidatePipeline, invalidatePipeline);
+        // Args: representation, colorMode, arrayLocation='POINTS', arrayName='', vectorMode='Magnitude', vectorComponent = 0, rescale=False
+        var args = [].concat(event.colorBy.representation, event.colorBy.mode, event.colorBy.array, event.colorBy.component);
+        startWorking();
+        session.call('pv.color.manager.color.by', args).then(invalidatePipeline, error);
+        // Update palette ?
+        if(event.colorBy.palette) {
             startWorking();
-            session.call('pv.color.manager.color.by', args).then(invalidatePipeline, error);
-        session.call('pv.color.manager.rgb.points.get', [event.colorBy.array[1]]).then(function(result) {
-        	console.log(event.colorBy.array[1])
-            console.log(result['continuous']['scalars'])
-            // Update palette ?
-            if(event.colorBy.palette) {
-                startWorking();
-                session.call('pv.color.manager.select.preset', [ event.colorBy.representation, event.colorBy.palette ]).then(invalidatePipeline, error);
-            }
-            console.log("HERE")
-            console.log(result['continuous'])
-            console.log(result['continuous']['scalars'])
-            proxyEditor.trigger({
-                type: 'update-rgb-points',
-                colorBy: event.colorBy,
-                rgbInfo: result
-            });
-        }, error);
+            session.call('pv.color.manager.select.preset', [ event.colorBy.representation, event.colorBy.palette ]).then(invalidatePipeline, error);
+        }
         
     }
 
