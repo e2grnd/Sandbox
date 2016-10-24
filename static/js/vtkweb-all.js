@@ -926,6 +926,9 @@
                         extractCoordinates(event, false, false);
                         redrawSelection();
                     }
+                    if (current_button == 1) {
+                    	current_button = 2
+                    }
                     renderersContainer.trigger($.extend(event, {
                         type: 'mouse',
                         action: 'move',
