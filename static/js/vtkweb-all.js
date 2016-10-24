@@ -988,7 +988,7 @@
                         mouseListenerContainer.html("Pan mode").css('color','#FFFFFF');
                     } else {
                         defaultDragButton = 1;
-                        mouseListenerContainer.html("Pan mode").css('color','#FFFFFF');
+                        mouseListenerContainer.html("Rotation mode").css('color','#FFFFFF');
                     }
 
                     break;
