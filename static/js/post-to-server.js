@@ -54,7 +54,7 @@
 	    //var hostIP = "104.196.120.212";
 	    //var hostIP = "104.196.122.159";
 	    
-	    var destinationURI = "http://" + hostIP + "/uploadFile.php";
+	    var destinationURI = "//" + hostIP + "/uploadFile.php";
 	    
 	    // FAppend the file to FormData - dummy change
 	    var fileInput = document.getElementById('file-id');
