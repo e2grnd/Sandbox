@@ -389,7 +389,7 @@
         $(viewportSelector).empty()
                            .bind('captured-screenshot-ready', onScreenshotCaptured);
         viewport = vtkWeb.createViewport({session: session});
-        viewport.setActiveRenderer('vgl');
+        viewport.setActiveRenderer('image');
         viewport.resetCamera();
         viewport.bind(viewportSelector);
     }

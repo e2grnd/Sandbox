@@ -815,7 +815,7 @@
         session: null,
         view: -1,
         enableInteractions: true,
-        renderer: 'vgl'
+        renderer: 'image'
     };
 
     // ----------------------------------------------------------------------
